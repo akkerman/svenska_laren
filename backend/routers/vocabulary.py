@@ -64,3 +64,41 @@ def add_custom_word(word: WordCardCreate, db: Session = Depends(get_db)):
     db.commit()
     db.refresh(new_card)
     return new_card
+
+@router.post("/sync/wordlist")
+def sync_wordlist_from_file(db: Session = Depends(get_db)):
+    """Add missing words from wordlist file without affecting existing progress."""
+    import json
+    import os
+
+    wordlist_path = os.path.join(os.path.dirname(__file__), "../data/wordlist_1000.json")
+    with open(wordlist_path, "r", encoding="utf-8") as f:
+        words = json.load(f)
+
+    # Get existing Swedish words to avoid duplicates
+    existing_words = {card.swedish for card in db.query(WordCard.swedish).all()}
+
+    today = datetime.now().date()
+    added_count = 0
+
+    for word in words:
+        if word["swedish"] not in existing_words:
+            card = WordCard(
+                swedish=word["swedish"],
+                english=word["english"],
+                category=word.get("category", "other"),
+                box=1,
+                next_review=today,
+                total_correct=0,
+                total_wrong=0
+            )
+            db.add(card)
+            added_count += 1
+
+    db.commit()
+
+    return {
+        "status": "synced",
+        "added": added_count,
+        "total_words": db.query(WordCard).count()
+    }
