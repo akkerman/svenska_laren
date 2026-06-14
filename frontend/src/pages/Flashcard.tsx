@@ -1,0 +1,135 @@
+import React, { useState, useEffect } from "react";
+import { getDueCards, answerCard, getStats } from "../api";
+import { useSettings } from "../context/SettingsContext";
+import type { WordCard, CardStats } from "../api";
+
+export function Flashcard() {
+  const { difficulty } = useSettings();
+  const [cards, setCards] = useState<WordCard[]>([]);
+  const [stats, setStats] = useState<CardStats | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [flipped, setFlipped] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    loadCards();
+  }, [difficulty]);
+
+  const loadCards = async () => {
+    setLoading(true);
+    try {
+      const dueCards = await getDueCards();
+      const cardStats = await getStats();
+      setCards(dueCards);
+      setStats(cardStats);
+      setCurrentIndex(0);
+      setFlipped(false);
+    } catch (error) {
+      console.error("Failed to load cards:", error);
+    }
+    setLoading(false);
+  };
+
+  const handleAnswer = async (correct: boolean) => {
+    const card = cards[currentIndex];
+    if (!card) return;
+
+    try {
+      await answerCard(card.id, correct);
+      await loadCards();
+    } catch (error) {
+      console.error("Failed to save answer:", error);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <p className="text-xl text-gray-600">Flitskaarten laden...</p>
+      </div>
+    );
+  }
+
+  if (!cards || cards.length === 0) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <p className="text-2xl font-bold text-gray-800 mb-4">
+            🎉 Geen kaarten om te reviewen!
+          </p>
+          <p className="text-gray-600">Prima gedaan! Kom later terug.</p>
+        </div>
+      </div>
+    );
+  }
+
+  const card = cards[currentIndex];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-8 px-4">
+      <div className="max-w-2xl mx-auto">
+        <div className="mb-8">
+          <h1 className="text-4xl font-bold text-blue-900 mb-4">Flitskaarten</h1>
+          {stats && (
+            <div className="grid grid-cols-3 gap-4 text-center">
+              <div className="bg-white rounded-lg p-4 shadow">
+                <p className="text-2xl font-bold text-blue-600">{stats.total}</p>
+                <p className="text-sm text-gray-600">Totaal woorden</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow">
+                <p className="text-2xl font-bold text-green-600">
+                  {stats.mastered}
+                </p>
+                <p className="text-sm text-gray-600">Beheerst</p>
+              </div>
+              <div className="bg-white rounded-lg p-4 shadow">
+                <p className="text-2xl font-bold text-orange-600">
+                  {cards.length}
+                </p>
+                <p className="text-sm text-gray-600">Vandaag te doen</p>
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="flex flex-col items-center">
+          <p className="text-gray-600 mb-4">
+            Kaart {currentIndex + 1} van {cards.length}
+          </p>
+
+          <div
+            onClick={() => setFlipped(!flipped)}
+            className="w-full max-w-sm h-64 bg-white rounded-lg shadow-lg cursor-pointer flex items-center justify-center transform transition-transform duration-300 hover:shadow-xl mb-8"
+          >
+            <div className="text-center px-8">
+              <p className="text-sm text-gray-500 mb-2">
+                {flipped ? "Nederlands" : "Zweeds"}
+              </p>
+              <p className="text-4xl font-bold text-blue-900">
+                {flipped ? card.english : card.swedish}
+              </p>
+              <p className="text-xs text-gray-400 mt-4">Klik om om te draaien</p>
+            </div>
+          </div>
+
+          {flipped && (
+            <div className="flex gap-4 w-full max-w-sm">
+              <button
+                onClick={() => handleAnswer(false)}
+                className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105 text-lg min-h-12"
+              >
+                ❌ Fout
+              </button>
+              <button
+                onClick={() => handleAnswer(true)}
+                className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105 text-lg min-h-12"
+              >
+                ✅ Goed
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
