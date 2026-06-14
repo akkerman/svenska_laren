@@ -20,7 +20,7 @@ def init_db():
             db.commit()
 
         if db.query(WordCard).count() == 0:
-            wordlist_path = os.path.join(os.path.dirname(__file__), "data", "wordlist.json")
+            wordlist_path = os.path.join(os.path.dirname(__file__), "data", "wordlist_1000.json")
             with open(wordlist_path, "r", encoding="utf-8") as f:
                 words = json.load(f)
 
