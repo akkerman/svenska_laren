@@ -57,16 +57,17 @@ def get_stats(direction: str = Query("se_nl"), db: Session = Depends(get_db)):
         "per_box": per_box
     }
 
-@router.delete("/{card_id}")
-def delete_card(card_id: int, db: Session = Depends(get_db)):
-    """Delete a card permanently."""
+@router.patch("/{card_id}/notes")
+def update_card_notes(card_id: int, notes: str = Query(""), db: Session = Depends(get_db)):
+    """Update notes for a card."""
     card = db.query(WordCard).filter(WordCard.id == card_id).first()
     if not card:
         raise ValueError("Card not found")
 
-    db.delete(card)
+    card.notes = notes if notes else None
     db.commit()
-    return {"status": "deleted", "card_id": card_id}
+    db.refresh(card)
+    return {"status": "updated", "card_id": card_id, "notes": card.notes}
 
 @router.post("", response_model=WordCardResponse)
 def add_custom_word(word: WordCardCreate, db: Session = Depends(get_db)):

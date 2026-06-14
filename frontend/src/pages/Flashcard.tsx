@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getDueCards, answerCard, getStats } from "../api";
+import { getDueCards, answerCard, getStats, updateCardNotes } from "../api";
 import { useSettings } from "../context/SettingsContext";
 import type { WordCard, CardStats } from "../api";
 
@@ -11,6 +11,8 @@ export function Flashcard() {
   const [flipped, setFlipped] = useState(false);
   const [loading, setLoading] = useState(true);
   const [direction, setDirection] = useState<"se_nl" | "nl_se">("se_nl");
+  const [editingNotes, setEditingNotes] = useState(false);
+  const [notesInput, setNotesInput] = useState("");
 
   useEffect(() => {
     loadCards();
@@ -40,6 +42,19 @@ export function Flashcard() {
       await loadCards();
     } catch (error) {
       console.error("Failed to save answer:", error);
+    }
+  };
+
+  const handleSaveNotes = async () => {
+    const card = cards[currentIndex];
+    if (!card) return;
+
+    try {
+      await updateCardNotes(card.id, notesInput);
+      await loadCards();
+      setEditingNotes(false);
+    } catch (error) {
+      console.error("Failed to save notes:", error);
     }
   };
 
@@ -124,29 +139,68 @@ export function Flashcard() {
             Kaart {currentIndex + 1} van {cards.length}
           </p>
 
-          <div
-            onClick={() => setFlipped(!flipped)}
-            className="w-full max-w-sm h-64 bg-white rounded-lg shadow-lg cursor-pointer flex items-center justify-center transform transition-transform duration-300 hover:shadow-xl mb-8"
-          >
-            <div className="text-center px-8">
-              <p className="text-sm text-gray-500 mb-2">
-                {direction === "se_nl"
-                  ? flipped ? "Nederlands" : "Zweeds"
-                  : flipped ? "Zweeds" : "Nederlands"
-                }
-              </p>
-              <p className="text-4xl font-bold text-blue-900">
-                {direction === "se_nl"
-                  ? flipped ? card.english : card.swedish
-                  : flipped ? card.swedish : card.english
-                }
-              </p>
-              {card.notes && (
-                <p className="text-xs text-blue-500 italic mt-3">({card.notes})</p>
-              )}
-              <p className="text-xs text-gray-400 mt-4">Klik om om te draaien</p>
+          <div className="w-full max-w-sm">
+            <div
+              onClick={() => setFlipped(!flipped)}
+              className="w-full h-64 bg-white rounded-lg shadow-lg cursor-pointer flex items-center justify-center transform transition-transform duration-300 hover:shadow-xl mb-2"
+            >
+              <div className="text-center px-8">
+                <p className="text-sm text-gray-500 mb-2">
+                  {direction === "se_nl"
+                    ? flipped ? "Nederlands" : "Zweeds"
+                    : flipped ? "Zweeds" : "Nederlands"
+                  }
+                </p>
+                <p className="text-4xl font-bold text-blue-900">
+                  {direction === "se_nl"
+                    ? flipped ? card.english : card.swedish
+                    : flipped ? card.swedish : card.english
+                  }
+                </p>
+                {card.notes && (
+                  <p className="text-xs text-blue-500 italic mt-3">({card.notes})</p>
+                )}
+                <p className="text-xs text-gray-400 mt-4">Klik om om te draaien</p>
+              </div>
             </div>
+            <button
+              onClick={() => {
+                setEditingNotes(!editingNotes);
+                setNotesInput(card.notes || "");
+              }}
+              className="text-xs bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded transition w-full"
+            >
+              ✏️ Notitie
+            </button>
           </div>
+
+          {editingNotes && (
+            <div className="w-full max-w-sm bg-white rounded-lg shadow-lg p-4 mb-8">
+              <input
+                type="text"
+                value={notesInput}
+                onChange={(e) => setNotesInput(e.target.value)}
+                placeholder="bijv. possessief, werkwoord, archaic..."
+                className="w-full px-3 py-2 border border-gray-300 rounded mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+              />
+              <div className="flex gap-2">
+                <button
+                  onClick={handleSaveNotes}
+                  className="flex-1 bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded transition text-sm min-h-10"
+                >
+                  💾 Opslaan
+                </button>
+                <button
+                  onClick={() => setEditingNotes(false)}
+                  className="flex-1 bg-gray-500 hover:bg-gray-600 text-white px-3 py-2 rounded transition text-sm min-h-10"
+                >
+                  Sluiten
+                </button>
+              </div>
+            </div>
+          )}
+
+          <div className="mb-8" />
 
           {flipped && (
             <div className="flex gap-4 w-full max-w-sm">

@@ -90,9 +90,9 @@ export async function addCustomWord(
   return res.json();
 }
 
-export async function deleteCard(card_id: number): Promise<{ status: string }> {
-  const res = await fetch(`${API_BASE}/cards/${card_id}`, {
-    method: "DELETE",
+export async function updateCardNotes(card_id: number, notes: string): Promise<{ status: string; notes: string | null }> {
+  const res = await fetch(`${API_BASE}/cards/${card_id}/notes?notes=${encodeURIComponent(notes)}`, {
+    method: "PATCH",
   });
   return res.json();
 }
