@@ -57,6 +57,17 @@ def get_stats(direction: str = Query("se_nl"), db: Session = Depends(get_db)):
         "per_box": per_box
     }
 
+@router.delete("/{card_id}")
+def delete_card(card_id: int, db: Session = Depends(get_db)):
+    """Delete a card permanently."""
+    card = db.query(WordCard).filter(WordCard.id == card_id).first()
+    if not card:
+        raise ValueError("Card not found")
+
+    db.delete(card)
+    db.commit()
+    return {"status": "deleted", "card_id": card_id}
+
 @router.post("", response_model=WordCardResponse)
 def add_custom_word(word: WordCardCreate, db: Session = Depends(get_db)):
     today = datetime.now().date()

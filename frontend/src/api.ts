@@ -89,6 +89,13 @@ export async function addCustomWord(
   return res.json();
 }
 
+export async function deleteCard(card_id: number): Promise<{ status: string }> {
+  const res = await fetch(`${API_BASE}/cards/${card_id}`, {
+    method: "DELETE",
+  });
+  return res.json();
+}
+
 // Translation
 export async function generateTranslation(
   direction: string,
