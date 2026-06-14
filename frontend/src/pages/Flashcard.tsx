@@ -10,6 +10,7 @@ export function Flashcard() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [direction, setDirection] = useState<"se_nl" | "nl_se">("se_nl");
 
   useEffect(() => {
     loadCards();
@@ -69,7 +70,19 @@ export function Flashcard() {
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100 py-8 px-4">
       <div className="max-w-2xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-blue-900 mb-4">Flitskaarten</h1>
+          <div className="flex justify-between items-center mb-4">
+            <h1 className="text-4xl font-bold text-blue-900">Flitskaarten</h1>
+            <button
+              onClick={() => {
+                setDirection(direction === "se_nl" ? "nl_se" : "se_nl");
+                setCurrentIndex(0);
+                setFlipped(false);
+              }}
+              className="text-sm bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition min-h-10"
+            >
+              {direction === "se_nl" ? "🔄 NL→SE" : "🔄 SE→NL"}
+            </button>
+          </div>
           {stats && (
             <div className="grid grid-cols-3 gap-4 text-center">
               <div className="bg-white rounded-lg p-4 shadow">
@@ -103,10 +116,16 @@ export function Flashcard() {
           >
             <div className="text-center px-8">
               <p className="text-sm text-gray-500 mb-2">
-                {flipped ? "Nederlands" : "Zweeds"}
+                {direction === "se_nl"
+                  ? flipped ? "Nederlands" : "Zweeds"
+                  : flipped ? "Zweeds" : "Nederlands"
+                }
               </p>
               <p className="text-4xl font-bold text-blue-900">
-                {flipped ? card.english : card.swedish}
+                {direction === "se_nl"
+                  ? flipped ? card.english : card.swedish
+                  : flipped ? card.swedish : card.english
+                }
               </p>
               <p className="text-xs text-gray-400 mt-4">Klik om om te draaien</p>
             </div>
