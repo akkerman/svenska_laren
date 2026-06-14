@@ -8,6 +8,7 @@ export interface WordCard {
   id: number;
   swedish: string;
   english: string;
+  notes?: string;
   category: string;
   box: number;
   next_review: string | null;

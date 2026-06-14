@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getDueCards, answerCard, getStats, deleteCard } from "../api";
+import { getDueCards, answerCard, getStats } from "../api";
 import { useSettings } from "../context/SettingsContext";
 import type { WordCard, CardStats } from "../api";
 
@@ -43,19 +43,6 @@ export function Flashcard() {
     }
   };
 
-  const handleDeleteCard = async () => {
-    const card = cards[currentIndex];
-    if (!card) return;
-
-    if (window.confirm(`Verwijderen: ${card.swedish} - ${card.english}?`)) {
-      try {
-        await deleteCard(card.id);
-        await loadCards();
-      } catch (error) {
-        console.error("Failed to delete card:", error);
-      }
-    }
-  };
 
   if (loading) {
     return (
@@ -137,37 +124,29 @@ export function Flashcard() {
             Kaart {currentIndex + 1} van {cards.length}
           </p>
 
-          <div className="w-full max-w-sm relative">
-            <div
-              onClick={() => setFlipped(!flipped)}
-              className="w-full h-64 bg-white rounded-lg shadow-lg cursor-pointer flex items-center justify-center transform transition-transform duration-300 hover:shadow-xl"
-            >
-              <div className="text-center px-8">
-                <p className="text-sm text-gray-500 mb-2">
-                  {direction === "se_nl"
-                    ? flipped ? "Nederlands" : "Zweeds"
-                    : flipped ? "Zweeds" : "Nederlands"
-                  }
-                </p>
-                <p className="text-4xl font-bold text-blue-900">
-                  {direction === "se_nl"
-                    ? flipped ? card.english : card.swedish
-                    : flipped ? card.swedish : card.english
-                  }
-                </p>
-                <p className="text-xs text-gray-400 mt-4">Klik om om te draaien</p>
-              </div>
+          <div
+            onClick={() => setFlipped(!flipped)}
+            className="w-full max-w-sm h-64 bg-white rounded-lg shadow-lg cursor-pointer flex items-center justify-center transform transition-transform duration-300 hover:shadow-xl mb-8"
+          >
+            <div className="text-center px-8">
+              <p className="text-sm text-gray-500 mb-2">
+                {direction === "se_nl"
+                  ? flipped ? "Nederlands" : "Zweeds"
+                  : flipped ? "Zweeds" : "Nederlands"
+                }
+              </p>
+              <p className="text-4xl font-bold text-blue-900">
+                {direction === "se_nl"
+                  ? flipped ? card.english : card.swedish
+                  : flipped ? card.swedish : card.english
+                }
+              </p>
+              {card.notes && (
+                <p className="text-xs text-blue-500 italic mt-3">({card.notes})</p>
+              )}
+              <p className="text-xs text-gray-400 mt-4">Klik om om te draaien</p>
             </div>
-            <button
-              onClick={handleDeleteCard}
-              className="absolute top-2 right-2 text-xs bg-red-500 hover:bg-red-600 text-white px-2 py-1 rounded transition"
-              title="Verwijder dit woord"
-            >
-              🗑️
-            </button>
           </div>
-
-          <div className="mb-8" />
 
           {flipped && (
             <div className="flex gap-4 w-full max-w-sm">

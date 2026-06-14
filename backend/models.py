@@ -16,6 +16,7 @@ class WordCard(Base):
     id = Column(Integer, primary_key=True, index=True)
     swedish = Column(String, index=True)
     english = Column(String)
+    notes = Column(String, nullable=True)  # Context/notes: e.g. "possessive" or "auxiliary verb"
     category = Column(String, default="other")
     direction = Column(String, default="se_nl")  # "se_nl" or "nl_se"
     box = Column(Integer, default=1)

@@ -12,6 +12,7 @@ class WordCardResponse(BaseModel):
     id: int
     swedish: str
     english: str
+    notes: Optional[str] = None
     category: str
     box: int
     next_review: Optional[date]
