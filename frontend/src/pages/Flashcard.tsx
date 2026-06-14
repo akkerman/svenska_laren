@@ -14,13 +14,13 @@ export function Flashcard() {
 
   useEffect(() => {
     loadCards();
-  }, [difficulty]);
+  }, [difficulty, direction]);
 
   const loadCards = async () => {
     setLoading(true);
     try {
-      const dueCards = await getDueCards();
-      const cardStats = await getStats();
+      const dueCards = await getDueCards(direction);
+      const cardStats = await getStats(direction);
       setCards(dueCards);
       setStats(cardStats);
       setCurrentIndex(0);

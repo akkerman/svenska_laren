@@ -54,13 +54,13 @@ export async function updateSettings(difficulty: number): Promise<Settings> {
 }
 
 // Vocabulary
-export async function getDueCards(): Promise<WordCard[]> {
-  const res = await fetch(`${API_BASE}/cards/due`);
+export async function getDueCards(direction: string = "se_nl"): Promise<WordCard[]> {
+  const res = await fetch(`${API_BASE}/cards/due?direction=${direction}`);
   return res.json();
 }
 
-export async function getStats(): Promise<CardStats> {
-  const res = await fetch(`${API_BASE}/cards/stats`);
+export async function getStats(direction: string = "se_nl"): Promise<CardStats> {
+  const res = await fetch(`${API_BASE}/cards/stats?direction=${direction}`);
   return res.json();
 }
 
