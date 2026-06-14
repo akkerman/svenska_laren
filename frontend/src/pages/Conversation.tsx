@@ -1,10 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   startConversation,
   streamConversationMessage,
   deleteConversation,
 } from "../api";
 import { useSettings } from "../context/SettingsContext";
+import { SwedishChars } from "../components/SwedishChars";
+import { MarkdownText } from "../components/MarkdownText";
 
 interface Message {
   role: "user" | "assistant";
@@ -21,8 +23,15 @@ export function Conversation() {
   const [streaming, setStreaming] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleCharClick = (char: string) => {
+    setUserInput(userInput + char);
+    inputRef.current?.focus();
   };
 
   useEffect(() => {
@@ -159,34 +168,42 @@ export function Conversation() {
                     : "bg-gray-100 text-gray-800"
                 }`}
               >
-                <p className="text-sm leading-relaxed whitespace-pre-wrap">
-                  {msg.content}
-                </p>
+                <div className="text-sm leading-relaxed">
+                  {msg.role === "assistant" ? (
+                    <MarkdownText content={msg.content} />
+                  ) : (
+                    <p className="whitespace-pre-wrap">{msg.content}</p>
+                  )}
+                </div>
               </div>
             </div>
           ))}
           <div ref={messagesEndRef} />
         </div>
 
-        <div className="flex gap-2">
-          <input
-            type="text"
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            onKeyDown={(e) =>
-              e.key === "Enter" && !streaming && handleSendMessage()
-            }
-            placeholder="Typ je bericht in het Zweeds of Nederlands..."
-            disabled={streaming}
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 disabled:opacity-50"
-          />
-          <button
-            onClick={handleSendMessage}
-            disabled={streaming || !userInput.trim()}
-            className="bg-purple-500 hover:bg-purple-600 text-white font-bold px-6 py-2 rounded-lg transition disabled:opacity-50 min-h-10"
-          >
-            Verzend
-          </button>
+        <div>
+          <SwedishChars onCharClick={handleCharClick} />
+          <div className="flex gap-2">
+            <input
+              ref={inputRef}
+              type="text"
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+              onKeyDown={(e) =>
+                e.key === "Enter" && !streaming && handleSendMessage()
+              }
+              placeholder="Typ je bericht in het Zweeds of Nederlands..."
+              disabled={streaming}
+              className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 disabled:opacity-50"
+            />
+            <button
+              onClick={handleSendMessage}
+              disabled={streaming || !userInput.trim()}
+              className="bg-purple-500 hover:bg-purple-600 text-white font-bold px-6 py-2 rounded-lg transition disabled:opacity-50 min-h-10"
+            >
+              Verzend
+            </button>
+          </div>
         </div>
       </div>
     </div>

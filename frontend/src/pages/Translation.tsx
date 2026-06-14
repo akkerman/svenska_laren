@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useRef } from "react";
 import {
   generateTranslation,
   evaluateTranslation,
@@ -7,6 +7,7 @@ import {
 } from "../api";
 import { useSettings } from "../context/SettingsContext";
 import { FeedbackBubble } from "../components/FeedbackBubble";
+import { SwedishChars } from "../components/SwedishChars";
 
 const languageNames: Record<string, string> = {
   Dutch: "Nederlands",
@@ -16,6 +17,7 @@ const languageNames: Record<string, string> = {
 
 export function Translation() {
   const { difficulty } = useSettings();
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [direction, setDirection] = useState("nl_to_se");
   const [topic, setTopic] = useState("");
   const [sentence, setSentence] = useState<TranslationResponse | null>(null);
@@ -58,6 +60,11 @@ export function Translation() {
       console.error("Failed to evaluate:", error);
     }
     setLoading(false);
+  };
+
+  const handleCharClick = (char: string) => {
+    setUserAttempt(userAttempt + char);
+    textareaRef.current?.focus();
   };
 
   return (
@@ -117,7 +124,9 @@ export function Translation() {
               </p>
             </div>
 
+            <SwedishChars onCharClick={handleCharClick} />
             <textarea
+              ref={textareaRef}
               value={userAttempt}
               onChange={(e) => setUserAttempt(e.target.value)}
               placeholder="Voer je vertaling in..."
