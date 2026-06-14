@@ -17,6 +17,7 @@ class WordCard(Base):
     swedish = Column(String, index=True)
     english = Column(String)
     category = Column(String, default="other")
+    direction = Column(String, default="se_nl")  # "se_nl" or "nl_se"
     box = Column(Integer, default=1)
     next_review = Column(Date)
     total_correct = Column(Integer, default=0)

@@ -24,17 +24,33 @@ def init_db():
             with open(wordlist_path, "r", encoding="utf-8") as f:
                 words = json.load(f)
 
+            today = datetime.now().date()
             for word in words:
-                card = WordCard(
+                # Create card for SE→NL
+                card_se_nl = WordCard(
                     swedish=word["swedish"],
                     english=word["english"],
                     category=word.get("category", "other"),
+                    direction="se_nl",
                     box=1,
-                    next_review=datetime.now().date(),
+                    next_review=today,
                     total_correct=0,
                     total_wrong=0
                 )
-                db.add(card)
+                db.add(card_se_nl)
+
+                # Create card for NL→SE
+                card_nl_se = WordCard(
+                    swedish=word["swedish"],
+                    english=word["english"],
+                    category=word.get("category", "other"),
+                    direction="nl_se",
+                    box=1,
+                    next_review=today,
+                    total_correct=0,
+                    total_wrong=0
+                )
+                db.add(card_nl_se)
             db.commit()
     finally:
         db.close()

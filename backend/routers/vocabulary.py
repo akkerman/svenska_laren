@@ -17,7 +17,7 @@ def get_difficulty_filters(difficulty: float):
         return [1, 2, 3, 4, 5]
 
 @router.get("/due", response_model=list[WordCardResponse])
-def get_due_cards(db: Session = Depends(get_db)):
+def get_due_cards(direction: str = Query("se_nl"), db: Session = Depends(get_db)):
     today = datetime.now().date()
 
     # Get user's difficulty setting
@@ -27,21 +27,28 @@ def get_due_cards(db: Session = Depends(get_db)):
     # Determine which boxes to show
     boxes_to_show = get_difficulty_filters(difficulty)
 
-    # Get due cards from allowed boxes
+    # Get due cards from allowed boxes for specified direction
     due = db.query(WordCard).filter(
+        WordCard.direction == direction,
         WordCard.box.in_(boxes_to_show),
         (WordCard.next_review <= today) | (WordCard.next_review.is_(None))
     ).all()
     return due
 
 @router.get("/stats", response_model=CardStatsResponse)
-def get_stats(db: Session = Depends(get_db)):
-    total = db.query(WordCard).count()
-    mastered = db.query(WordCard).filter(WordCard.box == 5).count()
+def get_stats(direction: str = Query("se_nl"), db: Session = Depends(get_db)):
+    total = db.query(WordCard).filter(WordCard.direction == direction).count()
+    mastered = db.query(WordCard).filter(
+        WordCard.direction == direction,
+        WordCard.box == 5
+    ).count()
 
     per_box = []
     for box_num in range(1, 6):
-        count = db.query(WordCard).filter(WordCard.box == box_num).count()
+        count = db.query(WordCard).filter(
+            WordCard.direction == direction,
+            WordCard.box == box_num
+        ).count()
         per_box.append(count)
 
     return {
@@ -75,25 +82,44 @@ def sync_wordlist_from_file(db: Session = Depends(get_db)):
     with open(wordlist_path, "r", encoding="utf-8") as f:
         words = json.load(f)
 
-    # Get existing Swedish words to avoid duplicates
-    existing_words = {card.swedish for card in db.query(WordCard.swedish).all()}
+    # Get existing Swedish words (both directions) to avoid duplicates
+    existing_words = {
+        card.swedish for card in db.query(WordCard.swedish).filter(
+            WordCard.direction == "se_nl"
+        ).all()
+    }
 
     today = datetime.now().date()
     added_count = 0
 
     for word in words:
         if word["swedish"] not in existing_words:
-            card = WordCard(
+            # Add for SE→NL
+            card_se_nl = WordCard(
                 swedish=word["swedish"],
                 english=word["english"],
                 category=word.get("category", "other"),
+                direction="se_nl",
                 box=1,
                 next_review=today,
                 total_correct=0,
                 total_wrong=0
             )
-            db.add(card)
-            added_count += 1
+            db.add(card_se_nl)
+
+            # Add for NL→SE
+            card_nl_se = WordCard(
+                swedish=word["swedish"],
+                english=word["english"],
+                category=word.get("category", "other"),
+                direction="nl_se",
+                box=1,
+                next_review=today,
+                total_correct=0,
+                total_wrong=0
+            )
+            db.add(card_nl_se)
+            added_count += 2
 
     db.commit()
 
