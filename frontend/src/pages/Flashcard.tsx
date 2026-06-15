@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import { getDueCards, answerCard, getStats, updateCardNotes } from "../api";
-import { useSettings } from "../context/SettingsContext";
 import { useTTS } from "../hooks/useTTS";
 import type { WordCard, CardStats } from "../api";
 
 export function Flashcard() {
-  const { difficulty } = useSettings();
   const { speak, playing } = useTTS();
   const [cards, setCards] = useState<WordCard[]>([]);
   const [stats, setStats] = useState<CardStats | null>(null);
@@ -18,7 +16,7 @@ export function Flashcard() {
 
   useEffect(() => {
     loadCards();
-  }, [difficulty, direction]);
+  }, [direction]);
 
   const loadCards = async () => {
     setLoading(true);
