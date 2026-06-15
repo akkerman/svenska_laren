@@ -11,9 +11,8 @@ class SettingsUpdate(BaseModel):
 class WordCardResponse(BaseModel):
     id: int
     swedish: str
-    english: str
+    dutch: str
     notes: Optional[str] = None
-    category: str
     box: int
     next_review: Optional[date]
     total_correct: int
@@ -24,8 +23,7 @@ class WordCardResponse(BaseModel):
 
 class WordCardCreate(BaseModel):
     swedish: str
-    english: str
-    category: Optional[str] = "other"
+    dutch: str
 
 class CardAnswerRequest(BaseModel):
     card_id: int

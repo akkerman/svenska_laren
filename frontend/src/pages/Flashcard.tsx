@@ -151,8 +151,8 @@ export function Flashcard() {
                 </p>
                 <p className="text-4xl font-bold text-blue-900">
                   {direction === "se_nl"
-                    ? flipped ? card.english : card.swedish
-                    : flipped ? card.swedish : card.english
+                    ? flipped ? card.dutch : card.swedish
+                    : flipped ? card.swedish : card.dutch
                   }
                 </p>
                 {card.notes && (

@@ -76,8 +76,7 @@ def add_custom_word(word: WordCardCreate, db: Session = Depends(get_db)):
     today = datetime.now().date()
     new_card = WordCard(
         swedish=word.swedish,
-        english=word.english,
-        category=word.category or "custom",
+        dutch=word.dutch,
         box=1,
         next_review=today
     )
@@ -111,8 +110,7 @@ def sync_wordlist_from_file(db: Session = Depends(get_db)):
             # Add for SE→NL
             card_se_nl = WordCard(
                 swedish=word["swedish"],
-                english=word["english"],
-                category=word.get("category", "other"),
+                dutch=word["dutch"],
                 direction="se_nl",
                 box=1,
                 next_review=today,
@@ -124,8 +122,7 @@ def sync_wordlist_from_file(db: Session = Depends(get_db)):
             # Add for NL→SE
             card_nl_se = WordCard(
                 swedish=word["swedish"],
-                english=word["english"],
-                category=word.get("category", "other"),
+                dutch=word["dutch"],
                 direction="nl_se",
                 box=1,
                 next_review=today,

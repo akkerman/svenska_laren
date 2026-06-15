@@ -29,8 +29,7 @@ def init_db():
                 # Create card for SE→NL
                 card_se_nl = WordCard(
                     swedish=word["swedish"],
-                    english=word["english"],
-                    category=word.get("category", "other"),
+                    dutch=word["dutch"],
                     direction="se_nl",
                     box=1,
                     next_review=today,
@@ -42,8 +41,7 @@ def init_db():
                 # Create card for NL→SE
                 card_nl_se = WordCard(
                     swedish=word["swedish"],
-                    english=word["english"],
-                    category=word.get("category", "other"),
+                    dutch=word["dutch"],
                     direction="nl_se",
                     box=1,
                     next_review=today,

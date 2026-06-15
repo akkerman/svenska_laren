@@ -7,9 +7,8 @@ export interface Settings {
 export interface WordCard {
   id: number;
   swedish: string;
-  english: string;
+  dutch: string;
   notes?: string;
-  category: string;
   box: number;
   next_review: string | null;
   total_correct: number;
@@ -79,13 +78,12 @@ export async function answerCard(
 
 export async function addCustomWord(
   swedish: string,
-  english: string,
-  category?: string
+  dutch: string
 ): Promise<WordCard> {
   const res = await fetch(`${API_BASE}/cards`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ swedish, english, category }),
+    body: JSON.stringify({ swedish, dutch }),
   });
   return res.json();
 }
