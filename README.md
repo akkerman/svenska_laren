@@ -5,6 +5,7 @@ A personal Swedish language learning app with flashcards (Leitner box), translat
 ## Quick Start
 
 ### Prerequisites
+
 - Python 3.9+
 - Node.js 18+
 - Ollama running with `alibayram/erurollm-9b-instruct` model:
@@ -12,14 +13,15 @@ A personal Swedish language learning app with flashcards (Leitner box), translat
   ollama pull alibayram/erurollm-9b-instruct
   ollama serve
   ```
-- Piper TTS Swedish voice:
+- Piper TTS Swedish voice (downloaded on first setup):
   ```bash
-  piper --download-dir ~/.local/share/piper_phoneme_dict --model sv_SE-nathalie-medium
+  cd backend && pipenv run python -m fetch_voices
   ```
 
 ### Setup & Run
 
 **Backend (Python FastAPI)**
+
 ```bash
 cd backend
 pipenv install
@@ -27,6 +29,7 @@ pipenv run uvicorn main:app --reload --port 8003
 ```
 
 **Frontend (React + Vite)**
+
 ```bash
 cd frontend
 npm install
@@ -84,12 +87,12 @@ All endpoints under `/api`:
 
 ## Leitner Box Intervals
 
-| Box | Review After |
-|-----|--------------|
-| 1   | 1 day        |
-| 2   | 2 days       |
-| 3   | 4 days       |
-| 4   | 8 days       |
+| Box | Review After     |
+| --- | ---------------- |
+| 1   | 1 day            |
+| 2   | 2 days           |
+| 3   | 4 days           |
+| 4   | 8 days           |
 | 5   | Never (mastered) |
 
 Correct answer → advance box (max 5)
