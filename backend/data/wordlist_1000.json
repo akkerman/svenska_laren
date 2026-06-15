@@ -1,4166 +1,4912 @@
 [
   {
     "swedish": "jag",
-    "dutch": "ik"
+    "dutch": "ik",
+    "frequency_rank": 3
   },
   {
     "swedish": "han",
-    "dutch": "hij"
+    "dutch": "hij",
+    "frequency_rank": 169
   },
   {
     "swedish": "hon",
-    "dutch": "zij"
+    "dutch": "zij",
+    "frequency_rank": 115
   },
   {
     "swedish": "det",
-    "dutch": "het"
+    "dutch": "het",
+    "frequency_rank": 4
   },
   {
     "swedish": "vi",
-    "dutch": "wij"
+    "dutch": "wij",
+    "frequency_rank": 33
   },
   {
     "swedish": "de",
-    "dutch": "zij"
+    "dutch": "zij",
+    "frequency_rank": 38
   },
   {
     "swedish": "mig",
-    "dutch": "mij"
+    "dutch": "mij",
+    "frequency_rank": 108
   },
   {
     "swedish": "du",
-    "dutch": "jij"
+    "dutch": "jij",
+    "frequency_rank": 23
   },
   {
     "swedish": "honom",
-    "dutch": "hem"
+    "dutch": "hem",
+    "frequency_rank": 285
   },
   {
     "swedish": "oss",
-    "dutch": "ons"
+    "dutch": "ons",
+    "frequency_rank": 319
   },
   {
     "swedish": "dem",
-    "dutch": "hen"
+    "dutch": "hen",
+    "frequency_rank": 553
   },
   {
     "swedish": "min",
-    "dutch": "mijn"
+    "dutch": "mijn",
+    "frequency_rank": 122
   },
   {
     "swedish": "din",
-    "dutch": "jouw"
+    "dutch": "jouw",
+    "frequency_rank": 167
   },
   {
     "swedish": "henne",
-    "dutch": "haar"
+    "dutch": "haar",
+    "frequency_rank": 736
   },
   {
     "swedish": "dess",
-    "dutch": "zijn"
+    "dutch": "zijn",
+    "frequency_rank": 1001
   },
   {
     "swedish": "vår",
-    "dutch": "ons"
+    "dutch": "ons",
+    "frequency_rank": 121
   },
   {
     "swedish": "deras",
-    "dutch": "hun"
+    "dutch": "hun",
+    "frequency_rank": 811
   },
   {
     "swedish": "mina",
-    "dutch": "de mijne"
-  },
-  {
-    "swedish": "din",
-    "dutch": "de jouwe"
+    "dutch": "de mijne",
+    "frequency_rank": 979
   },
   {
     "swedish": "hans",
-    "dutch": "zijn"
+    "dutch": "zijn",
+    "frequency_rank": 832
   },
   {
     "swedish": "hennes",
-    "dutch": "van haar"
-  },
-  {
-    "swedish": "vår",
-    "dutch": "de onze"
-  },
-  {
-    "swedish": "deras",
-    "dutch": "van hen"
+    "dutch": "van haar",
+    "frequency_rank": 1002
   },
   {
     "swedish": "detta",
-    "dutch": "dit"
+    "dutch": "dit",
+    "frequency_rank": 236
   },
   {
     "swedish": "allt",
-    "dutch": "alle"
+    "dutch": "alle",
+    "frequency_rank": 76
   },
   {
     "swedish": "först",
-    "dutch": "eerst"
+    "dutch": "eerst",
+    "frequency_rank": 611
   },
   {
     "swedish": "andra",
-    "dutch": "seconde"
+    "dutch": "seconde",
+    "frequency_rank": 187
   },
   {
     "swedish": "tredje",
-    "dutch": "derde"
+    "dutch": "derde",
+    "frequency_rank": 1003
   },
   {
     "swedish": "nästa",
-    "dutch": "volgende"
+    "dutch": "volgende",
+    "frequency_rank": 469
   },
   {
     "swedish": "sista",
-    "dutch": "laatst"
+    "dutch": "laatst",
+    "frequency_rank": 251
   },
   {
     "swedish": "ett",
-    "dutch": "een"
+    "dutch": "een",
+    "frequency_rank": 60
   },
   {
     "swedish": "två",
-    "dutch": "twee"
+    "dutch": "twee",
+    "frequency_rank": 432
   },
   {
     "swedish": "tre",
-    "dutch": "drie"
+    "dutch": "drie",
+    "frequency_rank": 1004
   },
   {
     "swedish": "fyra",
-    "dutch": "vier"
+    "dutch": "vier",
+    "frequency_rank": 1005
   },
   {
     "swedish": "fem",
-    "dutch": "vijf"
+    "dutch": "vijf",
+    "frequency_rank": 1006
   },
   {
     "swedish": "sex",
-    "dutch": "zes"
+    "dutch": "zes",
+    "frequency_rank": 612
   },
   {
     "swedish": "sju",
-    "dutch": "zeven"
+    "dutch": "zeven",
+    "frequency_rank": 1007
   },
   {
     "swedish": "åtta",
-    "dutch": "acht"
+    "dutch": "acht",
+    "frequency_rank": 1008
   },
   {
     "swedish": "nio",
-    "dutch": "negen"
+    "dutch": "negen",
+    "frequency_rank": 1009
   },
   {
     "swedish": "tio",
-    "dutch": "tien"
+    "dutch": "tien",
+    "frequency_rank": 1010
   },
   {
     "swedish": "igen",
-    "dutch": "opnieuw"
+    "dutch": "opnieuw",
+    "frequency_rank": 48
   },
   {
     "swedish": "alltid",
-    "dutch": "altijd"
+    "dutch": "altijd",
+    "frequency_rank": 514
   },
   {
     "swedish": "aldrig",
-    "dutch": "nooit"
+    "dutch": "nooit",
+    "frequency_rank": 58
   },
   {
     "swedish": "annan",
-    "dutch": "een andere"
+    "dutch": "een andere",
+    "frequency_rank": 248
   },
   {
     "swedish": "övrig",
-    "dutch": "ander"
+    "dutch": "ander",
+    "frequency_rank": 1011
   },
   {
     "swedish": "samma",
-    "dutch": "dezelfde"
+    "dutch": "dezelfde",
+    "frequency_rank": 260
   },
   {
     "swedish": "annorlunda",
-    "dutch": "verschillend"
+    "dutch": "verschillend",
+    "frequency_rank": 576
   },
   {
     "swedish": "mycket",
-    "dutch": "veel"
+    "dutch": "veel",
+    "frequency_rank": 27
   },
   {
     "swedish": "och",
-    "dutch": "en"
+    "dutch": "en",
+    "frequency_rank": 6
   },
   {
     "swedish": "till",
-    "dutch": "naar"
+    "dutch": "naar",
+    "frequency_rank": 8
   },
   {
     "swedish": "i",
-    "dutch": "in"
+    "dutch": "in",
+    "frequency_rank": 9
   },
   {
     "swedish": "är",
-    "dutch": "is"
+    "dutch": "is",
+    "frequency_rank": 7
   },
   {
     "swedish": "den där",
-    "dutch": "dat"
+    "dutch": "dat",
+    "frequency_rank": 1012
   },
   {
     "swedish": "var",
-    "dutch": "was"
+    "dutch": "was",
+    "frequency_rank": 25
   },
   {
     "swedish": "för",
-    "dutch": "voor"
+    "dutch": "voor",
+    "frequency_rank": 16
   },
   {
     "swedish": "på",
-    "dutch": "op"
-  },
-  {
-    "swedish": "är",
-    "dutch": "zijn"
+    "dutch": "op",
+    "frequency_rank": 1
   },
   {
     "swedish": "som",
-    "dutch": "als"
+    "dutch": "als",
+    "frequency_rank": 2
   },
   {
     "swedish": "med",
-    "dutch": "met"
-  },
-  {
-    "swedish": "på",
-    "dutch": "bij"
+    "dutch": "met",
+    "frequency_rank": 17
   },
   {
     "swedish": "vara",
-    "dutch": "zijn"
+    "dutch": "zijn",
+    "frequency_rank": 31
   },
   {
     "swedish": "ha",
-    "dutch": "hebben"
+    "dutch": "hebben",
+    "frequency_rank": 55
   },
   {
     "swedish": "från",
-    "dutch": "van"
+    "dutch": "van",
+    "frequency_rank": 51
   },
   {
     "swedish": "eller",
-    "dutch": "of"
+    "dutch": "of",
+    "frequency_rank": 36
   },
   {
     "swedish": "hade",
-    "dutch": "had"
+    "dutch": "had",
+    "frequency_rank": 227
   },
   {
     "swedish": "förbi",
-    "dutch": "door"
+    "dutch": "door",
+    "frequency_rank": 1013
   },
   {
     "swedish": "ord",
-    "dutch": "woord"
+    "dutch": "woord",
+    "frequency_rank": 330
   },
   {
     "swedish": "men",
-    "dutch": "maar"
+    "dutch": "maar",
+    "frequency_rank": 29
   },
   {
     "swedish": "inte",
-    "dutch": "niet"
+    "dutch": "niet",
+    "frequency_rank": 15
   },
   {
     "swedish": "vad",
-    "dutch": "wat"
-  },
-  {
-    "swedish": "var",
-    "dutch": "waren"
+    "dutch": "wat",
+    "frequency_rank": 44
   },
   {
     "swedish": "när",
-    "dutch": "wanneer"
+    "dutch": "wanneer",
+    "frequency_rank": 22
   },
   {
     "swedish": "burk",
-    "dutch": "kan"
+    "dutch": "kan",
+    "frequency_rank": 699
   },
   {
     "swedish": "sa",
-    "dutch": "gezegd"
+    "dutch": "gezegd",
+    "frequency_rank": 100
   },
   {
     "swedish": "där",
-    "dutch": "daar"
+    "dutch": "daar",
+    "frequency_rank": 92
   },
   {
     "swedish": "använda sig av",
-    "dutch": "gebruik"
+    "dutch": "gebruik",
+    "frequency_rank": 1014
   },
   {
     "swedish": "noll",
-    "dutch": "nul"
+    "dutch": "nul",
+    "frequency_rank": 1015
   },
   {
     "swedish": "varje",
-    "dutch": "elk"
-  },
-  {
-    "swedish": "som",
-    "dutch": "welke"
+    "dutch": "elk",
+    "frequency_rank": 173
   },
   {
     "swedish": "do",
-    "dutch": "doen"
+    "dutch": "doen",
+    "frequency_rank": 1016
   },
   {
     "swedish": "hur",
-    "dutch": "hoe"
+    "dutch": "hoe",
+    "frequency_rank": 78
   },
   {
     "swedish": "om",
-    "dutch": "als"
+    "dutch": "als",
+    "frequency_rank": 10
   },
   {
     "swedish": "kommer",
-    "dutch": "zullen"
+    "dutch": "zullen",
+    "frequency_rank": 84
   },
   {
     "swedish": "upp",
-    "dutch": "omhoog"
+    "dutch": "omhoog",
+    "frequency_rank": 210
   },
   {
     "swedish": "handla om",
-    "dutch": "over"
+    "dutch": "over",
+    "frequency_rank": 1017
   },
   {
     "swedish": "ut",
-    "dutch": "uit"
+    "dutch": "uit",
+    "frequency_rank": 181
   },
   {
     "swedish": "många",
-    "dutch": "veel"
+    "dutch": "veel",
+    "frequency_rank": 126
   },
   {
     "swedish": "sedan",
-    "dutch": "dan"
+    "dutch": "dan",
+    "frequency_rank": 49
   },
   {
     "swedish": "dessa",
-    "dutch": "deze"
+    "dutch": "deze",
+    "frequency_rank": 1018
   },
   {
     "swedish": "så",
-    "dutch": "dus"
+    "dutch": "dus",
+    "frequency_rank": 12
   },
   {
     "swedish": "några",
-    "dutch": "sommige"
+    "dutch": "sommige",
+    "frequency_rank": 50
   },
   {
     "swedish": "skulle",
-    "dutch": "zou"
+    "dutch": "zou",
+    "frequency_rank": 71
   },
   {
     "swedish": "göra",
-    "dutch": "maken"
+    "dutch": "maken",
+    "frequency_rank": 52
   },
   {
     "swedish": "tycka om",
-    "dutch": "leuk vinden"
+    "dutch": "leuk vinden",
+    "frequency_rank": 1019
   },
   {
     "swedish": "in i",
-    "dutch": "naar binnen"
+    "dutch": "naar binnen",
+    "frequency_rank": 1020
   },
   {
     "swedish": "tid",
-    "dutch": "tijd"
+    "dutch": "tijd",
+    "frequency_rank": 442
   },
   {
     "swedish": "har",
-    "dutch": "heeft"
+    "dutch": "heeft",
+    "frequency_rank": 11
   },
   {
     "swedish": "se",
-    "dutch": "look"
+    "dutch": "look",
+    "frequency_rank": 97
   },
   {
     "swedish": "mer",
-    "dutch": "meer"
+    "dutch": "meer",
+    "frequency_rank": 336
   },
   {
     "swedish": "skriva",
-    "dutch": "schrijven"
+    "dutch": "schrijven",
+    "frequency_rank": 511
   },
   {
     "swedish": "gå",
-    "dutch": "gaan"
+    "dutch": "gaan",
+    "frequency_rank": 83
   },
   {
     "swedish": "ser",
-    "dutch": "zien"
+    "dutch": "zien",
+    "frequency_rank": 125
   },
   {
     "swedish": "siffra",
-    "dutch": "nummer"
+    "dutch": "nummer",
+    "frequency_rank": 1021
   },
   {
     "swedish": "nej",
-    "dutch": "nee"
+    "dutch": "nee",
+    "frequency_rank": 910
   },
   {
     "swedish": "sätt",
-    "dutch": "manier"
+    "dutch": "manier",
+    "frequency_rank": 99
   },
   {
     "swedish": "skulle kunna",
-    "dutch": "zou kunnen"
+    "dutch": "zou kunnen",
+    "frequency_rank": 1022
   },
   {
     "swedish": "människor",
-    "dutch": "mensen"
+    "dutch": "mensen",
+    "frequency_rank": 357
   },
   {
     "swedish": "än",
-    "dutch": "dan"
+    "dutch": "dan",
+    "frequency_rank": 79
   },
   {
     "swedish": "vatten",
-    "dutch": "water"
+    "dutch": "water",
+    "frequency_rank": 184
   },
   {
     "swedish": "varit",
-    "dutch": "geweest"
+    "dutch": "geweest",
+    "frequency_rank": 164
   },
   {
     "swedish": "ring upp",
-    "dutch": "telefoongesprek"
+    "dutch": "telefoongesprek",
+    "frequency_rank": 1023
   },
   {
     "swedish": "who",
-    "dutch": "who"
+    "dutch": "who",
+    "frequency_rank": 1024
   },
   {
     "swedish": "olja",
-    "dutch": "olie"
+    "dutch": "olie",
+    "frequency_rank": 1025
   },
   {
     "swedish": "nu",
-    "dutch": "nu"
+    "dutch": "nu",
+    "frequency_rank": 70
   },
   {
     "swedish": "hitta",
-    "dutch": "vinden"
+    "dutch": "vinden",
+    "frequency_rank": 180
   },
   {
     "swedish": "lång",
-    "dutch": "lang"
+    "dutch": "lang",
+    "frequency_rank": 458
   },
   {
     "swedish": "ner",
-    "dutch": "omlaag"
+    "dutch": "omlaag",
+    "frequency_rank": 272
   },
   {
     "swedish": "dag",
-    "dutch": "dag"
+    "dutch": "dag",
+    "frequency_rank": 131
   },
   {
     "swedish": "gjorde",
-    "dutch": "deed"
+    "dutch": "deed",
+    "frequency_rank": 378
   },
   {
     "swedish": "skaffa sig",
-    "dutch": "krijgen"
+    "dutch": "krijgen",
+    "frequency_rank": 1026
   },
   {
     "swedish": "komma",
-    "dutch": "komen"
+    "dutch": "komen",
+    "frequency_rank": 192
   },
   {
     "swedish": "gjord",
-    "dutch": "gemaakt"
+    "dutch": "gemaakt",
+    "frequency_rank": 1027
   },
   {
     "swedish": "maj",
-    "dutch": "kunnen"
+    "dutch": "kunnen",
+    "frequency_rank": 1028
   },
   {
     "swedish": "del",
-    "dutch": "deel"
+    "dutch": "deel",
+    "frequency_rank": 371
   },
   {
     "swedish": "över",
-    "dutch": "over"
+    "dutch": "over",
+    "frequency_rank": 182
   },
   {
     "swedish": "säga",
-    "dutch": "inspraak"
+    "dutch": "inspraak",
+    "frequency_rank": 262
   },
   {
     "swedish": "uppsättning",
-    "dutch": "set"
+    "dutch": "set",
+    "frequency_rank": 1029
   },
   {
     "swedish": "ny",
-    "dutch": "nieuw"
+    "dutch": "nieuw",
+    "frequency_rank": 339
   },
   {
     "swedish": "bra",
-    "dutch": "geweldig"
+    "dutch": "geweldig",
+    "frequency_rank": 24
   },
   {
     "swedish": "sätta",
-    "dutch": "neerzetten"
+    "dutch": "neerzetten",
+    "frequency_rank": 321
   },
   {
     "swedish": "ljud",
-    "dutch": "geluid"
-  },
-  {
-    "swedish": "var",
-    "dutch": "waar"
+    "dutch": "geluid",
+    "frequency_rank": 1030
   },
   {
     "swedish": "slutet",
-    "dutch": "einde"
+    "dutch": "einde",
+    "frequency_rank": 1031
   },
   {
     "swedish": "ta",
-    "dutch": "nemen"
+    "dutch": "nemen",
+    "frequency_rank": 37
   },
   {
     "swedish": "hjälp",
-    "dutch": "hulp"
+    "dutch": "hulp",
+    "frequency_rank": 1032
   },
   {
     "swedish": "gör",
-    "dutch": "doet"
+    "dutch": "doet",
+    "frequency_rank": 35
   },
   {
     "swedish": "endast",
-    "dutch": "alleen"
+    "dutch": "alleen",
+    "frequency_rank": 195
   },
   {
     "swedish": "genom",
-    "dutch": "door"
+    "dutch": "door",
+    "frequency_rank": 75
   },
   {
     "swedish": "liten",
-    "dutch": "klein"
-  },
-  {
-    "swedish": "mycket",
-    "dutch": "veel"
+    "dutch": "klein",
+    "frequency_rank": 168
   },
   {
     "swedish": "väl",
-    "dutch": "goed"
+    "dutch": "goed",
+    "frequency_rank": 85
   },
   {
     "swedish": "arbete",
-    "dutch": "werk"
+    "dutch": "werk",
+    "frequency_rank": 669
   },
   {
     "swedish": "innan",
-    "dutch": "voor"
+    "dutch": "voor",
+    "frequency_rank": 73
   },
   {
     "swedish": "stor",
-    "dutch": "groot"
+    "dutch": "groot",
+    "frequency_rank": 114
   },
   {
     "swedish": "känna till",
-    "dutch": "weten"
+    "dutch": "weten",
+    "frequency_rank": 1033
   },
   {
     "swedish": "linje",
-    "dutch": "lijn"
+    "dutch": "lijn",
+    "frequency_rank": 1034
   },
   {
     "swedish": "måste",
-    "dutch": "moeten"
+    "dutch": "moeten",
+    "frequency_rank": 117
   },
   {
     "swedish": "plats",
-    "dutch": "plaats"
+    "dutch": "plaats",
+    "frequency_rank": 793
   },
   {
     "swedish": "höger",
-    "dutch": "rechts"
-  },
-  {
-    "swedish": "stor",
-    "dutch": "groot"
+    "dutch": "rechts",
+    "frequency_rank": 478
   },
   {
     "swedish": "år",
-    "dutch": "jaar"
-  },
-  {
-    "swedish": "för",
-    "dutch": "te"
+    "dutch": "jaar",
+    "frequency_rank": 87
   },
   {
     "swedish": "även",
-    "dutch": "zelfs"
+    "dutch": "zelfs",
+    "frequency_rank": 80
   },
   {
     "swedish": "leva",
-    "dutch": "live"
+    "dutch": "live",
+    "frequency_rank": 965
   },
   {
     "swedish": "betyda",
-    "dutch": "gemeen"
+    "dutch": "gemeen",
+    "frequency_rank": 1035
   },
   {
     "swedish": "sådan",
-    "dutch": "zo een"
+    "dutch": "zo een",
+    "frequency_rank": 854
   },
   {
     "swedish": "gammal",
-    "dutch": "oud"
+    "dutch": "oud",
+    "frequency_rank": 194
   },
   {
     "swedish": "därför att",
-    "dutch": "omdat"
+    "dutch": "omdat",
+    "frequency_rank": 1036
   },
   {
     "swedish": "tillbaka",
-    "dutch": "rug"
-  },
-  {
-    "swedish": "några",
-    "dutch": "elk"
+    "dutch": "rug",
+    "frequency_rank": 170
   },
   {
     "swedish": "sväng",
-    "dutch": "draai"
+    "dutch": "draai",
+    "frequency_rank": 1037
   },
   {
     "swedish": "ge",
-    "dutch": "geven"
+    "dutch": "geven",
+    "frequency_rank": 198
   },
   {
     "swedish": "här",
-    "dutch": "hier"
+    "dutch": "hier",
+    "frequency_rank": 42
   },
   {
     "swedish": "mest",
-    "dutch": "meest"
-  },
-  {
-    "swedish": "säga",
-    "dutch": "vertellen"
+    "dutch": "meest",
+    "frequency_rank": 1038
   },
   {
     "swedish": "varför",
-    "dutch": "waarom"
-  },
-  {
-    "swedish": "mycket",
-    "dutch": "erg"
+    "dutch": "waarom",
+    "frequency_rank": 368
   },
   {
     "swedish": "pojke",
-    "dutch": "jongen"
+    "dutch": "jongen",
+    "frequency_rank": 384
   },
   {
     "swedish": "fråga",
-    "dutch": "vragen"
+    "dutch": "vragen",
+    "frequency_rank": 317
   },
   {
     "swedish": "efter",
-    "dutch": "na"
+    "dutch": "na",
+    "frequency_rank": 204
   },
   {
     "swedish": "följ",
-    "dutch": "volgen"
+    "dutch": "volgen",
+    "frequency_rank": 1039
   },
   {
     "swedish": "åkte",
-    "dutch": "ging"
+    "dutch": "ging",
+    "frequency_rank": 1040
   },
   {
     "swedish": "sak",
-    "dutch": "ding"
+    "dutch": "ding",
+    "frequency_rank": 641
   },
   {
     "swedish": "kom",
-    "dutch": "kwam"
+    "dutch": "kwam",
+    "frequency_rank": 229
   },
   {
     "swedish": "män",
-    "dutch": "heren"
+    "dutch": "heren",
+    "frequency_rank": 1041
   },
   {
     "swedish": "vilja",
-    "dutch": "wil"
+    "dutch": "wil",
+    "frequency_rank": 255
   },
   {
     "swedish": "läsa",
-    "dutch": "lezen"
+    "dutch": "lezen",
+    "frequency_rank": 312
   },
   {
     "swedish": "bara",
-    "dutch": "zojuist"
+    "dutch": "zojuist",
+    "frequency_rank": 19
   },
   {
     "swedish": "show",
-    "dutch": "show"
+    "dutch": "show",
+    "frequency_rank": 1042
   },
   {
     "swedish": "behöver",
-    "dutch": "behoefte"
+    "dutch": "behoefte",
+    "frequency_rank": 183
   },
   {
     "swedish": "namn",
-    "dutch": "naam"
+    "dutch": "naam",
+    "frequency_rank": 543
   },
   {
     "swedish": "också",
-    "dutch": "ook"
+    "dutch": "ook",
+    "frequency_rank": 128
   },
   {
     "swedish": "landa",
-    "dutch": "land"
-  },
-  {
-    "swedish": "bra",
-    "dutch": "goed"
+    "dutch": "land",
+    "frequency_rank": 1043
   },
   {
     "swedish": "runt",
-    "dutch": "rondom"
+    "dutch": "rondom",
+    "frequency_rank": 483
   },
   {
     "swedish": "mening",
-    "dutch": "zin"
+    "dutch": "zin",
+    "frequency_rank": 1044
   },
   {
     "swedish": "form",
-    "dutch": "formulier"
+    "dutch": "formulier",
+    "frequency_rank": 1045
   },
   {
     "swedish": "hem",
-    "dutch": "thuis"
+    "dutch": "thuis",
+    "frequency_rank": 136
   },
   {
     "swedish": "man",
-    "dutch": "man"
+    "dutch": "man",
+    "frequency_rank": 47
   },
   {
     "swedish": "tror",
-    "dutch": "denken"
+    "dutch": "denken",
+    "frequency_rank": 89
   },
   {
     "swedish": "små",
-    "dutch": "klein"
+    "dutch": "klein",
+    "frequency_rank": 340
   },
   {
     "swedish": "flytta",
-    "dutch": "beweging"
+    "dutch": "beweging",
+    "frequency_rank": 258
   },
   {
     "swedish": "prova",
-    "dutch": "poging"
+    "dutch": "poging",
+    "frequency_rank": 1046
   },
   {
     "swedish": "snäll",
-    "dutch": "vriendelijk"
+    "dutch": "vriendelijk",
+    "frequency_rank": 142
   },
   {
     "swedish": "hand",
-    "dutch": "hand"
+    "dutch": "hand",
+    "frequency_rank": 544
   },
   {
     "swedish": "bild",
-    "dutch": "afbeelding"
+    "dutch": "afbeelding",
+    "frequency_rank": 912
   },
   {
     "swedish": "förändra",
-    "dutch": "wijziging"
+    "dutch": "wijziging",
+    "frequency_rank": 1047
   },
   {
     "swedish": "av",
-    "dutch": "uit"
+    "dutch": "uit",
+    "frequency_rank": 18
   },
   {
     "swedish": "spela",
-    "dutch": "toneelstuk"
+    "dutch": "toneelstuk",
+    "frequency_rank": 809
   },
   {
     "swedish": "stava",
-    "dutch": "spellen"
+    "dutch": "spellen",
+    "frequency_rank": 1048
   },
   {
     "swedish": "luft",
-    "dutch": "lucht"
+    "dutch": "lucht",
+    "frequency_rank": 1049
   },
   {
     "swedish": "bort",
-    "dutch": "weg"
+    "dutch": "weg",
+    "frequency_rank": 96
   },
   {
     "swedish": "djur",
-    "dutch": "dier"
+    "dutch": "dier",
+    "frequency_rank": 472
   },
   {
     "swedish": "hus",
-    "dutch": "huis"
+    "dutch": "huis",
+    "frequency_rank": 230
   },
   {
     "swedish": "punkt",
-    "dutch": "punt"
+    "dutch": "punt",
+    "frequency_rank": 1050
   },
   {
     "swedish": "sida",
-    "dutch": "bladzijde"
+    "dutch": "bladzijde",
+    "frequency_rank": 817
   },
   {
     "swedish": "brev",
-    "dutch": "brief"
+    "dutch": "brief",
+    "frequency_rank": 414
   },
   {
     "swedish": "mor",
-    "dutch": "moeder"
+    "dutch": "moeder",
+    "frequency_rank": 951
   },
   {
     "swedish": "svar",
-    "dutch": "antwoord"
+    "dutch": "antwoord",
+    "frequency_rank": 152
   },
   {
     "swedish": "hittades",
-    "dutch": "gevonden"
+    "dutch": "gevonden",
+    "frequency_rank": 1051
   },
   {
     "swedish": "studie",
-    "dutch": "studie"
+    "dutch": "studie",
+    "frequency_rank": 1052
   },
   {
     "swedish": "fortfarande",
-    "dutch": "nog steeds"
+    "dutch": "nog steeds",
+    "frequency_rank": 113
   },
   {
     "swedish": "lära sig",
-    "dutch": "leren"
+    "dutch": "leren",
+    "frequency_rank": 1053
   },
   {
     "swedish": "skall",
-    "dutch": "zou moeten"
+    "dutch": "zou moeten",
+    "frequency_rank": 237
   },
   {
     "swedish": "amerika",
-    "dutch": "amerika"
+    "dutch": "amerika",
+    "frequency_rank": 1054
   },
   {
     "swedish": "värld",
-    "dutch": "wereld"
+    "dutch": "wereld",
+    "frequency_rank": 1055
   },
   {
     "swedish": "hög",
-    "dutch": "hoog"
-  },
-  {
-    "swedish": "varje",
-    "dutch": "elk"
+    "dutch": "hoog",
+    "frequency_rank": 741
   },
   {
     "swedish": "elva",
-    "dutch": "elf"
+    "dutch": "elf",
+    "frequency_rank": 1056
   },
   {
     "swedish": "tolv",
-    "dutch": "twaalf"
+    "dutch": "twaalf",
+    "frequency_rank": 1057
   },
   {
     "swedish": "tretton",
-    "dutch": "dertien"
+    "dutch": "dertien",
+    "frequency_rank": 1058
   },
   {
     "swedish": "fjorton",
-    "dutch": "veertien"
+    "dutch": "veertien",
+    "frequency_rank": 1059
   },
   {
     "swedish": "femton",
-    "dutch": "vijftien"
+    "dutch": "vijftien",
+    "frequency_rank": 1060
   },
   {
     "swedish": "sexton",
-    "dutch": "zestien"
+    "dutch": "zestien",
+    "frequency_rank": 1061
   },
   {
     "swedish": "sjutton",
-    "dutch": "zeventien"
+    "dutch": "zeventien",
+    "frequency_rank": 1062
   },
   {
     "swedish": "arton",
-    "dutch": "achttien"
+    "dutch": "achttien",
+    "frequency_rank": 1063
   },
   {
     "swedish": "nitton",
-    "dutch": "negentien"
+    "dutch": "negentien",
+    "frequency_rank": 1064
   },
   {
     "swedish": "tjugo",
-    "dutch": "twintig"
+    "dutch": "twintig",
+    "frequency_rank": 1065
   },
   {
     "swedish": "nära",
-    "dutch": "in de buurt van"
+    "dutch": "in de buurt van",
+    "frequency_rank": 366
   },
   {
     "swedish": "lägg till",
-    "dutch": "toevoegen"
+    "dutch": "toevoegen",
+    "frequency_rank": 1066
   },
   {
     "swedish": "mat",
-    "dutch": "voedsel"
+    "dutch": "voedsel",
+    "frequency_rank": 119
   },
   {
     "swedish": "mellan",
-    "dutch": "tussen"
+    "dutch": "tussen",
+    "frequency_rank": 129
   },
   {
     "swedish": "egen",
-    "dutch": "eigen"
+    "dutch": "eigen",
+    "frequency_rank": 791
   },
   {
     "swedish": "nedan",
-    "dutch": "onderstaand"
+    "dutch": "onderstaand",
+    "frequency_rank": 1067
   },
   {
     "swedish": "land",
-    "dutch": "land"
+    "dutch": "land",
+    "frequency_rank": 613
   },
   {
     "swedish": "växt",
-    "dutch": "plant"
+    "dutch": "plant",
+    "frequency_rank": 1068
   },
   {
     "swedish": "skola",
-    "dutch": "school"
+    "dutch": "school",
+    "frequency_rank": 316
   },
   {
     "swedish": "far",
-    "dutch": "vader"
+    "dutch": "vader",
+    "frequency_rank": 287
   },
   {
     "swedish": "ha kvar",
-    "dutch": "houden"
+    "dutch": "houden",
+    "frequency_rank": 1069
   },
   {
     "swedish": "träd",
-    "dutch": "boom"
+    "dutch": "boom",
+    "frequency_rank": 394
   },
   {
     "swedish": "start",
-    "dutch": "begin"
+    "dutch": "begin",
+    "frequency_rank": 1070
   },
   {
     "swedish": "stad",
-    "dutch": "stad"
+    "dutch": "stad",
+    "frequency_rank": 711
   },
   {
     "swedish": "jorden",
-    "dutch": "aarde"
+    "dutch": "aarde",
+    "frequency_rank": 1071
   },
   {
     "swedish": "öga",
-    "dutch": "oog"
+    "dutch": "oog",
+    "frequency_rank": 866
   },
   {
     "swedish": "ljus",
-    "dutch": "licht"
+    "dutch": "licht",
+    "frequency_rank": 257
   },
   {
     "swedish": "trodde",
-    "dutch": "gedachte"
+    "dutch": "gedachte",
+    "frequency_rank": 457
   },
   {
     "swedish": "huvud",
-    "dutch": "hoofd"
+    "dutch": "hoofd",
+    "frequency_rank": 804
   },
   {
     "swedish": "under",
-    "dutch": "onder"
+    "dutch": "onder",
+    "frequency_rank": 178
   },
   {
     "swedish": "berättelse",
-    "dutch": "verhaal"
+    "dutch": "verhaal",
+    "frequency_rank": 1072
   },
   {
     "swedish": "fick syn på",
-    "dutch": "zaag"
+    "dutch": "zaag",
+    "frequency_rank": 1073
   },
   {
     "swedish": "viktig",
-    "dutch": "belangrijk"
+    "dutch": "belangrijk",
+    "frequency_rank": 1074
   },
   {
     "swedish": "vänster",
-    "dutch": "links"
+    "dutch": "links",
+    "frequency_rank": 443
   },
   {
     "swedish": "fram tills",
-    "dutch": "tot"
+    "dutch": "tot",
+    "frequency_rank": 1075
   },
   {
     "swedish": "gör det inte",
-    "dutch": "niet"
+    "dutch": "niet",
+    "frequency_rank": 1076
   },
   {
     "swedish": "barn",
-    "dutch": "kinderen"
+    "dutch": "kinderen",
+    "frequency_rank": 120
   },
   {
     "swedish": "få",
-    "dutch": "weinig"
-  },
-  {
-    "swedish": "sida",
-    "dutch": "kant"
+    "dutch": "weinig",
+    "frequency_rank": 26
   },
   {
     "swedish": "medan",
-    "dutch": "terwijl"
+    "dutch": "terwijl",
+    "frequency_rank": 299
   },
   {
     "swedish": "fötter",
-    "dutch": "voeten"
+    "dutch": "voeten",
+    "frequency_rank": 1077
   },
   {
     "swedish": "längs",
-    "dutch": "langs"
+    "dutch": "langs",
+    "frequency_rank": 1078
   },
   {
     "swedish": "bil",
-    "dutch": "auto"
+    "dutch": "auto",
+    "frequency_rank": 143
   },
   {
     "swedish": "makt",
-    "dutch": "macht"
+    "dutch": "macht",
+    "frequency_rank": 1079
   },
   {
     "swedish": "mile",
-    "dutch": "mijl"
+    "dutch": "mijl",
+    "frequency_rank": 1080
   },
   {
     "swedish": "stänga",
-    "dutch": "dichtbij"
+    "dutch": "dichtbij",
+    "frequency_rank": 762
   },
   {
     "swedish": "natt",
-    "dutch": "nacht"
+    "dutch": "nacht",
+    "frequency_rank": 383
   },
   {
     "swedish": "något",
-    "dutch": "iets"
-  },
-  {
-    "swedish": "gå",
-    "dutch": "wandeling"
+    "dutch": "iets",
+    "frequency_rank": 56
   },
   {
     "swedish": "verka",
-    "dutch": "lijken"
+    "dutch": "lijken",
+    "frequency_rank": 1081
   },
   {
     "swedish": "vit",
-    "dutch": "wit"
+    "dutch": "wit",
+    "frequency_rank": 836
   },
   {
     "swedish": "hav",
-    "dutch": "zee"
+    "dutch": "zee",
+    "frequency_rank": 1082
   },
   {
     "swedish": "hård",
-    "dutch": "moeilijk"
+    "dutch": "moeilijk",
+    "frequency_rank": 1083
   },
   {
     "swedish": "började",
-    "dutch": "begon"
+    "dutch": "begon",
+    "frequency_rank": 1084
   },
   {
     "swedish": "öppen",
-    "dutch": "open"
+    "dutch": "open",
+    "frequency_rank": 1085
   },
   {
     "swedish": "växa",
-    "dutch": "groeien"
+    "dutch": "groeien",
+    "frequency_rank": 1086
   },
   {
     "swedish": "exempel",
-    "dutch": "voorbeeld"
+    "dutch": "voorbeeld",
+    "frequency_rank": 1087
   },
   {
     "swedish": "tog",
-    "dutch": "genomen"
+    "dutch": "genomen",
+    "frequency_rank": 322
   },
   {
     "swedish": "börja",
-    "dutch": "beginnen"
+    "dutch": "beginnen",
+    "frequency_rank": 323
   },
   {
     "swedish": "flod",
-    "dutch": "rivier"
+    "dutch": "rivier",
+    "frequency_rank": 1088
   },
   {
     "swedish": "liv",
-    "dutch": "leven"
+    "dutch": "leven",
+    "frequency_rank": 460
   },
   {
     "swedish": "bära",
-    "dutch": "dragen"
+    "dutch": "dragen",
+    "frequency_rank": 715
   },
   {
     "swedish": "de där",
-    "dutch": "die"
+    "dutch": "die",
+    "frequency_rank": 1089
   },
   {
     "swedish": "stat",
-    "dutch": "staat"
+    "dutch": "staat",
+    "frequency_rank": 1090
   },
   {
     "swedish": "både",
-    "dutch": "beide"
+    "dutch": "beide",
+    "frequency_rank": 328
   },
   {
     "swedish": "en gång",
-    "dutch": "eenmaal"
+    "dutch": "eenmaal",
+    "frequency_rank": 1091
   },
   {
     "swedish": "papper",
-    "dutch": "papier"
+    "dutch": "papier",
+    "frequency_rank": 784
   },
   {
     "swedish": "bok",
-    "dutch": "boek"
+    "dutch": "boek",
+    "frequency_rank": 247
   },
   {
     "swedish": "tillsammans",
-    "dutch": "samen"
+    "dutch": "samen",
+    "frequency_rank": 672
   },
   {
     "swedish": "höra",
-    "dutch": "horen"
+    "dutch": "horen",
+    "frequency_rank": 569
   },
   {
     "swedish": "fick",
-    "dutch": "gekregen"
+    "dutch": "gekregen",
+    "frequency_rank": 95
   },
   {
     "swedish": "sluta",
-    "dutch": "stop"
+    "dutch": "stop",
+    "frequency_rank": 242
   },
   {
     "swedish": "grupp",
-    "dutch": "groep"
+    "dutch": "groep",
+    "frequency_rank": 1092
   },
   {
     "swedish": "utan",
-    "dutch": "zonder"
+    "dutch": "zonder",
+    "frequency_rank": 57
   },
   {
     "swedish": "ofta",
-    "dutch": "vaak"
+    "dutch": "vaak",
+    "frequency_rank": 660
   },
   {
     "swedish": "springa",
-    "dutch": "loop"
+    "dutch": "loop",
+    "frequency_rank": 550
   },
   {
     "swedish": "senare",
-    "dutch": "later"
+    "dutch": "later",
+    "frequency_rank": 256
   },
   {
     "swedish": "fröken",
-    "dutch": "missen"
+    "dutch": "missen",
+    "frequency_rank": 1093
   },
   {
     "swedish": "aning",
-    "dutch": "idee"
+    "dutch": "idee",
+    "frequency_rank": 1094
   },
   {
     "swedish": "tillräckligt",
-    "dutch": "genoeg"
+    "dutch": "genoeg",
+    "frequency_rank": 1095
   },
   {
     "swedish": "äta",
-    "dutch": "eten"
+    "dutch": "eten",
+    "frequency_rank": 360
   },
   {
     "swedish": "ansikte",
-    "dutch": "gezicht"
+    "dutch": "gezicht",
+    "frequency_rank": 1096
   },
   {
     "swedish": "kolla på",
-    "dutch": "horloge"
+    "dutch": "horloge",
+    "frequency_rank": 1097
   },
   {
     "swedish": "långt",
-    "dutch": "ver"
+    "dutch": "ver",
+    "frequency_rank": 445
   },
   {
     "swedish": "indiska",
-    "dutch": "indisch"
+    "dutch": "indisch",
+    "frequency_rank": 1098
   },
   {
     "swedish": "verkligen",
-    "dutch": "echt"
+    "dutch": "echt",
+    "frequency_rank": 373
   },
   {
     "swedish": "nästan",
-    "dutch": "bijna"
+    "dutch": "bijna",
+    "frequency_rank": 155
   },
   {
     "swedish": "låta",
-    "dutch": "laten"
+    "dutch": "laten",
+    "frequency_rank": 490
   },
   {
     "swedish": "ovan",
-    "dutch": "boven"
+    "dutch": "boven",
+    "frequency_rank": 1099
   },
   {
     "swedish": "flicka",
-    "dutch": "meisje"
+    "dutch": "meisje",
+    "frequency_rank": 291
   },
   {
     "swedish": "ibland",
-    "dutch": "soms"
+    "dutch": "soms",
+    "frequency_rank": 106
   },
   {
     "swedish": "fjäll",
-    "dutch": "berg"
+    "dutch": "berg",
+    "frequency_rank": 707
   },
   {
     "swedish": "skära",
-    "dutch": "snee"
+    "dutch": "snee",
+    "frequency_rank": 924
   },
   {
     "swedish": "ung",
-    "dutch": "jong"
+    "dutch": "jong",
+    "frequency_rank": 638
   },
   {
     "swedish": "prata",
-    "dutch": "gesprek"
+    "dutch": "gesprek",
+    "frequency_rank": 693
   },
   {
     "swedish": "snart",
-    "dutch": "spoedig"
+    "dutch": "spoedig",
+    "frequency_rank": 61
   },
   {
     "swedish": "lista",
-    "dutch": "lijst"
+    "dutch": "lijst",
+    "frequency_rank": 1100
   },
   {
     "swedish": "låt",
-    "dutch": "liedje"
+    "dutch": "liedje",
+    "frequency_rank": 382
   },
   {
     "swedish": "varelse",
-    "dutch": "wezen"
+    "dutch": "wezen",
+    "frequency_rank": 1101
   },
   {
     "swedish": "lämna",
-    "dutch": "vertrekken"
+    "dutch": "vertrekken",
+    "frequency_rank": 162
   },
   {
     "swedish": "familj",
-    "dutch": "familie"
-  },
-  {
-    "swedish": "dess",
-    "dutch": "zijn"
+    "dutch": "familie",
+    "frequency_rank": 946
   },
   {
     "swedish": "kropp",
-    "dutch": "lichaam"
+    "dutch": "lichaam",
+    "frequency_rank": 806
   },
   {
     "swedish": "musik",
-    "dutch": "muziek"
+    "dutch": "muziek",
+    "frequency_rank": 1103
   },
   {
     "swedish": "färg",
-    "dutch": "kleur"
+    "dutch": "kleur",
+    "frequency_rank": 681
   },
   {
     "swedish": "stå",
-    "dutch": "stellage"
+    "dutch": "stellage",
+    "frequency_rank": 387
   },
   {
     "swedish": "sol",
-    "dutch": "zon"
-  },
-  {
-    "swedish": "fråga",
-    "dutch": "vraag"
+    "dutch": "zon",
+    "frequency_rank": 1104
   },
   {
     "swedish": "fisk",
-    "dutch": "vis"
+    "dutch": "vis",
+    "frequency_rank": 1105
   },
   {
     "swedish": "område",
-    "dutch": "gebied"
+    "dutch": "gebied",
+    "frequency_rank": 438
   },
   {
     "swedish": "märke",
-    "dutch": "markering"
+    "dutch": "markering",
+    "frequency_rank": 1106
   },
   {
     "swedish": "hund",
-    "dutch": "hond"
+    "dutch": "hond",
+    "frequency_rank": 627
   },
   {
     "swedish": "häst",
-    "dutch": "paard"
+    "dutch": "paard",
+    "frequency_rank": 778
   },
   {
     "swedish": "fåglar",
-    "dutch": "vogels"
+    "dutch": "vogels",
+    "frequency_rank": 1107
   },
   {
     "swedish": "problem",
-    "dutch": "probleem"
+    "dutch": "probleem",
+    "frequency_rank": 639
   },
   {
     "swedish": "komplett",
-    "dutch": "compleet"
+    "dutch": "compleet",
+    "frequency_rank": 1108
   },
   {
     "swedish": "rum",
-    "dutch": "kamer"
+    "dutch": "kamer",
+    "frequency_rank": 241
   },
   {
     "swedish": "visste",
-    "dutch": "wist"
+    "dutch": "wist",
+    "frequency_rank": 1109
   },
   {
     "swedish": "eftersom",
-    "dutch": "sinds"
+    "dutch": "sinds",
+    "frequency_rank": 219
   },
   {
     "swedish": "någonsin",
-    "dutch": "ooit"
+    "dutch": "ooit",
+    "frequency_rank": 894
   },
   {
     "swedish": "bit",
-    "dutch": "deel"
+    "dutch": "deel",
+    "frequency_rank": 982
   },
   {
     "swedish": "berättade",
-    "dutch": "verteld"
+    "dutch": "verteld",
+    "frequency_rank": 1110
   },
   {
     "swedish": "vanligtvis",
-    "dutch": "gebruikelijk"
+    "dutch": "gebruikelijk",
+    "frequency_rank": 1111
   },
   {
     "swedish": "gjorde det inte",
-    "dutch": "deed het niet"
+    "dutch": "deed het niet",
+    "frequency_rank": 1112
   },
   {
     "swedish": "vänner",
-    "dutch": "vrienden"
+    "dutch": "vrienden",
+    "frequency_rank": 326
   },
   {
     "swedish": "lätt",
-    "dutch": "eenvoudig"
+    "dutch": "eenvoudig",
+    "frequency_rank": 123
   },
   {
     "swedish": "hört",
-    "dutch": "gehoord"
+    "dutch": "gehoord",
+    "frequency_rank": 1113
   },
   {
     "swedish": "beställa",
-    "dutch": "volgorde"
+    "dutch": "volgorde",
+    "frequency_rank": 1114
   },
   {
     "swedish": "röd",
-    "dutch": "rood"
+    "dutch": "rood",
+    "frequency_rank": 1115
   },
   {
     "swedish": "dörr",
-    "dutch": "deur"
+    "dutch": "deur",
+    "frequency_rank": 790
   },
   {
     "swedish": "säker",
-    "dutch": "zeker"
+    "dutch": "zeker",
+    "frequency_rank": 1116
   },
   {
     "swedish": "bli",
-    "dutch": "worden"
+    "dutch": "worden",
+    "frequency_rank": 81
   },
   {
     "swedish": "topp",
-    "dutch": "bovenkant"
+    "dutch": "bovenkant",
+    "frequency_rank": 1117
   },
   {
     "swedish": "fartyg",
-    "dutch": "schip"
+    "dutch": "schip",
+    "frequency_rank": 1118
   },
   {
     "swedish": "tvärs över",
-    "dutch": "over"
+    "dutch": "over",
+    "frequency_rank": 1119
   },
   {
     "swedish": "i dag",
-    "dutch": "vandaag"
-  },
-  {
-    "swedish": "under",
-    "dutch": "tijdens"
+    "dutch": "vandaag",
+    "frequency_rank": 1120
   },
   {
     "swedish": "kort",
-    "dutch": "kort"
+    "dutch": "kort",
+    "frequency_rank": 235
   },
   {
     "swedish": "bättre",
-    "dutch": "beter"
+    "dutch": "beter",
+    "frequency_rank": 449
   },
   {
     "swedish": "bäst",
-    "dutch": "best"
+    "dutch": "best",
+    "frequency_rank": 668
   },
   {
     "swedish": "dock",
-    "dutch": "echter"
+    "dutch": "echter",
+    "frequency_rank": 191
   },
   {
     "swedish": "låg",
-    "dutch": "laag"
+    "dutch": "laag",
+    "frequency_rank": 435
   },
   {
     "swedish": "timmar",
-    "dutch": "uur"
+    "dutch": "uur",
+    "frequency_rank": 710
   },
   {
     "swedish": "svart",
-    "dutch": "zwart"
+    "dutch": "zwart",
+    "frequency_rank": 695
   },
   {
     "swedish": "produkter",
-    "dutch": "producten"
+    "dutch": "producten",
+    "frequency_rank": 1121
   },
   {
     "swedish": "hände",
-    "dutch": "gebeurd"
+    "dutch": "gebeurd",
+    "frequency_rank": 1122
   },
   {
     "swedish": "hela",
-    "dutch": "geheel"
+    "dutch": "geheel",
+    "frequency_rank": 282
   },
   {
     "swedish": "mäta",
-    "dutch": "meeteenheid"
+    "dutch": "meeteenheid",
+    "frequency_rank": 1123
   },
   {
     "swedish": "kom ihåg",
-    "dutch": "herinneren"
+    "dutch": "herinneren",
+    "frequency_rank": 1124
   },
   {
     "swedish": "tidigt",
-    "dutch": "vroeg"
+    "dutch": "vroeg",
+    "frequency_rank": 1125
   },
   {
     "swedish": "vågor",
-    "dutch": "golven"
+    "dutch": "golven",
+    "frequency_rank": 1126
   },
   {
     "swedish": "nådde",
-    "dutch": "bereikt"
+    "dutch": "bereikt",
+    "frequency_rank": 1127
   },
   {
     "swedish": "gjort",
-    "dutch": "klaar"
+    "dutch": "klaar",
+    "frequency_rank": 288
   },
   {
     "swedish": "engelsk",
-    "dutch": "engels"
+    "dutch": "engels",
+    "frequency_rank": 1128
   },
   {
     "swedish": "väg",
-    "dutch": "weg"
+    "dutch": "weg",
+    "frequency_rank": 228
   },
   {
     "swedish": "stanna",
-    "dutch": "stoppen"
+    "dutch": "stoppen",
+    "frequency_rank": 271
   },
   {
     "swedish": "flyga",
-    "dutch": "vlieg"
+    "dutch": "vlieg",
+    "frequency_rank": 1129
   },
   {
     "swedish": "gav",
-    "dutch": "gaf"
+    "dutch": "gaf",
+    "frequency_rank": 1130
   },
   {
     "swedish": "låda",
-    "dutch": "doos"
+    "dutch": "doos",
+    "frequency_rank": 1131
   },
   {
     "swedish": "till sist",
-    "dutch": "eindelijk"
+    "dutch": "eindelijk",
+    "frequency_rank": 1132
   },
   {
     "swedish": "vänta",
-    "dutch": "wachten"
+    "dutch": "wachten",
+    "frequency_rank": 318
   },
   {
     "swedish": "korrekt",
-    "dutch": "juist"
+    "dutch": "juist",
+    "frequency_rank": 1133
   },
   {
     "swedish": "åh",
-    "dutch": "oh"
+    "dutch": "oh",
+    "frequency_rank": 1134
   },
   {
     "swedish": "snabbt",
-    "dutch": "snel"
+    "dutch": "snel",
+    "frequency_rank": 713
   },
   {
     "swedish": "person",
-    "dutch": "persoon"
+    "dutch": "persoon",
+    "frequency_rank": 1135
   },
   {
     "swedish": "blev",
-    "dutch": "werd"
+    "dutch": "werd",
+    "frequency_rank": 286
   },
   {
     "swedish": "visad",
-    "dutch": "getoond"
+    "dutch": "getoond",
+    "frequency_rank": 1136
   },
   {
     "swedish": "minuter",
-    "dutch": "minuten"
+    "dutch": "minuten",
+    "frequency_rank": 1137
   },
   {
     "swedish": "stark",
-    "dutch": "sterk"
+    "dutch": "sterk",
+    "frequency_rank": 1138
   },
   {
     "swedish": "verb",
-    "dutch": "werkwoord"
+    "dutch": "werkwoord",
+    "frequency_rank": 1139
   },
   {
     "swedish": "stjärnor",
-    "dutch": "sterren"
+    "dutch": "sterren",
+    "frequency_rank": 1140
   },
   {
     "swedish": "främre",
-    "dutch": "voorkant"
+    "dutch": "voorkant",
+    "frequency_rank": 1141
   },
   {
     "swedish": "känna",
-    "dutch": "gevoel"
+    "dutch": "gevoel",
+    "frequency_rank": 268
   },
   {
     "swedish": "faktum",
-    "dutch": "feit"
+    "dutch": "feit",
+    "frequency_rank": 1142
   },
   {
     "swedish": "tum",
-    "dutch": "inches"
+    "dutch": "inches",
+    "frequency_rank": 1143
   },
   {
     "swedish": "gata",
-    "dutch": "straat"
+    "dutch": "straat",
+    "frequency_rank": 683
   },
   {
     "swedish": "bestämt",
-    "dutch": "besloten"
+    "dutch": "besloten",
+    "frequency_rank": 1144
   },
   {
     "swedish": "innehålla",
-    "dutch": "bevatten"
+    "dutch": "bevatten",
+    "frequency_rank": 1145
   },
   {
     "swedish": "kurs",
-    "dutch": "cursus"
+    "dutch": "cursus",
+    "frequency_rank": 1146
   },
   {
     "swedish": "yta",
-    "dutch": "oppervlak"
+    "dutch": "oppervlak",
+    "frequency_rank": 1147
   },
   {
     "swedish": "producera",
-    "dutch": "produceren"
+    "dutch": "produceren",
+    "frequency_rank": 1148
   },
   {
     "swedish": "byggnad",
-    "dutch": "gebouw"
-  },
-  {
-    "swedish": "hav",
-    "dutch": "oceaan"
+    "dutch": "gebouw",
+    "frequency_rank": 916
   },
   {
     "swedish": "klass",
-    "dutch": "klas"
+    "dutch": "klas",
+    "frequency_rank": 1150
   },
   {
     "swedish": "notera",
-    "dutch": "opmerking"
+    "dutch": "opmerking",
+    "frequency_rank": 1151
   },
   {
     "swedish": "ingenting",
-    "dutch": "niets"
+    "dutch": "niets",
+    "frequency_rank": 279
   },
   {
     "swedish": "resten",
-    "dutch": "rest"
+    "dutch": "rest",
+    "frequency_rank": 1152
   },
   {
     "swedish": "försiktigt",
-    "dutch": "voorzichtig"
+    "dutch": "voorzichtig",
+    "frequency_rank": 1153
   },
   {
     "swedish": "forskare",
-    "dutch": "wetenschappers"
+    "dutch": "wetenschappers",
+    "frequency_rank": 1154
   },
   {
     "swedish": "inuti",
-    "dutch": "binnen"
+    "dutch": "binnen",
+    "frequency_rank": 1155
   },
   {
     "swedish": "hjul",
-    "dutch": "wielen"
+    "dutch": "wielen",
+    "frequency_rank": 1156
   },
   {
     "swedish": "stanna kvar",
-    "dutch": "verblijf"
+    "dutch": "verblijf",
+    "frequency_rank": 1157
   },
   {
     "swedish": "grön",
-    "dutch": "groente"
+    "dutch": "groente",
+    "frequency_rank": 1158
   },
   {
     "swedish": "känd",
-    "dutch": "bekend"
+    "dutch": "bekend",
+    "frequency_rank": 1159
   },
   {
     "swedish": "ö",
-    "dutch": "eiland"
+    "dutch": "eiland",
+    "frequency_rank": 515
   },
   {
     "swedish": "vecka",
-    "dutch": "week"
+    "dutch": "week",
+    "frequency_rank": 493
   },
   {
     "swedish": "mindre",
-    "dutch": "minder"
+    "dutch": "minder",
+    "frequency_rank": 488
   },
   {
     "swedish": "maskin",
-    "dutch": "machine"
+    "dutch": "machine",
+    "frequency_rank": 1160
   },
   {
     "swedish": "bas",
-    "dutch": "baseren"
-  },
-  {
-    "swedish": "sedan",
-    "dutch": "geleden"
+    "dutch": "baseren",
+    "frequency_rank": 1161
   },
   {
     "swedish": "stod",
-    "dutch": "stond"
+    "dutch": "stond",
+    "frequency_rank": 1162
   },
   {
     "swedish": "plan",
-    "dutch": "vliegtuig"
+    "dutch": "vliegtuig",
+    "frequency_rank": 993
   },
   {
     "swedish": "systemet",
-    "dutch": "systeem"
+    "dutch": "systeem",
+    "frequency_rank": 1163
   },
   {
     "swedish": "bakom",
-    "dutch": "achter"
+    "dutch": "achter",
+    "frequency_rank": 426
   },
   {
     "swedish": "sprang",
-    "dutch": "liep"
+    "dutch": "liep",
+    "frequency_rank": 1164
   },
   {
     "swedish": "runda",
-    "dutch": "ronde"
+    "dutch": "ronde",
+    "frequency_rank": 1165
   },
   {
     "swedish": "båt",
-    "dutch": "boot"
+    "dutch": "boot",
+    "frequency_rank": 702
   },
   {
     "swedish": "spel",
-    "dutch": "spel"
+    "dutch": "spel",
+    "frequency_rank": 1166
   },
   {
     "swedish": "tvinga",
-    "dutch": "kracht"
+    "dutch": "kracht",
+    "frequency_rank": 1167
   },
   {
     "swedish": "tog med",
-    "dutch": "gebracht"
+    "dutch": "gebracht",
+    "frequency_rank": 1168
   },
   {
     "swedish": "förstå",
-    "dutch": "begrijpen"
+    "dutch": "begrijpen",
+    "frequency_rank": 590
   },
   {
     "swedish": "värma",
-    "dutch": "warm"
+    "dutch": "warm",
+    "frequency_rank": 1169
   },
   {
     "swedish": "allmänning",
-    "dutch": "gewoon"
+    "dutch": "gewoon",
+    "frequency_rank": 1170
   },
   {
     "swedish": "föra",
-    "dutch": "brengen"
+    "dutch": "brengen",
+    "frequency_rank": 1171
   },
   {
     "swedish": "förklara",
-    "dutch": "uitleggen"
+    "dutch": "uitleggen",
+    "frequency_rank": 1172
   },
   {
     "swedish": "torr",
-    "dutch": "droog"
+    "dutch": "droog",
+    "frequency_rank": 1173
   },
   {
     "swedish": "fastän",
-    "dutch": "hoewel"
+    "dutch": "hoewel",
+    "frequency_rank": 670
   },
   {
     "swedish": "språk",
-    "dutch": "taal"
-  },
-  {
-    "swedish": "form",
-    "dutch": "vorm"
+    "dutch": "taal",
+    "frequency_rank": 568
   },
   {
     "swedish": "djup",
-    "dutch": "diep"
+    "dutch": "diep",
+    "frequency_rank": 1175
   },
   {
     "swedish": "tusentals",
-    "dutch": "duizenden"
+    "dutch": "duizenden",
+    "frequency_rank": 1176
   },
   {
     "swedish": "ja",
-    "dutch": "ja"
+    "dutch": "ja",
+    "frequency_rank": 165
   },
   {
     "swedish": "klar",
-    "dutch": "duidelijk"
+    "dutch": "duidelijk",
+    "frequency_rank": 1177
   },
   {
     "swedish": "ekvation",
-    "dutch": "vergelijking"
-  },
-  {
-    "swedish": "än",
-    "dutch": "nog"
+    "dutch": "vergelijking",
+    "frequency_rank": 1178
   },
   {
     "swedish": "regering",
-    "dutch": "regering"
+    "dutch": "regering",
+    "frequency_rank": 1179
   },
   {
     "swedish": "fylld",
-    "dutch": "gevuld"
+    "dutch": "gevuld",
+    "frequency_rank": 1180
   },
   {
     "swedish": "värme",
-    "dutch": "warmte"
+    "dutch": "warmte",
+    "frequency_rank": 1181
   },
   {
     "swedish": "full",
-    "dutch": "vol"
+    "dutch": "vol",
+    "frequency_rank": 632
   },
   {
     "swedish": "varm",
-    "dutch": "heet"
+    "dutch": "heet",
+    "frequency_rank": 1182
   },
   {
     "swedish": "kolla upp",
-    "dutch": "rekening"
+    "dutch": "rekening",
+    "frequency_rank": 1183
   },
   {
     "swedish": "objekt",
-    "dutch": "voorwerp"
+    "dutch": "voorwerp",
+    "frequency_rank": 1184
   },
   {
     "swedish": "am",
-    "dutch": "ben"
+    "dutch": "ben",
+    "frequency_rank": 1185
   },
   {
     "swedish": "regel",
-    "dutch": "regel"
+    "dutch": "regel",
+    "frequency_rank": 1186
   },
   {
     "swedish": "bland",
-    "dutch": "te midden van"
+    "dutch": "te midden van",
+    "frequency_rank": 177
   },
   {
     "swedish": "substantiv",
-    "dutch": "zelfstandig naamwoord"
+    "dutch": "zelfstandig naamwoord",
+    "frequency_rank": 1187
   },
   {
     "swedish": "kraft",
-    "dutch": "stroom"
+    "dutch": "stroom",
+    "frequency_rank": 1188
   },
   {
     "swedish": "kan inte",
-    "dutch": "kan niet"
+    "dutch": "kan niet",
+    "frequency_rank": 1189
   },
   {
     "swedish": "kunna",
-    "dutch": "bekwaam"
+    "dutch": "bekwaam",
+    "frequency_rank": 422
   },
   {
     "swedish": "storlek",
-    "dutch": "maat"
+    "dutch": "maat",
+    "frequency_rank": 831
   },
   {
     "swedish": "mörk",
-    "dutch": "donker"
+    "dutch": "donker",
+    "frequency_rank": 671
   },
   {
     "swedish": "boll",
-    "dutch": "bal"
+    "dutch": "bal",
+    "frequency_rank": 1190
   },
   {
     "swedish": "material",
-    "dutch": "materiaal"
+    "dutch": "materiaal",
+    "frequency_rank": 1191
   },
   {
     "swedish": "särskild",
-    "dutch": "speciaal"
+    "dutch": "speciaal",
+    "frequency_rank": 871
   },
   {
     "swedish": "tung",
-    "dutch": "zwaar"
-  },
-  {
-    "swedish": "bra",
-    "dutch": "prima"
+    "dutch": "zwaar",
+    "frequency_rank": 480
   },
   {
     "swedish": "par",
-    "dutch": "paar"
+    "dutch": "paar",
+    "frequency_rank": 1192
   },
   {
     "swedish": "cirkel",
-    "dutch": "cirkel"
+    "dutch": "cirkel",
+    "frequency_rank": 1193
   },
   {
     "swedish": "omfatta",
-    "dutch": "erbij betrekken"
+    "dutch": "erbij betrekken",
+    "frequency_rank": 1194
   },
   {
     "swedish": "byggd",
-    "dutch": "gebouwd"
-  },
-  {
-    "swedish": "kan inte",
-    "dutch": "kan niet"
+    "dutch": "gebouwd",
+    "frequency_rank": 1195
   },
   {
     "swedish": "materia",
-    "dutch": "materie"
+    "dutch": "materie",
+    "frequency_rank": 1197
   },
   {
     "swedish": "fyrkant",
-    "dutch": "vierkant"
+    "dutch": "vierkant",
+    "frequency_rank": 1198
   },
   {
     "swedish": "stavelser",
-    "dutch": "lettergrepen"
+    "dutch": "lettergrepen",
+    "frequency_rank": 1199
   },
   {
     "swedish": "kanske",
-    "dutch": "misschien"
+    "dutch": "misschien",
+    "frequency_rank": 110
   },
   {
     "swedish": "räkningen",
-    "dutch": "rekening"
+    "dutch": "rekening",
+    "frequency_rank": 1200
   },
   {
     "swedish": "känt",
-    "dutch": "gevoeld"
+    "dutch": "gevoeld",
+    "frequency_rank": 1201
   },
   {
     "swedish": "plötsligt",
-    "dutch": "plotseling"
+    "dutch": "plotseling",
+    "frequency_rank": 1202
   },
   {
     "swedish": "testa",
-    "dutch": "test"
+    "dutch": "test",
+    "frequency_rank": 1203
   },
   {
     "swedish": "riktning",
-    "dutch": "richting"
+    "dutch": "richting",
+    "frequency_rank": 1204
   },
   {
     "swedish": "centrum",
-    "dutch": "centrum"
+    "dutch": "centrum",
+    "frequency_rank": 1205
   },
   {
     "swedish": "bönder",
-    "dutch": "boeren"
+    "dutch": "boeren",
+    "frequency_rank": 1206
   },
   {
     "swedish": "redo",
-    "dutch": "klaar"
-  },
-  {
-    "swedish": "något",
-    "dutch": "iets"
+    "dutch": "klaar",
+    "frequency_rank": 1207
   },
   {
     "swedish": "dividerat",
-    "dutch": "verdeeld"
+    "dutch": "verdeeld",
+    "frequency_rank": 1208
   },
   {
     "swedish": "allmän",
-    "dutch": "algemeen"
+    "dutch": "algemeen",
+    "frequency_rank": 1209
   },
   {
     "swedish": "energi",
-    "dutch": "energie"
+    "dutch": "energie",
+    "frequency_rank": 1210
   },
   {
     "swedish": "ämne",
-    "dutch": "onderwerp"
+    "dutch": "onderwerp",
+    "frequency_rank": 427
   },
   {
     "swedish": "europa",
-    "dutch": "europa"
+    "dutch": "europa",
+    "frequency_rank": 1211
   },
   {
     "swedish": "måne",
-    "dutch": "maan"
-  },
-  {
-    "swedish": "område",
-    "dutch": "regio"
+    "dutch": "maan",
+    "frequency_rank": 1212
   },
   {
     "swedish": "lämna tillbaka",
-    "dutch": "opbrengst"
+    "dutch": "opbrengst",
+    "frequency_rank": 1213
   },
   {
     "swedish": "tro",
-    "dutch": "geloven"
+    "dutch": "geloven",
+    "frequency_rank": 289
   },
   {
     "swedish": "dansa",
-    "dutch": "dans"
+    "dutch": "dans",
+    "frequency_rank": 1214
   },
   {
     "swedish": "medlemmar",
-    "dutch": "leden"
+    "dutch": "leden",
+    "frequency_rank": 1215
   },
   {
     "swedish": "plockas",
-    "dutch": "geplukt"
+    "dutch": "geplukt",
+    "frequency_rank": 1216
   },
   {
     "swedish": "enkel",
-    "dutch": "eenvoudig"
+    "dutch": "eenvoudig",
+    "frequency_rank": 986
   },
   {
     "swedish": "celler",
-    "dutch": "cellen"
+    "dutch": "cellen",
+    "frequency_rank": 1217
   },
   {
     "swedish": "måla",
-    "dutch": "verf"
+    "dutch": "verf",
+    "frequency_rank": 1218
   },
   {
     "swedish": "sinne",
-    "dutch": "verstand"
+    "dutch": "verstand",
+    "frequency_rank": 1219
   },
   {
     "swedish": "kärlek",
-    "dutch": "liefde"
+    "dutch": "liefde",
+    "frequency_rank": 226
   },
   {
     "swedish": "orsak",
-    "dutch": "oorzaak"
+    "dutch": "oorzaak",
+    "frequency_rank": 1220
   },
   {
     "swedish": "regn",
-    "dutch": "regen"
+    "dutch": "regen",
+    "frequency_rank": 1221
   },
   {
     "swedish": "träning",
-    "dutch": "oefening"
+    "dutch": "oefening",
+    "frequency_rank": 1222
   },
   {
     "swedish": "ägg",
-    "dutch": "eieren"
+    "dutch": "eieren",
+    "frequency_rank": 855
   },
   {
     "swedish": "tåg",
-    "dutch": "trein"
+    "dutch": "trein",
+    "frequency_rank": 381
   },
   {
     "swedish": "blå",
-    "dutch": "blauw"
+    "dutch": "blauw",
+    "frequency_rank": 654
   },
   {
     "swedish": "önskar",
-    "dutch": "wens"
+    "dutch": "wens",
+    "frequency_rank": 333
   },
   {
     "swedish": "släppa",
-    "dutch": "druppel"
+    "dutch": "druppel",
+    "frequency_rank": 898
   },
   {
     "swedish": "tagit fram",
-    "dutch": "ontwikkeld"
+    "dutch": "ontwikkeld",
+    "frequency_rank": 1223
   },
   {
     "swedish": "fönster",
-    "dutch": "raam"
+    "dutch": "raam",
+    "frequency_rank": 391
   },
   {
     "swedish": "skillnad",
-    "dutch": "verschil"
+    "dutch": "verschil",
+    "frequency_rank": 1224
   },
   {
     "swedish": "distans",
-    "dutch": "afstand"
+    "dutch": "afstand",
+    "frequency_rank": 1225
   },
   {
     "swedish": "hjärta",
-    "dutch": "hart"
+    "dutch": "hart",
+    "frequency_rank": 606
   },
   {
     "swedish": "sitta",
-    "dutch": "zitten"
+    "dutch": "zitten",
+    "frequency_rank": 415
   },
   {
     "swedish": "belopp",
-    "dutch": "som"
+    "dutch": "som",
+    "frequency_rank": 761
   },
   {
     "swedish": "sommar",
-    "dutch": "zomer"
+    "dutch": "zomer",
+    "frequency_rank": 586
   },
   {
     "swedish": "vägg",
-    "dutch": "muur"
+    "dutch": "muur",
+    "frequency_rank": 327
   },
   {
     "swedish": "skog",
-    "dutch": "woud"
+    "dutch": "woud",
+    "frequency_rank": 315
   },
   {
     "swedish": "förmodligen",
-    "dutch": "waarschijnlijk"
+    "dutch": "waarschijnlijk",
+    "frequency_rank": 1226
   },
   {
     "swedish": "ben",
-    "dutch": "benen"
+    "dutch": "benen",
+    "frequency_rank": 277
   },
   {
     "swedish": "satt",
-    "dutch": "za"
-  },
-  {
-    "swedish": "huvud",
-    "dutch": "voornaamst"
+    "dutch": "za",
+    "frequency_rank": 983
   },
   {
     "swedish": "vinter",
-    "dutch": "winter"
+    "dutch": "winter",
+    "frequency_rank": 1227
   },
   {
     "swedish": "bred",
-    "dutch": "breed"
+    "dutch": "breed",
+    "frequency_rank": 1228
   },
   {
     "swedish": "skriven",
-    "dutch": "geschreven"
+    "dutch": "geschreven",
+    "frequency_rank": 1229
   },
   {
     "swedish": "längd",
-    "dutch": "lengte"
+    "dutch": "lengte",
+    "frequency_rank": 1230
   },
   {
     "swedish": "anledning",
-    "dutch": "reden"
+    "dutch": "reden",
+    "frequency_rank": 1231
   },
   {
     "swedish": "hålls",
-    "dutch": "gehouden"
+    "dutch": "gehouden",
+    "frequency_rank": 1232
   },
   {
     "swedish": "intressera",
-    "dutch": "interesse"
+    "dutch": "interesse",
+    "frequency_rank": 1233
   },
   {
     "swedish": "vapen",
-    "dutch": "armen"
+    "dutch": "armen",
+    "frequency_rank": 1234
   },
   {
     "swedish": "bror",
-    "dutch": "broer"
+    "dutch": "broer",
+    "frequency_rank": 970
   },
   {
     "swedish": "lopp",
-    "dutch": "race"
+    "dutch": "race",
+    "frequency_rank": 1235
   },
   {
     "swedish": "närvarande",
-    "dutch": "cadeau"
+    "dutch": "cadeau",
+    "frequency_rank": 785
   },
   {
     "swedish": "skön",
-    "dutch": "mooi"
+    "dutch": "mooi",
+    "frequency_rank": 479
   },
   {
     "swedish": "lagra",
-    "dutch": "winkel"
+    "dutch": "winkel",
+    "frequency_rank": 1236
   },
   {
     "swedish": "jobb",
-    "dutch": "functie"
+    "dutch": "functie",
+    "frequency_rank": 557
   },
   {
     "swedish": "kant",
-    "dutch": "rand"
+    "dutch": "rand",
+    "frequency_rank": 1237
   },
   {
     "swedish": "dåtid",
-    "dutch": "verleden"
+    "dutch": "verleden",
+    "frequency_rank": 1238
   },
   {
     "swedish": "skylt",
-    "dutch": "teken"
+    "dutch": "teken",
+    "frequency_rank": 932
   },
   {
     "swedish": "spela in",
-    "dutch": "dossier"
+    "dutch": "dossier",
+    "frequency_rank": 1239
   },
   {
     "swedish": "färdiga",
-    "dutch": "afgerond"
+    "dutch": "afgerond",
+    "frequency_rank": 1240
   },
   {
     "swedish": "upptäckt",
-    "dutch": "ontdekt"
+    "dutch": "ontdekt",
+    "frequency_rank": 1241
   },
   {
     "swedish": "vild",
-    "dutch": "wild"
+    "dutch": "wild",
+    "frequency_rank": 1242
   },
   {
     "swedish": "lycklig",
-    "dutch": "vrolijk"
+    "dutch": "vrolijk",
+    "frequency_rank": 1243
   },
   {
     "swedish": "bredvid",
-    "dutch": "naast"
+    "dutch": "naast",
+    "frequency_rank": 441
   },
   {
     "swedish": "borta",
-    "dutch": "weg"
+    "dutch": "weg",
+    "frequency_rank": 145
   },
   {
     "swedish": "himmel",
-    "dutch": "lucht"
+    "dutch": "lucht",
+    "frequency_rank": 1244
   },
   {
     "swedish": "glas",
-    "dutch": "glas"
+    "dutch": "glas",
+    "frequency_rank": 578
   },
   {
     "swedish": "miljon",
-    "dutch": "miljoen"
+    "dutch": "miljoen",
+    "frequency_rank": 1245
   },
   {
     "swedish": "västerut",
-    "dutch": "westen"
+    "dutch": "westen",
+    "frequency_rank": 1246
   },
   {
     "swedish": "lägga",
-    "dutch": "leggen"
+    "dutch": "leggen",
+    "frequency_rank": 202
   },
   {
     "swedish": "väder",
-    "dutch": "weer"
+    "dutch": "weer",
+    "frequency_rank": 653
   },
   {
     "swedish": "rot",
-    "dutch": "wortel"
+    "dutch": "wortel",
+    "frequency_rank": 1247
   },
   {
     "swedish": "instrument",
-    "dutch": "instrumenten"
+    "dutch": "instrumenten",
+    "frequency_rank": 1248
   },
   {
     "swedish": "träffa",
-    "dutch": "ontmoeten"
+    "dutch": "ontmoeten",
+    "frequency_rank": 531
   },
   {
     "swedish": "månader",
-    "dutch": "maanden"
+    "dutch": "maanden",
+    "frequency_rank": 1249
   },
   {
     "swedish": "paragraf",
-    "dutch": "paragraaf"
+    "dutch": "paragraaf",
+    "frequency_rank": 1250
   },
   {
     "swedish": "uppfostrad",
-    "dutch": "verhoogd"
+    "dutch": "verhoogd",
+    "frequency_rank": 1251
   },
   {
     "swedish": "representera",
-    "dutch": "staan ​​voor"
+    "dutch": "staan ​​voor",
+    "frequency_rank": 1252
   },
   {
     "swedish": "mjuk",
-    "dutch": "zacht"
+    "dutch": "zacht",
+    "frequency_rank": 893
   },
   {
     "swedish": "huruvida",
-    "dutch": "of"
+    "dutch": "of",
+    "frequency_rank": 1253
   },
   {
     "swedish": "kläder",
-    "dutch": "kleren"
+    "dutch": "kleren",
+    "frequency_rank": 779
   },
   {
     "swedish": "blommor",
-    "dutch": "bloemen"
-  },
-  {
-    "swedish": "skall",
-    "dutch": "zullen"
+    "dutch": "bloemen",
+    "frequency_rank": 1254
   },
   {
     "swedish": "lärare",
-    "dutch": "docent"
+    "dutch": "docent",
+    "frequency_rank": 464
   },
   {
     "swedish": "hölls",
-    "dutch": "gehouden"
+    "dutch": "gehouden",
+    "frequency_rank": 1255
   },
   {
     "swedish": "beskriva",
-    "dutch": "beschrijven"
+    "dutch": "beschrijven",
+    "frequency_rank": 1256
   },
   {
     "swedish": "kör",
-    "dutch": "drijfveer"
+    "dutch": "drijfveer",
+    "frequency_rank": 188
   },
   {
     "swedish": "korsa",
-    "dutch": "kruis"
+    "dutch": "kruis",
+    "frequency_rank": 1257
   },
   {
     "swedish": "tala",
-    "dutch": "spreken"
+    "dutch": "spreken",
+    "frequency_rank": 462
   },
   {
     "swedish": "lösa",
-    "dutch": "oplossen"
+    "dutch": "oplossen",
+    "frequency_rank": 1258
   },
   {
     "swedish": "dyka upp",
-    "dutch": "verschijnen"
+    "dutch": "verschijnen",
+    "frequency_rank": 1259
   },
   {
     "swedish": "metall",
-    "dutch": "metaal"
+    "dutch": "metaal",
+    "frequency_rank": 1260
   },
   {
     "swedish": "son",
-    "dutch": "zoon"
+    "dutch": "zoon",
+    "frequency_rank": 796
   },
   {
     "swedish": "antingen",
-    "dutch": "of"
+    "dutch": "of",
+    "frequency_rank": 691
   },
   {
     "swedish": "is",
-    "dutch": "ijs"
+    "dutch": "ijs",
+    "frequency_rank": 652
   },
   {
     "swedish": "sova",
-    "dutch": "slaap"
+    "dutch": "slaap",
+    "frequency_rank": 281
   },
   {
     "swedish": "by",
-    "dutch": "dorp"
+    "dutch": "dorp",
+    "frequency_rank": 759
   },
   {
     "swedish": "faktorer",
-    "dutch": "factoren"
+    "dutch": "factoren",
+    "frequency_rank": 1261
   },
   {
     "swedish": "resultat",
-    "dutch": "resultaat"
+    "dutch": "resultaat",
+    "frequency_rank": 1262
   },
   {
     "swedish": "hoppade",
-    "dutch": "sprong"
+    "dutch": "sprong",
+    "frequency_rank": 1263
   },
   {
     "swedish": "snö",
-    "dutch": "sneeuw"
+    "dutch": "sneeuw",
+    "frequency_rank": 1264
   },
   {
     "swedish": "rida",
-    "dutch": "rijden"
+    "dutch": "rijden",
+    "frequency_rank": 1265
   },
   {
     "swedish": "vård",
-    "dutch": "zorg"
+    "dutch": "zorg",
+    "frequency_rank": 863
   },
   {
     "swedish": "golv",
-    "dutch": "vloer"
+    "dutch": "vloer",
+    "frequency_rank": 477
   },
   {
     "swedish": "kulle",
-    "dutch": "heuvel"
+    "dutch": "heuvel",
+    "frequency_rank": 1266
   },
   {
     "swedish": "tryckte",
-    "dutch": "geduwd"
+    "dutch": "geduwd",
+    "frequency_rank": 1267
   },
   {
     "swedish": "bebis",
-    "dutch": "baby"
+    "dutch": "baby",
+    "frequency_rank": 1268
   },
   {
     "swedish": "köpa",
-    "dutch": "kopen"
+    "dutch": "kopen",
+    "frequency_rank": 520
   },
   {
     "swedish": "århundrade",
-    "dutch": "eeuw"
+    "dutch": "eeuw",
+    "frequency_rank": 1269
   },
   {
     "swedish": "utanför",
-    "dutch": "buiten"
-  },
-  {
-    "swedish": "allt",
-    "dutch": "alles"
-  },
-  {
-    "swedish": "lång",
-    "dutch": "lang"
+    "dutch": "buiten",
+    "frequency_rank": 199
   },
   {
     "swedish": "redan",
-    "dutch": "al"
+    "dutch": "al",
+    "frequency_rank": 93
   },
   {
     "swedish": "istället",
-    "dutch": "in plaats van"
+    "dutch": "in plaats van",
+    "frequency_rank": 954
   },
   {
     "swedish": "fras",
-    "dutch": "zin"
+    "dutch": "zin",
+    "frequency_rank": 1270
   },
   {
     "swedish": "jord",
-    "dutch": "bodem"
+    "dutch": "bodem",
+    "frequency_rank": 732
   },
   {
     "swedish": "säng",
-    "dutch": "bed"
+    "dutch": "bed",
+    "frequency_rank": 342
   },
   {
     "swedish": "kopiera",
-    "dutch": "kopiëren"
+    "dutch": "kopiëren",
+    "frequency_rank": 1271
   },
   {
     "swedish": "fri",
-    "dutch": "vrij"
+    "dutch": "vrij",
+    "frequency_rank": 1272
   },
   {
     "swedish": "hoppas",
-    "dutch": "hoop"
-  },
-  {
-    "swedish": "vår",
-    "dutch": "lente"
+    "dutch": "hoop",
+    "frequency_rank": 329
   },
   {
     "swedish": "fall",
-    "dutch": "geval"
+    "dutch": "geval",
+    "frequency_rank": 813
   },
   {
     "swedish": "skrattade",
-    "dutch": "lachte"
+    "dutch": "lachte",
+    "frequency_rank": 1273
   },
   {
     "swedish": "nation",
-    "dutch": "natie"
+    "dutch": "natie",
+    "frequency_rank": 1274
   },
   {
     "swedish": "ganska",
-    "dutch": "nogal"
+    "dutch": "nogal",
+    "frequency_rank": 196
   },
   {
     "swedish": "typ",
-    "dutch": "type"
+    "dutch": "type",
+    "frequency_rank": 1000
   },
   {
     "swedish": "sig själva",
-    "dutch": "zich"
+    "dutch": "zich",
+    "frequency_rank": 1275
   },
   {
     "swedish": "temperatur",
-    "dutch": "temperatuur"
-  },
-  {
-    "swedish": "ljus",
-    "dutch": "helder"
+    "dutch": "temperatuur",
+    "frequency_rank": 1276
   },
   {
     "swedish": "leda",
-    "dutch": "leiding"
+    "dutch": "leiding",
+    "frequency_rank": 1277
   },
   {
     "swedish": "alla",
-    "dutch": "iedereen"
+    "dutch": "iedereen",
+    "frequency_rank": 104
   },
   {
     "swedish": "metod",
-    "dutch": "methode"
+    "dutch": "methode",
+    "frequency_rank": 1278
   },
   {
     "swedish": "sektion",
-    "dutch": "sectie"
+    "dutch": "sectie",
+    "frequency_rank": 1279
   },
   {
     "swedish": "sjö",
-    "dutch": "meer"
+    "dutch": "meer",
+    "frequency_rank": 465
   },
   {
     "swedish": "konsonant",
-    "dutch": "medeklinker"
+    "dutch": "medeklinker",
+    "frequency_rank": 1280
   },
   {
     "swedish": "inom",
-    "dutch": "binnenin"
+    "dutch": "binnenin",
+    "frequency_rank": 203
   },
   {
     "swedish": "lexikon",
-    "dutch": "woordenboek"
+    "dutch": "woordenboek",
+    "frequency_rank": 1281
   },
   {
     "swedish": "hår",
-    "dutch": "haar"
+    "dutch": "haar",
+    "frequency_rank": 646
   },
   {
     "swedish": "ålder",
-    "dutch": "leeftijd"
-  },
-  {
-    "swedish": "belopp",
-    "dutch": "hoeveelheid"
+    "dutch": "leeftijd",
+    "frequency_rank": 1282
   },
   {
     "swedish": "skala",
-    "dutch": "schaal"
+    "dutch": "schaal",
+    "frequency_rank": 1283
   },
   {
     "swedish": "pund",
-    "dutch": "pond"
-  },
-  {
-    "swedish": "fastän",
-    "dutch": "hoewel"
+    "dutch": "pond",
+    "frequency_rank": 1284
   },
   {
     "swedish": "per",
-    "dutch": "per"
+    "dutch": "per",
+    "frequency_rank": 1285
   },
   {
     "swedish": "bruten",
-    "dutch": "gebroken"
+    "dutch": "gebroken",
+    "frequency_rank": 1286
   },
   {
     "swedish": "ögonblick",
-    "dutch": "moment"
+    "dutch": "moment",
+    "frequency_rank": 1287
   },
   {
     "swedish": "mycket liten",
-    "dutch": "klein"
+    "dutch": "klein",
+    "frequency_rank": 1288
   },
   {
     "swedish": "möjlig",
-    "dutch": "mogelijk"
+    "dutch": "mogelijk",
+    "frequency_rank": 1289
   },
   {
     "swedish": "guld",
-    "dutch": "goud"
+    "dutch": "goud",
+    "frequency_rank": 1290
   },
   {
     "swedish": "mjölk",
-    "dutch": "melk"
+    "dutch": "melk",
+    "frequency_rank": 1291
   },
   {
     "swedish": "tyst",
-    "dutch": "rustig"
+    "dutch": "rustig",
+    "frequency_rank": 362
   },
   {
     "swedish": "naturlig",
-    "dutch": "natuurlijk"
+    "dutch": "natuurlijk",
+    "frequency_rank": 1292
   },
   {
     "swedish": "massa",
-    "dutch": "kavel"
+    "dutch": "kavel",
+    "frequency_rank": 1293
   },
   {
     "swedish": "sten",
-    "dutch": "steen"
+    "dutch": "steen",
+    "frequency_rank": 1294
   },
   {
     "swedish": "spela teater",
-    "dutch": "handeling"
+    "dutch": "handeling",
+    "frequency_rank": 1295
   },
   {
     "swedish": "bygga",
-    "dutch": "bouwen"
+    "dutch": "bouwen",
+    "frequency_rank": 851
   },
   {
     "swedish": "mitten",
-    "dutch": "midden"
+    "dutch": "midden",
+    "frequency_rank": 1296
   },
   {
     "swedish": "fart",
-    "dutch": "snelheid"
+    "dutch": "snelheid",
+    "frequency_rank": 1297
   },
   {
     "swedish": "räkna",
-    "dutch": "graaf"
+    "dutch": "graaf",
+    "frequency_rank": 1298
   },
   {
     "swedish": "katt",
-    "dutch": "kat"
+    "dutch": "kat",
+    "frequency_rank": 595
   },
   {
     "swedish": "någon",
-    "dutch": "iemand"
+    "dutch": "iemand",
+    "frequency_rank": 45
   },
   {
     "swedish": "segla",
-    "dutch": "zeil"
+    "dutch": "zeil",
+    "frequency_rank": 1299
   },
   {
     "swedish": "rullad",
-    "dutch": "gerold"
+    "dutch": "gerold",
+    "frequency_rank": 1300
   },
   {
     "swedish": "björn",
-    "dutch": "beer"
+    "dutch": "beer",
+    "frequency_rank": 1301
   },
   {
     "swedish": "undra",
-    "dutch": "wonder"
+    "dutch": "wonder",
+    "frequency_rank": 1302
   },
   {
     "swedish": "log",
-    "dutch": "glimlachte"
+    "dutch": "glimlachte",
+    "frequency_rank": 878
   },
   {
     "swedish": "vinkel",
-    "dutch": "hoek"
+    "dutch": "hoek",
+    "frequency_rank": 1303
   },
   {
     "swedish": "fraktion",
-    "dutch": "fractie"
+    "dutch": "fractie",
+    "frequency_rank": 1304
   },
   {
     "swedish": "afrika",
-    "dutch": "afrika"
+    "dutch": "afrika",
+    "frequency_rank": 1305
   },
   {
     "swedish": "dödade",
-    "dutch": "gedood"
+    "dutch": "gedood",
+    "frequency_rank": 1306
   },
   {
     "swedish": "melodi",
-    "dutch": "melodie"
+    "dutch": "melodie",
+    "frequency_rank": 1307
   },
   {
     "swedish": "botten",
-    "dutch": "onderkant"
+    "dutch": "onderkant",
+    "frequency_rank": 468
   },
   {
     "swedish": "resa",
-    "dutch": "reis"
+    "dutch": "reis",
+    "frequency_rank": 270
   },
   {
     "swedish": "hål",
-    "dutch": "gat"
+    "dutch": "gat",
+    "frequency_rank": 980
   },
   {
     "swedish": "fattig",
-    "dutch": "arm"
+    "dutch": "arm",
+    "frequency_rank": 880
   },
   {
     "swedish": "låt oss",
-    "dutch": "laten we"
+    "dutch": "laten we",
+    "frequency_rank": 1308
   },
   {
     "swedish": "bekämpa",
-    "dutch": "gevecht"
+    "dutch": "gevecht",
+    "frequency_rank": 1309
   },
   {
     "swedish": "överraskning",
-    "dutch": "verrassing"
+    "dutch": "verrassing",
+    "frequency_rank": 1310
   },
   {
     "swedish": "franska",
-    "dutch": "frans"
+    "dutch": "frans",
+    "frequency_rank": 1311
   },
   {
     "swedish": "dog",
-    "dutch": "ging dood"
+    "dutch": "ging dood",
+    "frequency_rank": 760
   },
   {
     "swedish": "slå",
-    "dutch": "verslaan"
+    "dutch": "verslaan",
+    "frequency_rank": 266
   },
   {
     "swedish": "exakt",
-    "dutch": "precies"
+    "dutch": "precies",
+    "frequency_rank": 1312
   },
   {
     "swedish": "förbli",
-    "dutch": "blijven"
+    "dutch": "blijven",
+    "frequency_rank": 1313
   },
   {
     "swedish": "klänning",
-    "dutch": "jurk"
+    "dutch": "jurk",
+    "frequency_rank": 976
   },
   {
     "swedish": "järn",
-    "dutch": "ijzer"
+    "dutch": "ijzer",
+    "frequency_rank": 989
   },
   {
     "swedish": "kunde inte",
-    "dutch": "kon niet"
+    "dutch": "kon niet",
+    "frequency_rank": 1314
   },
   {
     "swedish": "fingrar",
-    "dutch": "vingers"
+    "dutch": "vingers",
+    "frequency_rank": 1315
   },
   {
     "swedish": "rad",
-    "dutch": "rij"
+    "dutch": "rij",
+    "frequency_rank": 604
   },
   {
     "swedish": "minst",
-    "dutch": "minst"
+    "dutch": "minst",
+    "frequency_rank": 1316
   },
   {
     "swedish": "fånga",
-    "dutch": "vangst"
+    "dutch": "vangst",
+    "frequency_rank": 1317
   },
   {
     "swedish": "klättrade",
-    "dutch": "beklommen"
+    "dutch": "beklommen",
+    "frequency_rank": 1318
   },
   {
     "swedish": "skrev",
-    "dutch": "schreef"
+    "dutch": "schreef",
+    "frequency_rank": 1319
   },
   {
     "swedish": "skrek",
-    "dutch": "geschreeuwd"
+    "dutch": "geschreeuwd",
+    "frequency_rank": 1320
   },
   {
     "swedish": "fortsatt",
-    "dutch": "voortgezet"
+    "dutch": "voortgezet",
+    "frequency_rank": 1321
   },
   {
     "swedish": "sig",
-    "dutch": "zelf"
-  },
-  {
-    "swedish": "annan",
-    "dutch": "anders"
+    "dutch": "zelf",
+    "frequency_rank": 218
   },
   {
     "swedish": "slätter",
-    "dutch": "vlaktes"
+    "dutch": "vlaktes",
+    "frequency_rank": 1322
   },
   {
     "swedish": "gas",
-    "dutch": "gas"
+    "dutch": "gas",
+    "frequency_rank": 1323
   },
   {
     "swedish": "england",
-    "dutch": "engeland"
+    "dutch": "engeland",
+    "frequency_rank": 1324
   },
   {
     "swedish": "brinnande",
-    "dutch": "brandend"
+    "dutch": "brandend",
+    "frequency_rank": 1325
   },
   {
     "swedish": "design",
-    "dutch": "ontwerp"
+    "dutch": "ontwerp",
+    "frequency_rank": 1326
   },
   {
     "swedish": "gick med",
-    "dutch": "aangesloten"
+    "dutch": "aangesloten",
+    "frequency_rank": 1327
   },
   {
     "swedish": "fot",
-    "dutch": "voet"
+    "dutch": "voet",
+    "frequency_rank": 1328
   },
   {
     "swedish": "lag",
-    "dutch": "wet"
+    "dutch": "wet",
+    "frequency_rank": 403
   },
   {
     "swedish": "öron",
-    "dutch": "oren"
+    "dutch": "oren",
+    "frequency_rank": 1329
   },
   {
     "swedish": "gräs",
-    "dutch": "gras"
+    "dutch": "gras",
+    "frequency_rank": 1330
   },
   {
     "swedish": "du är",
-    "dutch": "jij bent"
+    "dutch": "jij bent",
+    "frequency_rank": 1331
   },
   {
     "swedish": "växte",
-    "dutch": "groeide"
+    "dutch": "groeide",
+    "frequency_rank": 1332
   },
   {
     "swedish": "hud",
-    "dutch": "huid"
+    "dutch": "huid",
+    "frequency_rank": 1333
   },
   {
     "swedish": "dal",
-    "dutch": "vallei"
+    "dutch": "vallei",
+    "frequency_rank": 1334
   },
   {
     "swedish": "cent",
-    "dutch": "cent"
+    "dutch": "cent",
+    "frequency_rank": 1335
   },
   {
     "swedish": "nyckel",
-    "dutch": "sleutel"
+    "dutch": "sleutel",
+    "frequency_rank": 1336
   },
   {
     "swedish": "president",
-    "dutch": "president"
+    "dutch": "president",
+    "frequency_rank": 1337
   },
   {
     "swedish": "brun",
-    "dutch": "bruin"
-  },
-  {
-    "swedish": "problem",
-    "dutch": "probleem"
+    "dutch": "bruin",
+    "frequency_rank": 1338
   },
   {
     "swedish": "häftigt",
-    "dutch": "koel"
+    "dutch": "koel",
+    "frequency_rank": 1339
   },
   {
     "swedish": "moln",
-    "dutch": "wolk"
+    "dutch": "wolk",
+    "frequency_rank": 1340
   },
   {
     "swedish": "förlorat",
-    "dutch": "kwijt"
+    "dutch": "kwijt",
+    "frequency_rank": 1341
   },
   {
     "swedish": "skickas",
-    "dutch": "verstuurd"
+    "dutch": "verstuurd",
+    "frequency_rank": 1342
   },
   {
     "swedish": "symboler",
-    "dutch": "symbolen"
+    "dutch": "symbolen",
+    "frequency_rank": 1343
   },
   {
     "swedish": "ha på sig",
-    "dutch": "dragen"
+    "dutch": "dragen",
+    "frequency_rank": 1344
   },
   {
     "swedish": "dålig",
-    "dutch": "slecht"
+    "dutch": "slecht",
+    "frequency_rank": 284
   },
   {
     "swedish": "spara",
-    "dutch": "redden"
+    "dutch": "redden",
+    "frequency_rank": 958
   },
   {
     "swedish": "experimentera",
-    "dutch": "experiment"
+    "dutch": "experiment",
+    "frequency_rank": 1345
   },
   {
     "swedish": "motor",
-    "dutch": "motor"
+    "dutch": "motor",
+    "frequency_rank": 1346
   },
   {
     "swedish": "ensam",
-    "dutch": "alleen"
+    "dutch": "alleen",
+    "frequency_rank": 861
   },
   {
     "swedish": "teckning",
-    "dutch": "tekening"
+    "dutch": "tekening",
+    "frequency_rank": 1347
   },
   {
     "swedish": "öster",
-    "dutch": "oosten"
+    "dutch": "oosten",
+    "frequency_rank": 1348
   },
   {
     "swedish": "betala",
-    "dutch": "betalen"
+    "dutch": "betalen",
+    "frequency_rank": 1349
   },
   {
     "swedish": "enda",
-    "dutch": "enkel"
+    "dutch": "enkel",
+    "frequency_rank": 359
   },
   {
     "swedish": "rör",
-    "dutch": "aanraken"
+    "dutch": "aanraken",
+    "frequency_rank": 522
   },
   {
     "swedish": "information",
-    "dutch": "informatie"
+    "dutch": "informatie",
+    "frequency_rank": 1350
   },
   {
     "swedish": "uttrycka",
-    "dutch": "nadrukkelijk"
+    "dutch": "nadrukkelijk",
+    "frequency_rank": 1351
   },
   {
     "swedish": "mun",
-    "dutch": "mond"
+    "dutch": "mond",
+    "frequency_rank": 1352
   },
   {
     "swedish": "gård",
-    "dutch": "tuin"
+    "dutch": "tuin",
+    "frequency_rank": 491
   },
   {
     "swedish": "likvärdig",
-    "dutch": "gelijkwaardig"
+    "dutch": "gelijkwaardig",
+    "frequency_rank": 1353
   },
   {
     "swedish": "decimal",
-    "dutch": "decimale"
+    "dutch": "decimale",
+    "frequency_rank": 1354
   },
   {
     "swedish": "själv",
-    "dutch": "jezelf"
+    "dutch": "jezelf",
+    "frequency_rank": 222
   },
   {
     "swedish": "kontrollera",
-    "dutch": "controle"
+    "dutch": "controle",
+    "frequency_rank": 1355
   },
   {
     "swedish": "öva",
-    "dutch": "oefening"
+    "dutch": "oefening",
+    "frequency_rank": 1356
   },
   {
     "swedish": "rapportera",
-    "dutch": "rapport"
+    "dutch": "rapport",
+    "frequency_rank": 1357
   },
   {
     "swedish": "hetero",
-    "dutch": "direct"
+    "dutch": "direct",
+    "frequency_rank": 1358
   },
   {
     "swedish": "stiga",
-    "dutch": "opstaan"
+    "dutch": "opstaan",
+    "frequency_rank": 687
   },
   {
     "swedish": "påstående",
-    "dutch": "stelling"
+    "dutch": "stelling",
+    "frequency_rank": 1359
   },
   {
     "swedish": "pinne",
-    "dutch": "stok"
+    "dutch": "stok",
+    "frequency_rank": 1360
   },
   {
     "swedish": "fest",
-    "dutch": "feest"
+    "dutch": "feest",
+    "frequency_rank": 974
   },
   {
     "swedish": "frön",
-    "dutch": "zaden"
+    "dutch": "zaden",
+    "frequency_rank": 1361
   },
   {
     "swedish": "anta",
-    "dutch": "veronderstellen"
+    "dutch": "veronderstellen",
+    "frequency_rank": 1362
   },
   {
     "swedish": "kvinna",
-    "dutch": "vrouw"
+    "dutch": "vrouw",
+    "frequency_rank": 475
   },
   {
     "swedish": "kust",
-    "dutch": "kust"
+    "dutch": "kust",
+    "frequency_rank": 1363
   },
   {
     "swedish": "bank",
-    "dutch": "bank"
+    "dutch": "bank",
+    "frequency_rank": 1364
   },
   {
     "swedish": "period",
-    "dutch": "periode"
+    "dutch": "periode",
+    "frequency_rank": 1365
   },
   {
     "swedish": "tråd",
-    "dutch": "draad"
+    "dutch": "draad",
+    "frequency_rank": 1366
   },
   {
     "swedish": "välja",
-    "dutch": "kiezen"
+    "dutch": "kiezen",
+    "frequency_rank": 677
   },
   {
     "swedish": "rena",
-    "dutch": "schoon"
+    "dutch": "schoon",
+    "frequency_rank": 1367
   },
   {
     "swedish": "besök",
-    "dutch": "bezoek"
-  },
-  {
-    "swedish": "bit",
-    "dutch": "beetje"
+    "dutch": "bezoek",
+    "frequency_rank": 1368
   },
   {
     "swedish": "vars",
-    "dutch": "van wie"
+    "dutch": "van wie",
+    "frequency_rank": 1369
   },
   {
     "swedish": "mottagen",
-    "dutch": "ontvangen"
+    "dutch": "ontvangen",
+    "frequency_rank": 1370
   },
   {
     "swedish": "trädgård",
-    "dutch": "tuin"
+    "dutch": "tuin",
+    "frequency_rank": 559
   },
   {
     "swedish": "snälla du",
-    "dutch": "alsjeblieft"
+    "dutch": "alsjeblieft",
+    "frequency_rank": 1371
   },
   {
     "swedish": "konstig",
-    "dutch": "vreemd"
+    "dutch": "vreemd",
+    "frequency_rank": 914
   },
   {
     "swedish": "fångad",
-    "dutch": "gevangen"
+    "dutch": "gevangen",
+    "frequency_rank": 1372
   },
   {
     "swedish": "föll",
-    "dutch": "viel"
+    "dutch": "viel",
+    "frequency_rank": 1373
   },
   {
     "swedish": "team",
-    "dutch": "team"
+    "dutch": "team",
+    "frequency_rank": 1374
   },
   {
     "swedish": "gud",
-    "dutch": "god"
+    "dutch": "god",
+    "frequency_rank": 1375
   },
   {
     "swedish": "kapten",
-    "dutch": "gezagvoerder"
+    "dutch": "gezagvoerder",
+    "frequency_rank": 1376
   },
   {
     "swedish": "direkt",
-    "dutch": "direct"
+    "dutch": "direct",
+    "frequency_rank": 1377
   },
   {
     "swedish": "ringa",
-    "dutch": "ring"
+    "dutch": "ring",
+    "frequency_rank": 447
   },
   {
     "swedish": "tjäna",
-    "dutch": "dienen"
-  },
-  {
-    "swedish": "barn",
-    "dutch": "kind"
+    "dutch": "dienen",
+    "frequency_rank": 734
   },
   {
     "swedish": "öken",
-    "dutch": "woestijn"
+    "dutch": "woestijn",
+    "frequency_rank": 1378
   },
   {
     "swedish": "öka",
-    "dutch": "toename"
+    "dutch": "toename",
+    "frequency_rank": 952
   },
   {
     "swedish": "historia",
-    "dutch": "geschiedenis"
+    "dutch": "geschiedenis",
+    "frequency_rank": 1379
   },
   {
     "swedish": "kosta",
-    "dutch": "kosten"
-  },
-  {
-    "swedish": "kanske",
-    "dutch": "misschien"
+    "dutch": "kosten",
+    "frequency_rank": 1380
   },
   {
     "swedish": "företag",
-    "dutch": "bedrijf"
+    "dutch": "bedrijf",
+    "frequency_rank": 107
   },
   {
     "swedish": "separat",
-    "dutch": "verschillend"
+    "dutch": "verschillend",
+    "frequency_rank": 1381
   },
   {
     "swedish": "ha sönder",
-    "dutch": "pauze"
+    "dutch": "pauze",
+    "frequency_rank": 1382
   },
   {
     "swedish": "farbror",
-    "dutch": "oom"
+    "dutch": "oom",
+    "frequency_rank": 1383
   },
   {
     "swedish": "jakt",
-    "dutch": "jacht"
+    "dutch": "jacht",
+    "frequency_rank": 1384
   },
   {
     "swedish": "flöde",
-    "dutch": "stroom"
+    "dutch": "stroom",
+    "frequency_rank": 1385
   },
   {
     "swedish": "lady",
-    "dutch": "dame"
+    "dutch": "dame",
+    "frequency_rank": 1386
   },
   {
     "swedish": "studenter",
-    "dutch": "studenten"
+    "dutch": "studenten",
+    "frequency_rank": 1387
   },
   {
     "swedish": "mänsklig",
-    "dutch": "menselijk"
+    "dutch": "menselijk",
+    "frequency_rank": 1388
   },
   {
     "swedish": "konst",
-    "dutch": "kunst"
+    "dutch": "kunst",
+    "frequency_rank": 1389
   },
   {
     "swedish": "känsla",
-    "dutch": "gevoel"
+    "dutch": "gevoel",
+    "frequency_rank": 1390
   },
   {
     "swedish": "tillförsel",
-    "dutch": "levering"
+    "dutch": "levering",
+    "frequency_rank": 1391
   },
   {
     "swedish": "hörn",
-    "dutch": "hoek"
+    "dutch": "hoek",
+    "frequency_rank": 1392
   },
   {
     "swedish": "elektrisk",
-    "dutch": "elektrisch"
+    "dutch": "elektrisch",
+    "frequency_rank": 1393
   },
   {
     "swedish": "insekter",
-    "dutch": "insecten"
+    "dutch": "insecten",
+    "frequency_rank": 1394
   },
   {
     "swedish": "gröda",
-    "dutch": "gewassen"
+    "dutch": "gewassen",
+    "frequency_rank": 1395
   },
   {
     "swedish": "tona",
-    "dutch": "toon"
-  },
-  {
-    "swedish": "träffa",
-    "dutch": "hit"
+    "dutch": "toon",
+    "frequency_rank": 1396
   },
   {
     "swedish": "sand",
-    "dutch": "zand"
+    "dutch": "zand",
+    "frequency_rank": 1397
   },
   {
     "swedish": "läkare",
-    "dutch": "arts"
+    "dutch": "arts",
+    "frequency_rank": 492
   },
   {
     "swedish": "förse",
-    "dutch": "voorzien"
+    "dutch": "voorzien",
+    "frequency_rank": 1398
   },
   {
     "swedish": "således",
-    "dutch": "dus"
+    "dutch": "dus",
+    "frequency_rank": 1399
   },
   {
     "swedish": "vana",
-    "dutch": "zal niet"
+    "dutch": "zal niet",
+    "frequency_rank": 1400
   },
   {
     "swedish": "kock",
-    "dutch": "kok"
-  },
-  {
-    "swedish": "ben",
-    "dutch": "botten"
+    "dutch": "kok",
+    "frequency_rank": 1401
   },
   {
     "swedish": "svans",
-    "dutch": "staart"
+    "dutch": "staart",
+    "frequency_rank": 1402
   },
   {
     "swedish": "styrelse",
-    "dutch": "bord"
+    "dutch": "bord",
+    "frequency_rank": 1403
   },
   {
     "swedish": "modern",
-    "dutch": "modern"
+    "dutch": "modern",
+    "frequency_rank": 1404
   },
   {
     "swedish": "förening",
-    "dutch": "verbinding"
+    "dutch": "verbinding",
+    "frequency_rank": 1405
   },
   {
     "swedish": "var inte",
-    "dutch": "was niet"
+    "dutch": "was niet",
+    "frequency_rank": 1406
   },
   {
     "swedish": "passa",
-    "dutch": "fit"
+    "dutch": "fit",
+    "frequency_rank": 1407
   },
   {
     "swedish": "tillägg",
-    "dutch": "toevoeging"
+    "dutch": "toevoeging",
+    "frequency_rank": 1408
   },
   {
     "swedish": "tillhöra",
-    "dutch": "behoren"
-  },
-  {
-    "swedish": "säker",
-    "dutch": "veilig"
+    "dutch": "behoren",
+    "frequency_rank": 1409
   },
   {
     "swedish": "soldater",
-    "dutch": "soldaten"
+    "dutch": "soldaten",
+    "frequency_rank": 1411
   },
   {
     "swedish": "gissa",
-    "dutch": "gok"
-  },
-  {
-    "swedish": "tyst",
-    "dutch": "stil"
+    "dutch": "gok",
+    "frequency_rank": 1412
   },
   {
     "swedish": "handel",
-    "dutch": "handel"
+    "dutch": "handel",
+    "frequency_rank": 1413
   },
   {
     "swedish": "snarare",
-    "dutch": "liever"
+    "dutch": "liever",
+    "frequency_rank": 1414
   },
   {
     "swedish": "jämföra",
-    "dutch": "vergelijken"
+    "dutch": "vergelijken",
+    "frequency_rank": 1415
   },
   {
     "swedish": "folkmassan",
-    "dutch": "menigte"
+    "dutch": "menigte",
+    "frequency_rank": 1416
   },
   {
     "swedish": "dikt",
-    "dutch": "gedicht"
+    "dutch": "gedicht",
+    "frequency_rank": 1417
   },
   {
     "swedish": "njut av",
-    "dutch": "genieten"
+    "dutch": "genieten",
+    "frequency_rank": 1418
   },
   {
     "swedish": "element",
-    "dutch": "elementen"
+    "dutch": "elementen",
+    "frequency_rank": 1419
   },
   {
     "swedish": "ange",
-    "dutch": "aanwijzen"
+    "dutch": "aanwijzen",
+    "frequency_rank": 698
   },
   {
     "swedish": "bortsett från",
-    "dutch": "behalve"
+    "dutch": "behalve",
+    "frequency_rank": 1420
   },
   {
     "swedish": "förvänta",
-    "dutch": "verwachten"
+    "dutch": "verwachten",
+    "frequency_rank": 1421
   },
   {
     "swedish": "platt",
-    "dutch": "vlak"
+    "dutch": "vlak",
+    "frequency_rank": 1422
   },
   {
     "swedish": "intressant",
-    "dutch": "interessant"
-  },
-  {
-    "swedish": "känsla",
-    "dutch": "gevoel"
+    "dutch": "interessant",
+    "frequency_rank": 1423
   },
   {
     "swedish": "sträng",
-    "dutch": "snaar"
+    "dutch": "snaar",
+    "frequency_rank": 1425
   },
   {
     "swedish": "blåsa",
-    "dutch": "blazen"
-  },
-  {
-    "swedish": "känd",
-    "dutch": "bekend"
+    "dutch": "blazen",
+    "frequency_rank": 1426
   },
   {
     "swedish": "värde",
-    "dutch": "waarde"
+    "dutch": "waarde",
+    "frequency_rank": 1428
   },
   {
     "swedish": "vingar",
-    "dutch": "vleugels"
+    "dutch": "vleugels",
+    "frequency_rank": 1429
   },
   {
     "swedish": "rörelse",
-    "dutch": "beweging"
+    "dutch": "beweging",
+    "frequency_rank": 1430
   },
   {
     "swedish": "pol",
-    "dutch": "pool"
+    "dutch": "pool",
+    "frequency_rank": 1431
   },
   {
     "swedish": "spännande",
-    "dutch": "spannend"
+    "dutch": "spannend",
+    "frequency_rank": 1432
   },
   {
     "swedish": "grenar",
-    "dutch": "takken"
+    "dutch": "takken",
+    "frequency_rank": 1433
   },
   {
     "swedish": "tjock",
-    "dutch": "dik"
+    "dutch": "dik",
+    "frequency_rank": 506
   },
   {
     "swedish": "blod",
-    "dutch": "bloed"
+    "dutch": "bloed",
+    "frequency_rank": 1434
   },
   {
     "swedish": "lögn",
-    "dutch": "leugen"
+    "dutch": "leugen",
+    "frequency_rank": 1435
   },
   {
     "swedish": "fläck",
-    "dutch": "plek"
+    "dutch": "plek",
+    "frequency_rank": 1436
   },
   {
     "swedish": "klocka",
-    "dutch": "klok"
+    "dutch": "klok",
+    "frequency_rank": 934
   },
   {
     "swedish": "roligt",
-    "dutch": "plezier"
+    "dutch": "plezier",
+    "frequency_rank": 350
   },
   {
     "swedish": "högt",
-    "dutch": "luidruchtig"
+    "dutch": "luidruchtig",
+    "frequency_rank": 1437
   },
   {
     "swedish": "överväga",
-    "dutch": "overwegen"
+    "dutch": "overwegen",
+    "frequency_rank": 1438
   },
   {
     "swedish": "föreslog",
-    "dutch": "suggereerde"
+    "dutch": "suggereerde",
+    "frequency_rank": 1439
   },
   {
     "swedish": "tunn",
-    "dutch": "dun"
+    "dutch": "dun",
+    "frequency_rank": 1440
   },
   {
     "swedish": "placera",
-    "dutch": "positie"
+    "dutch": "positie",
+    "frequency_rank": 1441
   },
   {
     "swedish": "gick in i",
-    "dutch": "ingevoerde"
+    "dutch": "ingevoerde",
+    "frequency_rank": 1442
   },
   {
     "swedish": "frukt",
-    "dutch": "fruit"
+    "dutch": "fruit",
+    "frequency_rank": 1443
   },
   {
     "swedish": "bunden",
-    "dutch": "gebonden"
+    "dutch": "gebonden",
+    "frequency_rank": 1444
   },
   {
     "swedish": "rik",
-    "dutch": "rijk"
+    "dutch": "rijk",
+    "frequency_rank": 1445
   },
   {
     "swedish": "dollar",
-    "dutch": "dollar"
+    "dutch": "dollar",
+    "frequency_rank": 1446
   },
   {
     "swedish": "skicka",
-    "dutch": "versturen"
+    "dutch": "versturen",
+    "frequency_rank": 215
   },
   {
     "swedish": "syn",
-    "dutch": "zicht"
+    "dutch": "zicht",
+    "frequency_rank": 701
   },
   {
     "swedish": "chef",
-    "dutch": "chef"
+    "dutch": "chef",
+    "frequency_rank": 1447
   },
   {
     "swedish": "japanska",
-    "dutch": "japans"
+    "dutch": "japans",
+    "frequency_rank": 1448
   },
   {
     "swedish": "ström",
-    "dutch": "stroom"
+    "dutch": "stroom",
+    "frequency_rank": 1449
   },
   {
     "swedish": "planeter",
-    "dutch": "planeten"
+    "dutch": "planeten",
+    "frequency_rank": 1450
   },
   {
     "swedish": "rytm",
-    "dutch": "ritme"
+    "dutch": "ritme",
+    "frequency_rank": 1451
   },
   {
     "swedish": "vetenskap",
-    "dutch": "wetenschap"
+    "dutch": "wetenschap",
+    "frequency_rank": 1452
   },
   {
     "swedish": "större",
-    "dutch": "belangrijk"
+    "dutch": "belangrijk",
+    "frequency_rank": 709
   },
   {
     "swedish": "observera",
-    "dutch": "observeren"
-  },
-  {
-    "swedish": "rör",
-    "dutch": "buis"
+    "dutch": "observeren",
+    "frequency_rank": 1453
   },
   {
     "swedish": "nödvändig",
-    "dutch": "nodig"
+    "dutch": "nodig",
+    "frequency_rank": 1454
   },
   {
     "swedish": "vikt",
-    "dutch": "gewicht"
+    "dutch": "gewicht",
+    "frequency_rank": 1455
   },
   {
     "swedish": "kött",
-    "dutch": "vlees"
+    "dutch": "vlees",
+    "frequency_rank": 640
   },
   {
     "swedish": "lyfts",
-    "dutch": "opgeheven"
+    "dutch": "opgeheven",
+    "frequency_rank": 1456
   },
   {
     "swedish": "bearbeta",
-    "dutch": "proces"
+    "dutch": "proces",
+    "frequency_rank": 1457
   },
   {
     "swedish": "armén",
-    "dutch": "leger"
+    "dutch": "leger",
+    "frequency_rank": 1458
   },
   {
     "swedish": "hatt",
-    "dutch": "hoed"
+    "dutch": "hoed",
+    "frequency_rank": 1459
   },
   {
     "swedish": "fast egendom",
-    "dutch": "eigendom"
-  },
-  {
-    "swedish": "särskild",
-    "dutch": "bijzonder"
+    "dutch": "eigendom",
+    "frequency_rank": 1460
   },
   {
     "swedish": "simma",
-    "dutch": "zwemmen"
+    "dutch": "zwemmen",
+    "frequency_rank": 988
   },
   {
     "swedish": "villkor",
-    "dutch": "voorwaarden"
+    "dutch": "voorwaarden",
+    "frequency_rank": 587
   },
   {
     "swedish": "nuvarande",
-    "dutch": "huidig"
+    "dutch": "huidig",
+    "frequency_rank": 786
   },
   {
     "swedish": "parkera",
-    "dutch": "park"
+    "dutch": "park",
+    "frequency_rank": 1461
   },
   {
     "swedish": "sälja",
-    "dutch": "verkopen"
+    "dutch": "verkopen",
+    "frequency_rank": 602
   },
   {
     "swedish": "axel",
-    "dutch": "schouder"
+    "dutch": "schouder",
+    "frequency_rank": 1462
   },
   {
     "swedish": "industri",
-    "dutch": "industrie"
+    "dutch": "industrie",
+    "frequency_rank": 1463
   },
   {
     "swedish": "tvätta",
-    "dutch": "wassen"
+    "dutch": "wassen",
+    "frequency_rank": 548
   },
   {
     "swedish": "blockera",
-    "dutch": "blok"
+    "dutch": "blok",
+    "frequency_rank": 1464
   },
   {
     "swedish": "sprida",
-    "dutch": "spreiding"
+    "dutch": "spreiding",
+    "frequency_rank": 1465
   },
   {
     "swedish": "nötkreatur",
-    "dutch": "vee"
+    "dutch": "vee",
+    "frequency_rank": 1466
   },
   {
     "swedish": "fru",
-    "dutch": "vrouw"
+    "dutch": "vrouw",
+    "frequency_rank": 904
   },
   {
     "swedish": "skarp",
-    "dutch": "scherp"
-  },
-  {
-    "swedish": "företag",
-    "dutch": "bedrijf"
+    "dutch": "scherp",
+    "frequency_rank": 1467
   },
   {
     "swedish": "radio",
-    "dutch": "radio"
-  },
-  {
-    "swedish": "väl",
-    "dutch": "goed"
+    "dutch": "radio",
+    "frequency_rank": 1468
   },
   {
     "swedish": "handling",
-    "dutch": "actie"
+    "dutch": "actie",
+    "frequency_rank": 1469
   },
   {
     "swedish": "huvudstad",
-    "dutch": "hoofdstad"
+    "dutch": "hoofdstad",
+    "frequency_rank": 1470
   },
   {
     "swedish": "fabriker",
-    "dutch": "fabrieken"
+    "dutch": "fabrieken",
+    "frequency_rank": 1471
   },
   {
     "swedish": "fast",
-    "dutch": "geregeld"
+    "dutch": "geregeld",
+    "frequency_rank": 166
   },
   {
     "swedish": "gul",
-    "dutch": "geel"
+    "dutch": "geel",
+    "frequency_rank": 678
   },
   {
     "swedish": "är det inte",
-    "dutch": "is niet"
+    "dutch": "is niet",
+    "frequency_rank": 1472
   },
   {
     "swedish": "sydlig",
-    "dutch": "zuidelijk"
+    "dutch": "zuidelijk",
+    "frequency_rank": 1473
   },
   {
     "swedish": "lastbil",
-    "dutch": "vrachtauto"
+    "dutch": "vrachtauto",
+    "frequency_rank": 1474
   },
   {
     "swedish": "rättvis",
-    "dutch": "eerlijk"
+    "dutch": "eerlijk",
+    "frequency_rank": 1475
   },
   {
     "swedish": "tryckt",
-    "dutch": "afgedrukt"
+    "dutch": "afgedrukt",
+    "frequency_rank": 1476
   },
   {
     "swedish": "skulle inte",
-    "dutch": "zou niet"
+    "dutch": "zou niet",
+    "frequency_rank": 1477
   },
   {
     "swedish": "ett huvud",
-    "dutch": "vooruit"
+    "dutch": "vooruit",
+    "frequency_rank": 1478
   },
   {
     "swedish": "chans",
-    "dutch": "kans"
+    "dutch": "kans",
+    "frequency_rank": 1479
   },
   {
     "swedish": "född",
-    "dutch": "geboren"
+    "dutch": "geboren",
+    "frequency_rank": 397
   },
   {
     "swedish": "nivå",
-    "dutch": "niveau"
+    "dutch": "niveau",
+    "frequency_rank": 1480
   },
   {
     "swedish": "triangel",
-    "dutch": "driehoek"
+    "dutch": "driehoek",
+    "frequency_rank": 1481
   },
   {
     "swedish": "molekyler",
-    "dutch": "moleculen"
+    "dutch": "moleculen",
+    "frequency_rank": 1482
   },
   {
     "swedish": "frankrike",
-    "dutch": "frankrijk"
+    "dutch": "frankrijk",
+    "frequency_rank": 1483
   },
   {
     "swedish": "upprepas",
-    "dutch": "herhaald"
+    "dutch": "herhaald",
+    "frequency_rank": 1484
   },
   {
     "swedish": "kolumn",
-    "dutch": "kolom"
+    "dutch": "kolom",
+    "frequency_rank": 1485
   },
   {
     "swedish": "västra",
-    "dutch": "westelijk"
+    "dutch": "westelijk",
+    "frequency_rank": 1486
   },
   {
     "swedish": "kyrka",
-    "dutch": "kerk"
+    "dutch": "kerk",
+    "frequency_rank": 1487
   },
   {
     "swedish": "syster",
-    "dutch": "zus"
+    "dutch": "zus",
+    "frequency_rank": 1488
   },
   {
     "swedish": "syre",
-    "dutch": "zuurstof"
+    "dutch": "zuurstof",
+    "frequency_rank": 1489
   },
   {
     "swedish": "flertal",
-    "dutch": "meervoud"
+    "dutch": "meervoud",
+    "frequency_rank": 1490
   },
   {
     "swedish": "olika",
-    "dutch": "verscheidene"
+    "dutch": "verscheidene",
+    "frequency_rank": 148
   },
   {
     "swedish": "gick med på",
-    "dutch": "overeengekomen"
+    "dutch": "overeengekomen",
+    "frequency_rank": 1491
   },
   {
     "swedish": "motsatt",
-    "dutch": "tegenovergestelde"
+    "dutch": "tegenovergestelde",
+    "frequency_rank": 1492
   },
   {
     "swedish": "fel",
-    "dutch": "fout"
+    "dutch": "fout",
+    "frequency_rank": 127
   },
   {
     "swedish": "diagram",
-    "dutch": "grafiek"
+    "dutch": "grafiek",
+    "frequency_rank": 1493
   },
   {
     "swedish": "beredd",
-    "dutch": "voorbereid"
+    "dutch": "voorbereid",
+    "frequency_rank": 1494
   },
   {
     "swedish": "söt",
-    "dutch": "zeer"
+    "dutch": "zeer",
+    "frequency_rank": 179
   },
   {
     "swedish": "lösning",
-    "dutch": "oplossing"
+    "dutch": "oplossing",
+    "frequency_rank": 1495
   },
   {
     "swedish": "färsk",
-    "dutch": "vers"
+    "dutch": "vers",
+    "frequency_rank": 1496
   },
   {
     "swedish": "affär",
-    "dutch": "winkel"
+    "dutch": "winkel",
+    "frequency_rank": 343
   },
   {
     "swedish": "framförallt",
-    "dutch": "speciaal"
+    "dutch": "speciaal",
+    "frequency_rank": 1497
   },
   {
     "swedish": "skor",
-    "dutch": "schoenen"
+    "dutch": "schoenen",
+    "frequency_rank": 466
   },
   {
     "swedish": "faktiskt",
-    "dutch": "eigenlijk"
+    "dutch": "eigenlijk",
+    "frequency_rank": 334
   },
   {
     "swedish": "näsa",
-    "dutch": "neus"
+    "dutch": "neus",
+    "frequency_rank": 1498
   },
   {
     "swedish": "rädd",
-    "dutch": "bang"
+    "dutch": "bang",
+    "frequency_rank": 250
   },
   {
     "swedish": "död",
-    "dutch": "dood"
+    "dutch": "dood",
+    "frequency_rank": 1499
   },
   {
     "swedish": "socker",
-    "dutch": "suiker"
+    "dutch": "suiker",
+    "frequency_rank": 1500
   },
   {
     "swedish": "adjektiv",
-    "dutch": "bijvoeglijk naamwoord"
+    "dutch": "bijvoeglijk naamwoord",
+    "frequency_rank": 1501
   },
   {
     "swedish": "fikon",
-    "dutch": "afb"
+    "dutch": "afb",
+    "frequency_rank": 1502
   },
   {
     "swedish": "kontor",
-    "dutch": "kantoor"
+    "dutch": "kantoor",
+    "frequency_rank": 1503
   },
   {
     "swedish": "enorm",
-    "dutch": "enorm"
+    "dutch": "enorm",
+    "frequency_rank": 1504
   },
   {
     "swedish": "pistol",
-    "dutch": "pistool"
+    "dutch": "pistool",
+    "frequency_rank": 1505
   },
   {
     "swedish": "liknande",
-    "dutch": "vergelijkbaar"
-  },
-  {
-    "swedish": "död",
-    "dutch": "dood"
-  },
-  {
-    "swedish": "göra",
-    "dutch": "scoren"
+    "dutch": "vergelijkbaar",
+    "frequency_rank": 1506
   },
   {
     "swedish": "fram",
-    "dutch": "vooruit"
+    "dutch": "vooruit",
+    "frequency_rank": 82
   },
   {
     "swedish": "sträckt",
-    "dutch": "uitgerekt"
+    "dutch": "uitgerekt",
+    "frequency_rank": 1508
   },
   {
     "swedish": "erfarenhet",
-    "dutch": "ervaring"
+    "dutch": "ervaring",
+    "frequency_rank": 1509
   },
   {
     "swedish": "reste sig",
-    "dutch": "roos"
+    "dutch": "roos",
+    "frequency_rank": 1510
   },
   {
     "swedish": "tillåta",
-    "dutch": "toestaan"
+    "dutch": "toestaan",
+    "frequency_rank": 1511
   },
   {
     "swedish": "rädsla",
-    "dutch": "angst"
+    "dutch": "angst",
+    "frequency_rank": 1512
   },
   {
     "swedish": "arbetare",
-    "dutch": "werknemers"
+    "dutch": "werknemers",
+    "frequency_rank": 1513
   },
   {
     "swedish": "washington",
-    "dutch": "washington"
+    "dutch": "washington",
+    "frequency_rank": 1514
   },
   {
     "swedish": "grekisk",
-    "dutch": "grieks"
+    "dutch": "grieks",
+    "frequency_rank": 1515
   },
   {
     "swedish": "kvinnor",
-    "dutch": "vrouwen"
+    "dutch": "vrouwen",
+    "frequency_rank": 1516
   },
   {
     "swedish": "köpt",
-    "dutch": "gekocht"
+    "dutch": "gekocht",
+    "frequency_rank": 1517
   },
   {
     "swedish": "led",
-    "dutch": "led"
+    "dutch": "led",
+    "frequency_rank": 1518
   },
   {
     "swedish": "mars",
-    "dutch": "maart"
+    "dutch": "maart",
+    "frequency_rank": 1519
   },
   {
     "swedish": "nordlig",
-    "dutch": "noordelijk"
+    "dutch": "noordelijk",
+    "frequency_rank": 1520
   },
   {
     "swedish": "skapa",
-    "dutch": "creëren"
+    "dutch": "creëren",
+    "frequency_rank": 984
   },
   {
     "swedish": "svår",
-    "dutch": "moeilijk"
+    "dutch": "moeilijk",
+    "frequency_rank": 665
   },
   {
     "swedish": "match",
-    "dutch": "overeenkomst"
+    "dutch": "overeenkomst",
+    "frequency_rank": 1521
   },
   {
     "swedish": "vinna",
-    "dutch": "winnen"
-  },
-  {
-    "swedish": "inte",
-    "dutch": "niet"
+    "dutch": "winnen",
+    "frequency_rank": 1522
   },
   {
     "swedish": "stål",
-    "dutch": "staal"
+    "dutch": "staal",
+    "frequency_rank": 1523
   },
   {
     "swedish": "total",
-    "dutch": "totaal"
+    "dutch": "totaal",
+    "frequency_rank": 1524
   },
   {
     "swedish": "handla",
-    "dutch": "overeenkomst"
+    "dutch": "overeenkomst",
+    "frequency_rank": 504
   },
   {
     "swedish": "bestämma",
-    "dutch": "bepalen"
+    "dutch": "bepalen",
+    "frequency_rank": 962
   },
   {
     "swedish": "kväll",
-    "dutch": "avond"
+    "dutch": "avond",
+    "frequency_rank": 306
   },
   {
     "swedish": "inte heller",
-    "dutch": "noch"
+    "dutch": "noch",
+    "frequency_rank": 1525
   },
   {
     "swedish": "rep",
-    "dutch": "touw"
+    "dutch": "touw",
+    "frequency_rank": 1526
   },
   {
     "swedish": "bomull",
-    "dutch": "katoen"
+    "dutch": "katoen",
+    "frequency_rank": 1527
   },
   {
     "swedish": "äpple",
-    "dutch": "appel"
+    "dutch": "appel",
+    "frequency_rank": 451
   },
   {
     "swedish": "detaljer",
-    "dutch": "details"
+    "dutch": "details",
+    "frequency_rank": 1528
   },
   {
     "swedish": "hel",
-    "dutch": "geheel"
+    "dutch": "geheel",
+    "frequency_rank": 838
   },
   {
     "swedish": "majs",
-    "dutch": "maïs"
+    "dutch": "maïs",
+    "frequency_rank": 1529
   },
   {
     "swedish": "ämnen",
-    "dutch": "stoffen"
+    "dutch": "stoffen",
+    "frequency_rank": 1530
   },
   {
     "swedish": "lukt",
-    "dutch": "geur"
+    "dutch": "geur",
+    "frequency_rank": 1531
   },
   {
     "swedish": "verktyg",
-    "dutch": "hulpmiddelen"
+    "dutch": "hulpmiddelen",
+    "frequency_rank": 1532
   },
   {
     "swedish": "betingelser",
-    "dutch": "voorwaarden"
+    "dutch": "voorwaarden",
+    "frequency_rank": 1533
   },
   {
     "swedish": "kor",
-    "dutch": "koeien"
+    "dutch": "koeien",
+    "frequency_rank": 1534
   },
   {
     "swedish": "spår",
-    "dutch": "spoor"
+    "dutch": "spoor",
+    "frequency_rank": 890
   },
   {
     "swedish": "anlände",
-    "dutch": "aangekomen"
+    "dutch": "aangekomen",
+    "frequency_rank": 1535
   },
   {
     "swedish": "belägen",
-    "dutch": "gelegen"
+    "dutch": "gelegen",
+    "frequency_rank": 1536
   },
   {
     "swedish": "herr",
-    "dutch": "meneer"
-  },
-  {
-    "swedish": "plats",
-    "dutch": "zitplaats"
+    "dutch": "meneer",
+    "frequency_rank": 1537
   },
   {
     "swedish": "division",
-    "dutch": "divisie"
+    "dutch": "divisie",
+    "frequency_rank": 1538
   },
   {
     "swedish": "effekt",
-    "dutch": "effect"
+    "dutch": "effect",
+    "frequency_rank": 1539
   },
   {
     "swedish": "understrykning",
-    "dutch": "onderstrepen"
-  },
-  {
-    "swedish": "se",
-    "dutch": "weergave"
+    "dutch": "onderstrepen",
+    "frequency_rank": 1540
   },
   {
     "swedish": "ledsen",
-    "dutch": "verdrietig"
+    "dutch": "verdrietig",
+    "frequency_rank": 217
   },
   {
     "swedish": "ful",
-    "dutch": "lelijk"
+    "dutch": "lelijk",
+    "frequency_rank": 428
   },
   {
     "swedish": "tråkig",
-    "dutch": "saai"
+    "dutch": "saai",
+    "frequency_rank": 496
   },
   {
     "swedish": "upptagen",
-    "dutch": "druk bezig"
+    "dutch": "druk bezig",
+    "frequency_rank": 756
   },
   {
     "swedish": "sent",
-    "dutch": "laat"
+    "dutch": "laat",
+    "frequency_rank": 532
   },
   {
     "swedish": "värre",
-    "dutch": "slechter"
+    "dutch": "slechter",
+    "frequency_rank": 959
   },
   {
     "swedish": "flera",
-    "dutch": "meerdere"
+    "dutch": "meerdere",
+    "frequency_rank": 140
   },
   {
     "swedish": "ingen",
-    "dutch": "geen"
+    "dutch": "geen",
+    "frequency_rank": 69
   },
   {
     "swedish": "mot",
-    "dutch": "tegen"
+    "dutch": "tegen",
+    "frequency_rank": 65
   },
   {
     "swedish": "sällan",
-    "dutch": "zelden"
+    "dutch": "zelden",
+    "frequency_rank": 714
   },
   {
     "swedish": "varken",
-    "dutch": "geen van beide"
+    "dutch": "geen van beide",
+    "frequency_rank": 355
   },
   {
     "swedish": "i morgon",
-    "dutch": "morgen"
+    "dutch": "morgen",
+    "frequency_rank": 1541
   },
   {
     "swedish": "i går",
-    "dutch": "gisteren"
+    "dutch": "gisteren",
+    "frequency_rank": 1542
   },
   {
     "swedish": "eftermiddag",
-    "dutch": "middag"
+    "dutch": "middag",
+    "frequency_rank": 1543
   },
   {
     "swedish": "månad",
-    "dutch": "maand"
+    "dutch": "maand",
+    "frequency_rank": 888
   },
   {
     "swedish": "söndag",
-    "dutch": "zondag"
+    "dutch": "zondag",
+    "frequency_rank": 1544
   },
   {
     "swedish": "måndag",
-    "dutch": "maandag"
+    "dutch": "maandag",
+    "frequency_rank": 1545
   },
   {
     "swedish": "tisdag",
-    "dutch": "dinsdag"
+    "dutch": "dinsdag",
+    "frequency_rank": 1546
   },
   {
     "swedish": "onsdag",
-    "dutch": "woensdag"
+    "dutch": "woensdag",
+    "frequency_rank": 1547
   },
   {
     "swedish": "torsdag",
-    "dutch": "donderdag"
+    "dutch": "donderdag",
+    "frequency_rank": 1548
   },
   {
     "swedish": "fredag",
-    "dutch": "vrijdag"
+    "dutch": "vrijdag",
+    "frequency_rank": 1549
   },
   {
     "swedish": "lördag",
-    "dutch": "zaterdag"
+    "dutch": "zaterdag",
+    "frequency_rank": 911
   },
   {
     "swedish": "höst",
-    "dutch": "herfst"
+    "dutch": "herfst",
+    "frequency_rank": 1550
   },
   {
     "swedish": "norr",
-    "dutch": "noorden"
+    "dutch": "noorden",
+    "frequency_rank": 1551
   },
   {
     "swedish": "söder",
-    "dutch": "zuiden"
+    "dutch": "zuiden",
+    "frequency_rank": 1552
   },
   {
     "swedish": "hungrig",
-    "dutch": "hongerig"
+    "dutch": "hongerig",
+    "frequency_rank": 1553
   },
   {
     "swedish": "törstig",
-    "dutch": "dorstig"
+    "dutch": "dorstig",
+    "frequency_rank": 1554
   },
   {
     "swedish": "våt",
-    "dutch": "nat"
+    "dutch": "nat",
+    "frequency_rank": 721
   },
   {
     "swedish": "farlig",
-    "dutch": "gevaarlijk"
+    "dutch": "gevaarlijk",
+    "frequency_rank": 1555
   },
   {
     "swedish": "vän",
-    "dutch": "vriend"
+    "dutch": "vriend",
+    "frequency_rank": 261
   },
   {
     "swedish": "förälder",
-    "dutch": "ouder"
+    "dutch": "ouder",
+    "frequency_rank": 1556
   },
   {
     "swedish": "dotter",
-    "dutch": "dochter"
+    "dutch": "dochter",
+    "frequency_rank": 975
   },
   {
     "swedish": "make",
-    "dutch": "echtgenoot"
+    "dutch": "echtgenoot",
+    "frequency_rank": 1557
   },
   {
     "swedish": "kök",
-    "dutch": "keuken"
+    "dutch": "keuken",
+    "frequency_rank": 541
   },
   {
     "swedish": "badrum",
-    "dutch": "badkamer"
+    "dutch": "badkamer",
+    "frequency_rank": 1558
   },
   {
     "swedish": "sovrum",
-    "dutch": "slaapkamer"
+    "dutch": "slaapkamer",
+    "frequency_rank": 833
   },
   {
     "swedish": "vardagsrum",
-    "dutch": "woonkamer"
-  },
-  {
-    "swedish": "stad",
-    "dutch": "dorp"
+    "dutch": "woonkamer",
+    "frequency_rank": 795
   },
   {
     "swedish": "studerande",
-    "dutch": "student"
+    "dutch": "student",
+    "frequency_rank": 1559
   },
   {
     "swedish": "penna",
-    "dutch": "pen"
+    "dutch": "pen",
+    "frequency_rank": 1560
   },
   {
     "swedish": "frukost",
-    "dutch": "ontbijt"
+    "dutch": "ontbijt",
+    "frequency_rank": 753
   },
   {
     "swedish": "lunch",
-    "dutch": "lunch"
+    "dutch": "lunch",
+    "frequency_rank": 1561
   },
   {
     "swedish": "middag",
-    "dutch": "diner"
+    "dutch": "diner",
+    "frequency_rank": 489
   },
   {
     "swedish": "måltid",
-    "dutch": "maaltijd"
+    "dutch": "maaltijd",
+    "frequency_rank": 1562
   },
   {
     "swedish": "banan",
-    "dutch": "banaan"
+    "dutch": "banaan",
+    "frequency_rank": 1563
   },
   {
     "swedish": "orange",
-    "dutch": "oranje"
+    "dutch": "oranje",
+    "frequency_rank": 1564
   },
   {
     "swedish": "citron",
-    "dutch": "citroen"
+    "dutch": "citroen",
+    "frequency_rank": 1565
   },
   {
     "swedish": "grönsak",
-    "dutch": "groente"
+    "dutch": "groente",
+    "frequency_rank": 1566
   },
   {
     "swedish": "potatis",
-    "dutch": "aardappel"
+    "dutch": "aardappel",
+    "frequency_rank": 1567
   },
   {
     "swedish": "tomat",
-    "dutch": "tomaat"
+    "dutch": "tomaat",
+    "frequency_rank": 1568
   },
   {
     "swedish": "lök",
-    "dutch": "ui"
+    "dutch": "ui",
+    "frequency_rank": 1569
   },
   {
     "swedish": "sallad",
-    "dutch": "salade"
+    "dutch": "salade",
+    "frequency_rank": 1570
   },
   {
     "swedish": "nötkött",
-    "dutch": "rundvlees"
+    "dutch": "rundvlees",
+    "frequency_rank": 1571
   },
   {
     "swedish": "fläsk",
-    "dutch": "varkensvlees"
+    "dutch": "varkensvlees",
+    "frequency_rank": 1572
   },
   {
     "swedish": "kyckling",
-    "dutch": "kip"
+    "dutch": "kip",
+    "frequency_rank": 1573
   },
   {
     "swedish": "bröd",
-    "dutch": "brood"
+    "dutch": "brood",
+    "frequency_rank": 1574
   },
   {
     "swedish": "smör",
-    "dutch": "boter"
+    "dutch": "boter",
+    "frequency_rank": 623
   },
   {
     "swedish": "ost",
-    "dutch": "kaas"
-  },
-  {
-    "swedish": "ägg",
-    "dutch": "ei"
+    "dutch": "kaas",
+    "frequency_rank": 561
   },
   {
     "swedish": "ris",
-    "dutch": "rijst"
+    "dutch": "rijst",
+    "frequency_rank": 1575
   },
   {
     "swedish": "pasta",
-    "dutch": "pasta"
+    "dutch": "pasta",
+    "frequency_rank": 1576
   },
   {
     "swedish": "soppa",
-    "dutch": "soep"
+    "dutch": "soep",
+    "frequency_rank": 1577
   },
   {
     "swedish": "kaka",
-    "dutch": "taart"
+    "dutch": "taart",
+    "frequency_rank": 841
   },
   {
     "swedish": "kaffe",
-    "dutch": "koffie"
+    "dutch": "koffie",
+    "frequency_rank": 780
   },
   {
     "swedish": "te",
-    "dutch": "thee"
+    "dutch": "thee",
+    "frequency_rank": 977
   },
   {
     "swedish": "juice",
-    "dutch": "sap"
+    "dutch": "sap",
+    "frequency_rank": 1578
   },
   {
     "swedish": "salt",
-    "dutch": "zout"
+    "dutch": "zout",
+    "frequency_rank": 1579
   },
   {
     "swedish": "peppar",
-    "dutch": "peper"
+    "dutch": "peper",
+    "frequency_rank": 1580
   },
   {
     "swedish": "dryck",
-    "dutch": "drankje"
+    "dutch": "drankje",
+    "frequency_rank": 1581
   },
   {
     "swedish": "baka",
-    "dutch": "bakken"
+    "dutch": "bakken",
+    "frequency_rank": 1582
   },
   {
     "swedish": "smak",
-    "dutch": "smaak"
+    "dutch": "smaak",
+    "frequency_rank": 1583
   },
   {
     "swedish": "kostym",
-    "dutch": "pak"
+    "dutch": "pak",
+    "frequency_rank": 1584
   },
   {
     "swedish": "skjorta",
-    "dutch": "shirt"
+    "dutch": "shirt",
+    "frequency_rank": 446
   },
   {
     "swedish": "kjol",
-    "dutch": "rok"
+    "dutch": "rok",
+    "frequency_rank": 558
   },
   {
     "swedish": "byxor",
-    "dutch": "broek"
+    "dutch": "broek",
+    "frequency_rank": 1585
   },
   {
     "swedish": "täcka",
-    "dutch": "jas"
+    "dutch": "jas",
+    "frequency_rank": 1586
   },
   {
     "swedish": "väska",
-    "dutch": "tas"
+    "dutch": "tas",
+    "frequency_rank": 420
   },
   {
     "swedish": "grå",
-    "dutch": "grijs"
+    "dutch": "grijs",
+    "frequency_rank": 990
   },
   {
     "swedish": "rosa",
-    "dutch": "roze"
+    "dutch": "roze",
+    "frequency_rank": 1587
   }
 ]

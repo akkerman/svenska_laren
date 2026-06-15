@@ -17,6 +17,7 @@ class WordCard(Base):
     swedish = Column(String, index=True)
     dutch = Column(String)
     notes = Column(String, nullable=True)  # Context/notes: e.g. "possessive" or "auxiliary verb"
+    frequency_rank = Column(Integer, default=1000)  # Lower = more frequent
     direction = Column(String, default="se_nl")  # "se_nl" or "nl_se"
     box = Column(Integer, default=1)
     next_review = Column(Date)

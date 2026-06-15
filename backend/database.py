@@ -30,6 +30,7 @@ def init_db():
                 card_se_nl = WordCard(
                     swedish=word["swedish"],
                     dutch=word["dutch"],
+                    frequency_rank=word.get("frequency_rank", 1000),
                     direction="se_nl",
                     box=1,
                     next_review=today,
@@ -42,6 +43,7 @@ def init_db():
                 card_nl_se = WordCard(
                     swedish=word["swedish"],
                     dutch=word["dutch"],
+                    frequency_rank=word.get("frequency_rank", 1000),
                     direction="nl_se",
                     box=1,
                     next_review=today,

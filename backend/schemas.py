@@ -13,6 +13,7 @@ class WordCardResponse(BaseModel):
     swedish: str
     dutch: str
     notes: Optional[str] = None
+    frequency_rank: int
     box: int
     next_review: Optional[date]
     total_correct: int

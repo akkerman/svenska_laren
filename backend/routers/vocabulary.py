@@ -8,13 +8,30 @@ from schemas import WordCardResponse, WordCardCreate, CardStatsResponse
 
 router = APIRouter(prefix="/api/cards", tags=["vocabulary"])
 
+def get_frequency_limit(difficulty: float):
+    """Return max frequency rank based on difficulty level."""
+    if difficulty < 0.3:
+        return 300
+    elif difficulty < 0.6:
+        return 700
+    else:
+        return 10000  # Show all (highest rank)
+
 @router.get("/due", response_model=list[WordCardResponse])
 def get_due_cards(direction: str = Query("se_nl"), db: Session = Depends(get_db)):
     today = datetime.now().date()
 
-    # Get all due cards for specified direction
+    # Get user's difficulty setting
+    settings = db.query(UserSettings).filter(UserSettings.id == "local").first()
+    difficulty = settings.difficulty if settings else 0.3
+
+    # Determine max frequency rank to show
+    max_frequency = get_frequency_limit(difficulty)
+
+    # Get all due cards for specified direction, filtered by frequency
     due = db.query(WordCard).filter(
         WordCard.direction == direction,
+        WordCard.frequency_rank <= max_frequency,
         (WordCard.next_review <= today) | (WordCard.next_review.is_(None))
     ).all()
     random.shuffle(due)
@@ -94,6 +111,7 @@ def sync_wordlist_from_file(db: Session = Depends(get_db)):
             card_se_nl = WordCard(
                 swedish=word["swedish"],
                 dutch=word["dutch"],
+                frequency_rank=word.get("frequency_rank", 1000),
                 direction="se_nl",
                 box=1,
                 next_review=today,
@@ -106,6 +124,7 @@ def sync_wordlist_from_file(db: Session = Depends(get_db)):
             card_nl_se = WordCard(
                 swedish=word["swedish"],
                 dutch=word["dutch"],
+                frequency_rank=word.get("frequency_rank", 1000),
                 direction="nl_se",
                 box=1,
                 next_review=today,
