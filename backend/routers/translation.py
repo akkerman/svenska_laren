@@ -54,46 +54,45 @@ def evaluate_translation(request: TranslationEvaluateRequest, db: Session = Depe
 
     difficulty_instr = get_difficulty_instruction(request.difficulty)
 
-    prompt = f"""Je bent een Nederlands taalleraar die Zweeds-naar-Nederlands vertalingen beoordeelt.
+    prompt = f"""Je bent een Nederlands taalleraar. Beoordeel deze Zweeds-naar-Nederlands vertaling.
+
+ZEGGEN IN HET {lang_src.upper()} (de taal om te vertalen):
+{request.source_sentence}
+
+STUDENT VERTALING IN HET {lang_tgt.upper()} (Nederlandse vertaling):
+{request.user_attempt}
 
 TAAK:
-1. Analyseer de originele zin in het {lang_src}
-2. Vergelijk met de studentvertaling in het {lang_tgt}
-3. Identificeer specifieke fouten (verkeerde woordkeuze, grammatica, volgorde)
-4. Geef concrete feedback met voorbeelden
-5. Geef de ideale vertaling (VOLLEDIG in het {lang_tgt}, geen {lang_src} woorden)
+1. Lees beide zinnen zorgvuldig
+2. Vergelijk ze woord voor woord
+3. Bepaal welke woorden/onderdelen fout vertaald zijn
+4. Geef concrete feedback in het Nederlands
+5. Geef een perfecte vertaling (ALLEEN in het {lang_tgt})
 
-ORIGINEEL ({lang_src}): "{request.source_sentence}"
-STUDENT POGING ({lang_tgt}): "{request.user_attempt}"
-{difficulty_instr}
-
-Antwoord in JSON met exact deze velden:
+ANTWOORD IN DEZE JSON (meer niets):
 {{
-  "score": <geheel getal 1-5>,
-  "feedback": "<specific commentaar op wat goed/fout is in het Nederlands, met voorbeelden van foutieve en correcte woorden>",
-  "corrected": "<de ideale vertaling, VOLLEDIG in het {lang_tgt}>"
+  "score": <1-5>,
+  "feedback": "<Wat is goed/fout? Wees specifiek welke woorden fout zijn>",
+  "corrected": "<Perfecte vertaling, VOLLEDIG in het {lang_tgt}, GEEN {lang_src}>"
 }}
 
-REGELS:
-- Feedback moet altijd in het Nederlands zijn
-- Noem SPECIFIEKE woorden uit de studentpoging die fout zijn
-- Het 'corrected' veld: GEEN {lang_src} woorden! Alles in het {lang_tgt}
-- Wees duidelijk welk {lang_src} woord welk {lang_tgt} woord zou moeten zijn"""
+KRITIEK: Controleer je antwoord:
+- Is feedback in het Nederlands?
+- Noem je SPECIFIEKE woorden die fout zijn?
+- Bevat corrected GEEN {lang_src} woorden?
+- Is corrected geldige JSON?"""
 
-    system = f"""Je bent een ervaren taalleraar die Zweeds-naar-Nederlands vertalingen beoordeelt.
+    system = f"""Je bent een taalleraar. Antwoord ALLEEN in geldige JSON, niets anders.
 
-ANTWOORD REGELS:
-- Antwoord ALLEEN in geldige JSON, niets anders
-- Feedback ALTIJD in het Nederlands
-- 'corrected' veld MOET volledig in het {lang_tgt} zijn
-- Geen {lang_src} woorden in het corrected veld
-- Zorg dat je antwoord geldig JSON is
+DRIE DINGEN:
+1. Feedback in het Nederlands - wat is goed/fout in de studentvertaling
+2. Score 1-5 - hoe goed is de vertaling
+3. Corrected - de perfecte vertaling in het {lang_tgt}
 
-FEEDBACK REGELS:
-- Specifiek: noem welke woorden/zinsdelen fout zijn
-- Constructief: leg uit wat beter kan
-- Duidelijk: wees helder wat het verschil is tussen studentpoging en correcte versie
-- Wees niet verwarrend door talen door elkaar te halen"""
+KRITIEK VOOR JOU:
+- Controleer dat je output geldige JSON is
+- 'corrected' mag GEEN {lang_src} woorden bevatten
+- Geef specifieke feedback, niet vaag"""
 
     try:
         response_text = ollama.generate(prompt, system)
