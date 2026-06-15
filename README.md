@@ -12,6 +12,10 @@ A personal Swedish language learning app with flashcards (Leitner box), translat
   ollama pull alibayram/erurollm-9b-instruct
   ollama serve
   ```
+- Piper TTS Swedish voice:
+  ```bash
+  piper --download-dir ~/.local/share/piper_phoneme_dict --model sv_SE-nathalie-medium
+  ```
 
 ### Setup & Run
 

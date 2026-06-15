@@ -49,8 +49,8 @@ def generate_translation(request: TranslationGenerateRequest, db: Session = Depe
 
 @router.post("/evaluate", response_model=TranslationEvaluateResponse)
 def evaluate_translation(request: TranslationEvaluateRequest, db: Session = Depends(get_db)):
-    lang_src = "Dutch" if request.direction == "nl_to_se" else "Swedish"
-    lang_tgt = "Swedish" if request.direction == "nl_to_se" else "Dutch"
+    lang_src = "Swedish" if request.direction == "se_to_nl" else "Dutch"
+    lang_tgt = "Dutch" if request.direction == "se_to_nl" else "Swedish"
 
     difficulty_instr = get_difficulty_instruction(request.difficulty)
 
