@@ -18,6 +18,17 @@ def text_to_speech(text: str = Query(...)):
     if not text or len(text) > 500:
         raise ValueError("Text must be between 1 and 500 characters")
 
+    # Check if piper is available
+    try:
+        subprocess.run(
+            ["piper", "--help"],
+            capture_output=True,
+            timeout=5,
+            check=True
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        raise RuntimeError("Text-to-speech not available. Run: cd backend && pipenv run python -m fetch_voices")
+
     # Create temporary file for audio output
     with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp:
         output_file = tmp.name
@@ -28,7 +39,8 @@ def text_to_speech(text: str = Query(...)):
             ["piper", "--model", PIPER_VOICE, "--data-dir", PIPER_DATA_DIR, "--output-file", output_file],
             input=text.encode("utf-8"),
             check=True,
-            capture_output=True
+            capture_output=True,
+            timeout=30
         )
 
         # Return the audio file
@@ -41,4 +53,5 @@ def text_to_speech(text: str = Query(...)):
         # Clean up temp file if error
         if os.path.exists(output_file):
             os.unlink(output_file)
-        raise RuntimeError(f"Piper TTS failed: {e.stderr.decode()}")
+        stderr = e.stderr.decode() if e.stderr else str(e)
+        raise RuntimeError(f"TTS failed: {stderr}")
