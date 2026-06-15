@@ -56,31 +56,33 @@ def evaluate_translation(request: TranslationEvaluateRequest, db: Session = Depe
 
     prompt = f"""Je bent een Nederlands taalleraar. Beoordeel deze Zweeds-naar-Nederlands vertaling.
 
-ZEGGEN IN HET {lang_src.upper()} (de taal om te vertalen):
-{request.source_sentence}
+ORIGINEEL (Zweeds): {request.source_sentence}
+STUDENT VERTALING (Nederlands): {request.user_attempt}
 
-STUDENT VERTALING IN HET {lang_tgt.upper()} (Nederlandse vertaling):
-{request.user_attempt}
+STAP 1: Is de vertaling CORRECT?
+- Kijk of alle woorden juist vertaald zijn
+- Kijk of de zinsstructuur klopt
+- Kijk of de betekenis hetzelfde is
 
-TAAK:
-1. Lees beide zinnen zorgvuldig
-2. Vergelijk ze woord voor woord
-3. Bepaal welke woorden/onderdelen fout vertaald zijn
-4. Geef concrete feedback in het Nederlands
-5. Geef een perfecte vertaling (ALLEEN in het {lang_tgt})
+STAP 2: Bepaal score en feedback
+- Score 5: vertaling is perfect, geen fouten
+  → feedback: "Perfect vertaald!"
+  → corrected: dezelfde als student vertaling
+- Score 4: bijna goed, kleine fout
+  → feedback: alleen de specifieke fout noemen
+  → corrected: verbeterde versie
+- Score 3 of lager: meerdere fouten of fout concept
+  → feedback: alle fouten specificeren
+  → corrected: verbeterde versie
 
 ANTWOORD IN DEZE JSON (meer niets):
 {{
   "score": <1-5>,
-  "feedback": "<Wat is goed/fout? Wees specifiek welke woorden fout zijn>",
-  "corrected": "<Perfecte vertaling, VOLLEDIG in het {lang_tgt}, GEEN {lang_src}>"
+  "feedback": "<Alleen als score < 5: wat is fout? Anders: 'Perfect vertaald!'>",
+  "corrected": "<De vertaling (dezelfde als student als score=5, anders verbeterd)>"
 }}
 
-KRITIEK: Controleer je antwoord:
-- Is feedback in het Nederlands?
-- Noem je SPECIFIEKE woorden die fout zijn?
-- Bevat corrected GEEN {lang_src} woorden?
-- Is corrected geldige JSON?"""
+REGEL: Geef GEEN feedback over iets beter kan als de vertaling al perfect is!"""
 
     system = f"""Je bent een taalleraar. Antwoord ALLEEN in geldige JSON, niets anders.
 
