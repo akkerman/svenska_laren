@@ -63,10 +63,12 @@ Antwoord in JSON met exact deze velden:
 {{
   "score": <geheel getal 1-5>,
   "feedback": "<aanmoedigend commentaar van 1-2 zinnen in het Nederlands>",
-  "corrected": "<de ideale correcte vertaling>"
-}}"""
+  "corrected": "<de ideale correcte vertaling, VOLLEDIG in het {lang_tgt}>"
+}}
 
-    system = "Je bent een taalleraar die studentvertalingen beoordeelt. Antwoord alleen in geldige JSON. Geef feedback altijd in het Nederlands."
+BELANGRIJK: Het 'corrected' veld moet VOLLEDIG in het {lang_tgt} zijn. Geen enkele {lang_src} woorden erin. Zet alle {lang_src} woorden om naar {lang_tgt} equivalenten."""
+
+    system = f"Je bent een taalleraar die studentvertalingen beoordeelt. Antwoord alleen in geldige JSON. Geef feedback altijd in het Nederlands. Het 'corrected' veld moet VOLLEDIG in het {lang_tgt} zijn - vertaal alles naar {lang_tgt}, geen {lang_src} woorden."
 
     try:
         response_text = ollama.generate(prompt, system)
