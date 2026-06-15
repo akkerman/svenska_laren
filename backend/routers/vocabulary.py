@@ -9,13 +9,10 @@ from schemas import WordCardResponse, WordCardCreate, CardStatsResponse
 router = APIRouter(prefix="/api/cards", tags=["vocabulary"])
 
 def get_frequency_limit(difficulty: float):
-    """Return max frequency rank based on difficulty level."""
-    if difficulty < 0.3:
-        return 300
-    elif difficulty < 0.6:
-        return 700
-    else:
-        return 10000  # Show all (highest rank)
+    """Convert difficulty (0-1) to max frequency rank.
+    difficulty 0.3 → rank 300, 0.5 → rank 500, 1.0 → rank 1000+
+    """
+    return max(100, int(difficulty * 1000))
 
 @router.get("/due", response_model=list[WordCardResponse])
 def get_due_cards(direction: str = Query("se_nl"), db: Session = Depends(get_db)):
