@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { getDueCards, answerCard, getStats, updateCardNotes } from "../api";
 import { useSettings } from "../context/SettingsContext";
+import { useTTS } from "../hooks/useTTS";
 import type { WordCard, CardStats } from "../api";
 
 export function Flashcard() {
   const { difficulty } = useSettings();
+  const { speak, playing } = useTTS();
   const [cards, setCards] = useState<WordCard[]>([]);
   const [stats, setStats] = useState<CardStats | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -159,15 +161,24 @@ export function Flashcard() {
                 <p className="text-xs text-gray-400 mt-4">Klik om om te draaien</p>
               </div>
             </div>
-            <button
-              onClick={() => {
-                setEditingNotes(!editingNotes);
-                setNotesInput(card.notes || "");
-              }}
-              className="text-xs bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded transition w-full"
-            >
-              ✏️ Notitie
-            </button>
+            <div className="flex gap-2">
+              <button
+                onClick={() => {
+                  setEditingNotes(!editingNotes);
+                  setNotesInput(card.notes || "");
+                }}
+                className="text-xs bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded transition flex-1"
+              >
+                ✏️ Notitie
+              </button>
+              <button
+                onClick={() => speak(card.swedish)}
+                disabled={playing}
+                className="text-xs bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded transition flex-1 disabled:opacity-50"
+              >
+                🔊 Hoor
+              </button>
+            </div>
           </div>
 
           {editingNotes && (

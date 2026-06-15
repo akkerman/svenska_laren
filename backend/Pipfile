@@ -11,6 +11,7 @@ pydantic = ">=2.0"
 requests = ">=2.31"
 python-dateutil = ">=2.9"
 alembic = ">=1.13"
+gTTS = ">=2.4.0"
 
 [dev-packages]
 

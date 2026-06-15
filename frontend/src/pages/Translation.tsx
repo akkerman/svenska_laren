@@ -8,6 +8,7 @@ import {
 import { useSettings } from "../context/SettingsContext";
 import { FeedbackBubble } from "../components/FeedbackBubble";
 import { SwedishChars } from "../components/SwedishChars";
+import { useTTS } from "../hooks/useTTS";
 
 const languageNames: Record<string, string> = {
   Dutch: "Nederlands",
@@ -17,6 +18,7 @@ const languageNames: Record<string, string> = {
 
 export function Translation() {
   const { difficulty } = useSettings();
+  const { speak, playing } = useTTS();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [direction, setDirection] = useState("nl_to_se");
   const [topic, setTopic] = useState("");
@@ -119,9 +121,20 @@ export function Translation() {
                 Vertaal deze {languageNames[sentence.language_from] || sentence.language_from} zin naar{" "}
                 {languageNames[sentence.language_to] || sentence.language_to}:
               </p>
-              <p className="text-2xl font-bold text-gray-800">
-                {sentence.sentence}
-              </p>
+              <div className="flex items-center justify-between gap-4">
+                <p className="text-2xl font-bold text-gray-800 flex-1">
+                  {sentence.sentence}
+                </p>
+                {(sentence.language_from === "Swedish" || sentence.language_from === "Zweeds") && (
+                  <button
+                    onClick={() => speak(sentence.sentence)}
+                    disabled={playing}
+                    className="bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded transition disabled:opacity-50 flex-shrink-0"
+                  >
+                    🔊
+                  </button>
+                )}
+              </div>
             </div>
 
             <SwedishChars onCharClick={handleCharClick} />

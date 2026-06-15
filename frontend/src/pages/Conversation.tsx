@@ -7,6 +7,7 @@ import {
 import { useSettings } from "../context/SettingsContext";
 import { SwedishChars } from "../components/SwedishChars";
 import { MarkdownText } from "../components/MarkdownText";
+import { useTTS } from "../hooks/useTTS";
 
 interface Message {
   role: "user" | "assistant";
@@ -15,6 +16,7 @@ interface Message {
 
 export function Conversation() {
   const { difficulty } = useSettings();
+  const { speak, playing } = useTTS();
   const [sessionId, setSessionId] = useState<string | null>(null);
   const [topic, setTopic] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
@@ -175,6 +177,15 @@ export function Conversation() {
                     <p className="whitespace-pre-wrap">{msg.content}</p>
                   )}
                 </div>
+                {msg.role === "assistant" && (
+                  <button
+                    onClick={() => speak(msg.content)}
+                    disabled={playing}
+                    className="text-xs bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded transition disabled:opacity-50 mt-2"
+                  >
+                    🔊 Luister
+                  </button>
+                )}
               </div>
             </div>
           ))}
