@@ -126,7 +126,7 @@ export function Flashcard() {
                 <div className="grid grid-cols-5 gap-2 text-center text-xs">
                   {stats.per_box.map((count, i) => (
                     <div key={i} className="bg-blue-50 rounded p-2">
-                      <p className="font-bold text-blue-600">{count}</p>
+                      <p className="font-bold text-blue-600">{count.filtered}/{count.total}</p>
                       <p className="text-gray-600">Box {i + 1}</p>
                     </div>
                   ))}

@@ -36,19 +36,36 @@ def get_due_cards(direction: str = Query("se_nl"), db: Session = Depends(get_db)
 
 @router.get("/stats", response_model=CardStatsResponse)
 def get_stats(direction: str = Query("se_nl"), db: Session = Depends(get_db)):
-    total = db.query(WordCard).filter(WordCard.direction == direction).count()
+    # Get user's difficulty setting
+    settings = db.query(UserSettings).filter(UserSettings.id == "local").first()
+    difficulty = settings.difficulty if settings else 0.3
+
+    # Determine max frequency rank to show
+    max_frequency = get_frequency_limit(difficulty)
+
+    # Count filtered (by difficulty) and total
+    total = db.query(WordCard).filter(
+        WordCard.direction == direction,
+        WordCard.frequency_rank <= max_frequency
+    ).count()
     mastered = db.query(WordCard).filter(
         WordCard.direction == direction,
+        WordCard.frequency_rank <= max_frequency,
         WordCard.box == 5
     ).count()
 
     per_box = []
     for box_num in range(1, 6):
-        count = db.query(WordCard).filter(
+        filtered = db.query(WordCard).filter(
+            WordCard.direction == direction,
+            WordCard.frequency_rank <= max_frequency,
+            WordCard.box == box_num
+        ).count()
+        total_in_box = db.query(WordCard).filter(
             WordCard.direction == direction,
             WordCard.box == box_num
         ).count()
-        per_box.append(count)
+        per_box.append({"filtered": filtered, "total": total_in_box})
 
     return {
         "total": total,

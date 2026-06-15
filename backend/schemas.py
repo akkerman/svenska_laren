@@ -34,10 +34,14 @@ class CardAnswerResponse(BaseModel):
     new_box: int
     next_review: Optional[date]
 
+class BoxCount(BaseModel):
+    filtered: int
+    total: int
+
 class CardStatsResponse(BaseModel):
     total: int
     mastered: int
-    per_box: list[int]
+    per_box: list[BoxCount]
 
 class TranslationGenerateRequest(BaseModel):
     direction: str

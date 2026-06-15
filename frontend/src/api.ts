@@ -15,10 +15,15 @@ export interface WordCard {
   total_wrong: number;
 }
 
+export interface BoxCount {
+  filtered: number;
+  total: number;
+}
+
 export interface CardStats {
   total: number;
   mastered: number;
-  per_box: number[];
+  per_box: BoxCount[];
 }
 
 export interface TranslationResponse {
