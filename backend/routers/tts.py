@@ -3,12 +3,14 @@ from fastapi.responses import FileResponse
 import os
 import tempfile
 import subprocess
+from pathlib import Path
 
 router = APIRouter(prefix="/api/tts", tags=["tts"])
 
 # Piper model for Swedish (sv-SE)
-PIPER_MODEL = "sv_SE-nathalie-medium"
-PIPER_VOICE = "sv_SE-nathalie-medium"
+PIPER_MODEL = "sv_SE-nathalie"
+PIPER_VOICE = "sv_SE-nathalie"
+PIPER_DATA_DIR = str(Path.home() / ".local" / "share" / "piper")
 
 @router.get("/speak")
 def text_to_speech(text: str = Query(...)):
@@ -23,7 +25,7 @@ def text_to_speech(text: str = Query(...)):
     try:
         # Run piper to generate speech
         process = subprocess.run(
-            ["piper", "--model", PIPER_VOICE, "--output-file", output_file],
+            ["piper", "--model", PIPER_VOICE, "--data-dir", PIPER_DATA_DIR, "--output-file", output_file],
             input=text.encode("utf-8"),
             check=True,
             capture_output=True
