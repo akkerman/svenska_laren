@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Depends, Query
 from sqlalchemy.orm import Session
 from datetime import datetime
+import random
 from database import get_db
 from models import WordCard, UserSettings
 from schemas import WordCardResponse, WordCardCreate, CardStatsResponse
@@ -33,6 +34,7 @@ def get_due_cards(direction: str = Query("se_nl"), db: Session = Depends(get_db)
         WordCard.box.in_(boxes_to_show),
         (WordCard.next_review <= today) | (WordCard.next_review.is_(None))
     ).all()
+    random.shuffle(due)
     return due
 
 @router.get("/stats", response_model=CardStatsResponse)

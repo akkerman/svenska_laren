@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { getDueCards, answerCard, getStats, updateCardNotes } from "../api";
 import { useSettings } from "../context/SettingsContext";
 import type { WordCard, CardStats } from "../api";
@@ -135,10 +135,6 @@ export function Flashcard() {
         </div>
 
         <div className="flex flex-col items-center">
-          <p className="text-gray-600 mb-4">
-            Kaart {currentIndex + 1} van {cards.length}
-          </p>
-
           <div className="w-full max-w-sm">
             <div
               onClick={() => setFlipped(!flipped)}
