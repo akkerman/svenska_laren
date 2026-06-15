@@ -10,8 +10,10 @@ router = APIRouter(prefix="/api/cards", tags=["vocabulary"])
 
 def get_frequency_limit(difficulty: float):
     """Convert difficulty (0-1) to max frequency rank.
-    difficulty 0.3 → rank 300, 0.5 → rank 500, 1.0 → rank 1000+
+    difficulty 0.3 → rank 300, 0.5 → rank 500, 1.0 → all words (99999)
     """
+    if difficulty >= 1.0:
+        return 99999  # Show all words
     return max(100, int(difficulty * 1000))
 
 @router.get("/due", response_model=list[WordCardResponse])
