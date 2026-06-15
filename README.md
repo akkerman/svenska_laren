@@ -13,10 +13,6 @@ A personal Swedish language learning app with flashcards (Leitner box), translat
   ollama pull alibayram/erurollm-9b-instruct
   ollama serve
   ```
-- Piper TTS Swedish voice (downloaded on first setup):
-  ```bash
-  cd backend && pipenv run python -m fetch_voices
-  ```
 
 ### Setup & Run
 

@@ -1,34 +1,15 @@
-"""Download required Piper TTS voices for Swedish language."""
+"""Download Piper TTS voices for Swedish language (optional).
 
-import subprocess
+Swedish voice models for Piper are currently not in the main repository.
+This script is kept for future reference but is not required to run the app.
+"""
+
 import sys
 
-VOICES = ["sv_SE-nathalie"]
-
 def main():
-    print("Setting up Piper TTS voices...")
-
-    for voice in VOICES:
-        print(f"  Downloading {voice}...")
-        try:
-            # Use piper's Python API to download
-            result = subprocess.run(
-                [sys.executable, "-c", f"from piper.voice import PiperVoice; PiperVoice.load('{voice}')"],
-                capture_output=True,
-                text=True,
-                timeout=120
-            )
-            if result.returncode == 0:
-                print(f"✓ {voice} ready")
-            else:
-                print(f"✗ Failed to load {voice}")
-                if result.stderr:
-                    print(f"  Error: {result.stderr}")
-        except Exception as e:
-            print(f"✗ Error: {e}")
-            return
-
-    print(f"✓ All voices ready!")
+    print("TTS is currently disabled in this version.")
+    print("The app works fine without speech synthesis.")
+    print("If you want to enable TTS, install a Swedish Piper voice manually.")
 
 if __name__ == "__main__":
     main()
