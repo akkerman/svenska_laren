@@ -80,6 +80,8 @@ The "translation" field MUST be in DUTCH.
 Return ONLY the JSON object, nothing else. No explanation, no markdown, no extra text."""
 
     response_text = ollama.generate(prompt, system)
+    print(f"[TRANSLATION] Direction: {request.direction}")
+    print(f"[TRANSLATION] AI Response: {response_text}")
 
     try:
         # Extract JSON from response (may contain markdown or explanation)
