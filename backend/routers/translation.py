@@ -80,6 +80,23 @@ CRITICAL:
             data = data[0]
         sentence = data.get("sentence", "") if isinstance(data, dict) else ""
         translation = data.get("translation", "") if isinstance(data, dict) else ""
+
+        # Validate: sentence should be in correct language
+        # For SE→NL: sentence should contain Swedish (not Dutch articles like "de", "het")
+        # For NL→SE: sentence should contain Dutch (not Swedish articles)
+        if request.direction == "se_to_nl":
+            dutch_words = {"de", "het", "een", "is", "ben", "zijn"}
+            sentence_words = set(sentence.lower().split())
+            if len(sentence_words & dutch_words) > len(sentence_words) * 0.3:  # >30% Dutch words
+                # Likely Dutch sentence, swap them
+                sentence, translation = translation, sentence
+        elif request.direction == "nl_to_se":
+            swedish_words = {"den", "det", "en", "är", "på", "och"}
+            sentence_words = set(sentence.lower().split())
+            if len(sentence_words & swedish_words) > len(sentence_words) * 0.3:  # >30% Swedish words
+                # Likely Swedish sentence, swap them
+                sentence, translation = translation, sentence
+
     except (json.JSONDecodeError, AttributeError, TypeError, ValueError):
         # Fallback if JSON parsing fails
         sentence = response_text
