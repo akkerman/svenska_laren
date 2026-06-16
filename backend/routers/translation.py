@@ -33,6 +33,8 @@ def get_difficulty_instruction(difficulty: float) -> str:
 def generate_translation(request: TranslationGenerateRequest, db: Session = Depends(get_db)):
     lang_from = "Dutch" if request.direction == "nl_to_se" else "Swedish"
     lang_to = "Swedish" if request.direction == "nl_to_se" else "Dutch"
+    lang_from_name = "DUTCH" if request.direction == "nl_to_se" else "SWEDISH"
+    lang_to_name = "SWEDISH" if request.direction == "nl_to_se" else "DUTCH"
 
     difficulty_instr = get_difficulty_instruction(request.difficulty)
     topic_str = f"Topic: {request.topic}." if request.topic else ""
@@ -42,16 +44,26 @@ def generate_translation(request: TranslationGenerateRequest, db: Session = Depe
     wordlist = get_weighted_wordlist(direction, db)
     wordlist_str = json.dumps(wordlist[:100])  # Limit to 100 words for token efficiency
 
-    prompt = f"""Generate ONE sentence pair ONLY. Nothing else.
+    prompt = f"""You MUST generate ONE sentence pair in JSON. Follow instructions exactly.
 
-Create a single {lang_from} sentence for translation practice. {difficulty_instr}. {topic_str}
+TASK: Create ONE sentence in {lang_from_name} and translate it to {lang_to_name}.
+{difficulty_instr}
+{topic_str}
 
-PREFERRED VOCABULARY (use these words): {wordlist_str}
+VOCABULARY LIST (prefer these words):
+{wordlist_str}
 
-Respond with EXACTLY this format, nothing more:
-{{"sentence": "ONE {lang_from} sentence here", "translation": "its {lang_to} translation here"}}"""
+CRITICAL:
+- "sentence" field MUST be in {lang_from_name}
+- "translation" field MUST be in {lang_to_name}
+- Return ONLY this JSON, no other text:
+{{"sentence": "ONE SENTENCE IN {lang_from_name}", "translation": "TRANSLATION IN {lang_to_name}"}}"""
 
-    system = "You are a helpful language teaching assistant. Preferably use words from the provided vocabulary list, especially those marked as 'priority': true. Return ONLY valid JSON."
+    system = f"""You are a Swedish language teacher. You MUST:
+1. Generate ONE sentence in {lang_from_name}
+2. Translate it to {lang_to_name}
+3. Return ONLY valid JSON with fields: "sentence" and "translation"
+4. Use words from the vocabulary list when possible"""
     response_text = ollama.generate(prompt, system)
 
     try:
