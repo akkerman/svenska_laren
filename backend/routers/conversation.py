@@ -7,7 +7,7 @@ from schemas import (
     ConversationStartRequest, ConversationStartResponse,
     ConversationMessageRequest, MessageResponse
 )
-from vocabulary import get_weighted_wordlist
+from .vocabulary import get_weighted_wordlist
 import ollama
 import uuid
 from datetime import datetime

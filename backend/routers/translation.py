@@ -6,7 +6,7 @@ from schemas import (
     TranslationGenerateRequest, TranslationGenerateResponse,
     TranslationEvaluateRequest, TranslationEvaluateResponse
 )
-from vocabulary import get_weighted_wordlist
+from .vocabulary import get_weighted_wordlist
 import ollama
 import json
 
