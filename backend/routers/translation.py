@@ -44,26 +44,25 @@ def generate_translation(request: TranslationGenerateRequest, db: Session = Depe
     wordlist = get_weighted_wordlist(direction, db)
     wordlist_str = json.dumps(wordlist[:100])  # Limit to 100 words for token efficiency
 
-    prompt = f"""You MUST generate ONE sentence pair in JSON. Follow instructions exactly.
+    prompt = f"""Generate ONE sentence pair in JSON format.
 
 TASK: Create ONE sentence in {lang_from_name} and translate it to {lang_to_name}.
 {difficulty_instr}
 {topic_str}
 
-VOCABULARY LIST (prefer these words):
-{wordlist_str}
-
 CRITICAL:
-- "sentence" field MUST be in {lang_from_name}
-- "translation" field MUST be in {lang_to_name}
-- Return ONLY this JSON, no other text:
-{{"sentence": "ONE SENTENCE IN {lang_from_name}", "translation": "TRANSLATION IN {lang_to_name}"}}"""
+- "sentence" field MUST contain the {lang_from_name} sentence
+- "translation" field MUST contain the {lang_to_name} translation
+- Return ONLY valid JSON, no explanation:
+{{"sentence": "one sentence in {lang_from_name}", "translation": "its translation in {lang_to_name}"}}"""
 
     system = f"""You are a Swedish language teacher. You MUST:
 1. Generate ONE sentence in {lang_from_name}
 2. Translate it to {lang_to_name}
-3. Return ONLY valid JSON with fields: "sentence" and "translation"
-4. Use words from the vocabulary list when possible"""
+3. Return ONLY valid JSON with TWO fields: "sentence" and "translation"
+4. Prefer these words when possible: {wordlist_str}
+5. Do NOT return lists, word lists, or multiple items
+6. Do NOT include any text outside the JSON"""
     response_text = ollama.generate(prompt, system)
 
     try:
