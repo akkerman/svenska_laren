@@ -6,7 +6,6 @@ import {
   type EvaluationResponse,
 } from "../api";
 import { useSettings } from "../context/SettingsContext";
-import { FeedbackBubble } from "../components/FeedbackBubble";
 import { SwedishChars } from "../components/SwedishChars";
 import { useTTS } from "../hooks/useTTS";
 
