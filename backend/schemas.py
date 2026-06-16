@@ -52,12 +52,14 @@ class TranslationGenerateResponse(BaseModel):
     sentence: str
     language_from: str
     language_to: str
+    correct_translation: str
 
 class TranslationEvaluateRequest(BaseModel):
     source_sentence: str
     user_attempt: str
     direction: str
     difficulty: float
+    correct_translation: str
 
 class TranslationEvaluateResponse(BaseModel):
     source_sentence: str

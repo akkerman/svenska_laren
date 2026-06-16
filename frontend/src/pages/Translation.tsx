@@ -54,7 +54,8 @@ export function Translation() {
         sentence.sentence,
         userAttempt,
         direction,
-        difficulty
+        difficulty,
+        sentence.correct_translation
       );
       setEvaluation(result);
     } catch (error) {

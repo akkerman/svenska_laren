@@ -30,6 +30,7 @@ export interface TranslationResponse {
   sentence: string;
   language_from: string;
   language_to: string;
+  correct_translation: string;
 }
 
 export interface EvaluationResponse {
@@ -118,12 +119,13 @@ export async function evaluateTranslation(
   source_sentence: string,
   user_attempt: string,
   direction: string,
-  difficulty: number
+  difficulty: number,
+  correct_translation: string
 ): Promise<EvaluationResponse> {
   const res = await fetch(`${API_BASE}/translation/evaluate`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ source_sentence, user_attempt, direction, difficulty }),
+    body: JSON.stringify({ source_sentence, user_attempt, direction, difficulty, correct_translation }),
   });
   return res.json();
 }

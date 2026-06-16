@@ -108,45 +108,15 @@ Return ONLY the JSON object, nothing else. No explanation, no markdown, no extra
     return {
         "sentence": sentence,
         "language_from": lang_from,
-        "language_to": lang_to
+        "language_to": lang_to,
+        "correct_translation": translation
     }
 
 @router.post("/evaluate", response_model=TranslationEvaluateResponse)
 def evaluate_translation(request: TranslationEvaluateRequest, db: Session = Depends(get_db)):
-    lang_src = "Swedish" if request.direction == "se_to_nl" else "Dutch"
-    lang_tgt = "Dutch" if request.direction == "se_to_nl" else "Swedish"
-
-    prompt = f"""Provide the correct translation only.
-
-ORIGINEEL ({lang_src}): {request.source_sentence}
-
-Translate this to {lang_tgt}. Return ONLY valid JSON (no markdown):
-{{"translation": "the correct translation in {lang_tgt}"}}"""
-
-    system = f"You are a translator. Return ONLY valid JSON with the correct translation in {lang_tgt}."
-
-    try:
-        response_text = ollama.generate(prompt, system)
-        print(f"[EVALUATE] Source: {request.source_sentence}")
-        print(f"[EVALUATE] AI Response: {response_text}")
-
-        # Extract JSON from response (may contain markdown or explanation)
-        import re
-        json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
-        if json_match:
-            json_str = json_match.group(0)
-        else:
-            json_str = response_text
-
-        data = json.loads(json_str)
-        # Handle case where AI returns a list instead of dict
-        if isinstance(data, list) and len(data) > 0:
-            data = data[0]
-        correct_translation = data.get("translation", "") if isinstance(data, dict) else ""
-        print(f"[EVALUATE] Parsed translation: {correct_translation}")
-    except (json.JSONDecodeError, AttributeError, TypeError, ValueError) as e:
-        print(f"[EVALUATE ERROR] Failed to parse: {e}")
-        correct_translation = ""
+    # The correct translation is passed from frontend (from /generate response)
+    # We don't need to ask AI again
+    correct_translation = getattr(request, 'correct_translation', '')
 
     session = TranslationSession(
         direction=request.direction,
