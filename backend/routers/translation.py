@@ -100,8 +100,9 @@ Return ONLY the JSON object, nothing else. No explanation, no markdown, no extra
         translation = data.get("translation", "") if isinstance(data, dict) else ""
 
     except (json.JSONDecodeError, AttributeError, TypeError, ValueError):
-        # Fallback if JSON parsing fails
-        sentence = response_text
+        # If parsing fails, log it and return empty
+        print(f"[TRANSLATION ERROR] Failed to parse response: {response_text}")
+        sentence = ""
         translation = ""
 
     return {
