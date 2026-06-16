@@ -19,7 +19,7 @@ export function Translation() {
   const { difficulty } = useSettings();
   const { speak, playing } = useTTS();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const [direction, setDirection] = useState("nl_to_se");
+  const [direction, setDirection] = useState("se_to_nl");
   const [topic, setTopic] = useState("");
   const [sentence, setSentence] = useState<TranslationResponse | null>(null);
   const [userAttempt, setUserAttempt] = useState("");
