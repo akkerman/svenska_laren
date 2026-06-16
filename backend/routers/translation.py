@@ -127,6 +127,8 @@ Translate this to {lang_tgt}. Return ONLY valid JSON (no markdown):
 
     try:
         response_text = ollama.generate(prompt, system)
+        print(f"[EVALUATE] Source: {request.source_sentence}")
+        print(f"[EVALUATE] AI Response: {response_text}")
 
         # Extract JSON from response (may contain markdown or explanation)
         import re
@@ -141,7 +143,9 @@ Translate this to {lang_tgt}. Return ONLY valid JSON (no markdown):
         if isinstance(data, list) and len(data) > 0:
             data = data[0]
         correct_translation = data.get("translation", "") if isinstance(data, dict) else ""
-    except (json.JSONDecodeError, AttributeError, TypeError, ValueError):
+        print(f"[EVALUATE] Parsed translation: {correct_translation}")
+    except (json.JSONDecodeError, AttributeError, TypeError, ValueError) as e:
+        print(f"[EVALUATE ERROR] Failed to parse: {e}")
         correct_translation = ""
 
     session = TranslationSession(
