@@ -31,38 +31,42 @@ def get_difficulty_instruction(difficulty: float) -> str:
 
 @router.post("/generate", response_model=TranslationGenerateResponse)
 def generate_translation(request: TranslationGenerateRequest, db: Session = Depends(get_db)):
-    lang_from = "Dutch" if request.direction == "nl_to_se" else "Swedish"
-    lang_to = "Swedish" if request.direction == "nl_to_se" else "Dutch"
-    lang_from_name = "DUTCH" if request.direction == "nl_to_se" else "SWEDISH"
-    lang_to_name = "SWEDISH" if request.direction == "nl_to_se" else "DUTCH"
+    # Determine direction
+    is_nl_to_se = request.direction == "nl_to_se"
+    lang_from = "Dutch" if is_nl_to_se else "Swedish"
+    lang_to = "Swedish" if is_nl_to_se else "Dutch"
 
     difficulty_instr = get_difficulty_instruction(request.difficulty)
     topic_str = f"Topic: {request.topic}." if request.topic else ""
 
     # Get weighted wordlist for context
-    direction = "se_nl" if request.direction == "se_to_nl" else "nl_se"
+    direction = "nl_se" if is_nl_to_se else "se_nl"
     wordlist = get_weighted_wordlist(direction, db)
-    wordlist_str = json.dumps(wordlist[:100])  # Limit to 100 words for token efficiency
+    wordlist_str = json.dumps(wordlist[:50])  # Limit to 50 words
 
-    prompt = f"""Generate ONE sentence pair in JSON format.
+    if is_nl_to_se:
+        prompt = """You are a Dutch-to-Swedish translator for language learning.
 
-TASK: Create ONE sentence in {lang_from_name} and translate it to {lang_to_name}.
-{difficulty_instr}
-{topic_str}
+Generate ONE sentence ONLY, in DUTCH, for students to translate to Swedish.
+Keep it simple and natural.
 
-CRITICAL:
-- "sentence" field MUST contain the {lang_from_name} sentence
-- "translation" field MUST contain the {lang_to_name} translation
-- Return ONLY valid JSON, no explanation:
-{{"sentence": "one sentence in {lang_from_name}", "translation": "its translation in {lang_to_name}"}}"""
+Return ONLY valid JSON (no explanation, no markdown):
+{"sentence": "Dutch sentence here", "translation": "Swedish translation here"}"""
+        system = """You are a Dutch-to-Swedish translator.
+CRITICAL: The "sentence" field MUST be in DUTCH. The "translation" field MUST be in SWEDISH.
+Return ONLY JSON with exactly these two fields. No other text."""
+    else:
+        prompt = """You are a Swedish-to-Dutch translator for language learning.
 
-    system = f"""You are a Swedish language teacher. You MUST:
-1. Generate ONE sentence in {lang_from_name}
-2. Translate it to {lang_to_name}
-3. Return ONLY valid JSON with TWO fields: "sentence" and "translation"
-4. Prefer these words when possible: {wordlist_str}
-5. Do NOT return lists, word lists, or multiple items
-6. Do NOT include any text outside the JSON"""
+Generate ONE sentence ONLY, in SWEDISH, for students to translate to Dutch.
+Keep it simple and natural.
+
+Return ONLY valid JSON (no explanation, no markdown):
+{"sentence": "Swedish sentence here", "translation": "Dutch translation here"}"""
+        system = """You are a Swedish-to-Dutch translator.
+CRITICAL: The "sentence" field MUST be in SWEDISH. The "translation" field MUST be in DUTCH.
+Return ONLY JSON with exactly these two fields. No other text."""
+
     response_text = ollama.generate(prompt, system)
 
     try:
@@ -81,26 +85,28 @@ CRITICAL:
         sentence = data.get("sentence", "") if isinstance(data, dict) else ""
         translation = data.get("translation", "") if isinstance(data, dict) else ""
 
-        # Validate: sentence should be in correct language
-        sentence_words = set(sentence.lower().split())
+        # Simple validation: if sentence is empty or very short, it failed
+        if not sentence or len(sentence.strip()) < 3:
+            sentence = ""
+        else:
+            # Basic language check
+            sentence_lower = sentence.lower()
+            is_nl_to_se = request.direction == "nl_to_se"
 
-        # Detect language by counting language-specific words
-        dutch_words = {"de", "het", "een", "is", "ben", "zijn", "hij", "zij", "wat", "niet", "meer"}
-        swedish_words = {"den", "det", "en", "är", "på", "och", "han", "hon", "vad", "inte", "mer"}
-        english_words = {"the", "is", "and", "to", "of", "a", "in", "that", "it", "for", "with"}
-
-        dutch_count = len(sentence_words & dutch_words)
-        swedish_count = len(sentence_words & swedish_words)
-        english_count = len(sentence_words & english_words)
-
-        # Reject if too much English
-        if english_count > max(dutch_count, swedish_count) and english_count > 2:
-            sentence = ""  # Reject, will retry
-        # Swap if languages are swapped
-        elif request.direction == "se_to_nl" and dutch_count > swedish_count:
-            sentence, translation = translation, sentence
-        elif request.direction == "nl_to_se" and swedish_count > dutch_count:
-            sentence, translation = translation, sentence
+            if is_nl_to_se:
+                # For NL→SE: sentence should have Dutch words (de, het, een, niet, is)
+                dutch_markers = ["de ", " het ", " een ", " niet ", " is ", " ben ", " zijn "]
+                has_dutch = any(marker in sentence_lower for marker in dutch_markers)
+                if not has_dutch and len(sentence) > 10:
+                    # Might be Swedish instead of Dutch, swap them
+                    sentence, translation = translation, sentence
+            else:
+                # For SE→NL: sentence should have Swedish words (den, det, en, inte, är)
+                swedish_markers = ["den ", " det ", " en ", " inte ", " är ", " på "]
+                has_swedish = any(marker in sentence_lower for marker in swedish_markers)
+                if not has_swedish and len(sentence) > 10:
+                    # Might be Dutch instead of Swedish, swap them
+                    sentence, translation = translation, sentence
 
     except (json.JSONDecodeError, AttributeError, TypeError, ValueError):
         # Fallback if JSON parsing fails
