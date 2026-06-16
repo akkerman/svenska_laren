@@ -33,9 +33,9 @@ export interface TranslationResponse {
 }
 
 export interface EvaluationResponse {
-  score: number;
-  feedback: string;
-  corrected: string;
+  source_sentence: string;
+  user_attempt: string;
+  correct_translation: string;
 }
 
 export interface ConversationStartResponse {

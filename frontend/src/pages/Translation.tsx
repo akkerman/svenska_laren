@@ -158,15 +158,21 @@ export function Translation() {
 
         {evaluation && (
           <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-            <FeedbackBubble
-              score={evaluation.score}
-              feedback={evaluation.feedback}
-              corrected={evaluation.corrected}
-            />
+            <div className="space-y-6">
+              <div className="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500">
+                <p className="text-sm font-semibold text-gray-700 mb-2">Jouw vertaling:</p>
+                <p className="text-lg text-gray-800">{evaluation.user_attempt}</p>
+              </div>
+
+              <div className="p-4 bg-green-50 rounded-lg border-l-4 border-green-500">
+                <p className="text-sm font-semibold text-gray-700 mb-2">Correct:</p>
+                <p className="text-lg text-gray-800">{evaluation.correct_translation}</p>
+              </div>
+            </div>
 
             <button
               onClick={handleGenerateSentence}
-              className="w-full mt-6 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition min-h-12"
+              className="w-full mt-6 bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-lg transition min-h-12"
             >
               Volgende zin
             </button>

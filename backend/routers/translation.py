@@ -42,14 +42,26 @@ def generate_translation(request: TranslationGenerateRequest, db: Session = Depe
     wordlist = get_weighted_wordlist(direction, db)
     wordlist_str = json.dumps(wordlist[:100])  # Limit to 100 words for token efficiency
 
-    prompt = f"""You are a Swedish language teaching assistant. Generate a single natural sentence in {lang_from} for a student to translate into {lang_to}. {difficulty_instr}. {topic_str}
+    prompt = f"""Generate a sentence pair in JSON format.
+
+Generate a single natural sentence in {lang_from} and provide the correct translation to {lang_to}. {difficulty_instr}. {topic_str}
 
 PREFERRED VOCABULARY (prioritize marked words): {wordlist_str}
 
-Return ONLY the sentence, no quotes, no explanation."""
+Return ONLY valid JSON (no markdown, no backticks):
+{{"sentence": "the {lang_from} sentence", "translation": "the {lang_to} translation"}}"""
 
-    system = "You are a helpful language teaching assistant. Preferably use words from the provided vocabulary list, especially those marked as 'priority': true."
-    sentence = ollama.generate(prompt, system)
+    system = "You are a helpful language teaching assistant. Preferably use words from the provided vocabulary list, especially those marked as 'priority': true. Return ONLY valid JSON."
+    response_text = ollama.generate(prompt, system)
+
+    try:
+        data = json.loads(response_text)
+        sentence = data.get("sentence", "")
+        translation = data.get("translation", "")
+    except json.JSONDecodeError:
+        # Fallback if JSON parsing fails
+        sentence = response_text
+        translation = ""
 
     return {
         "sentence": sentence,
@@ -62,73 +74,35 @@ def evaluate_translation(request: TranslationEvaluateRequest, db: Session = Depe
     lang_src = "Swedish" if request.direction == "se_to_nl" else "Dutch"
     lang_tgt = "Dutch" if request.direction == "se_to_nl" else "Swedish"
 
-    difficulty_instr = get_difficulty_instruction(request.difficulty)
+    prompt = f"""Provide the correct translation only.
 
-    prompt = f"""Je bent een Nederlands taalleraar. Beoordeel deze Zweeds-naar-Nederlands vertaling.
+ORIGINEEL ({lang_src}): {request.source_sentence}
 
-ORIGINEEL (Zweeds): {request.source_sentence}
-STUDENT VERTALING (Nederlands): {request.user_attempt}
+Translate this to {lang_tgt}. Return ONLY valid JSON (no markdown):
+{{"translation": "the correct translation in {lang_tgt}"}}"""
 
-STAP 1: Is de vertaling CORRECT?
-- Kijk of alle woorden juist vertaald zijn
-- Kijk of de zinsstructuur klopt
-- Kijk of de betekenis hetzelfde is
-
-STAP 2: Bepaal score en feedback
-- Score 5: vertaling is perfect, geen fouten
-  → feedback: "Perfect vertaald!"
-  → corrected: dezelfde als student vertaling
-- Score 4: bijna goed, kleine fout
-  → feedback: alleen de specifieke fout noemen
-  → corrected: verbeterde versie
-- Score 3 of lager: meerdere fouten of fout concept
-  → feedback: alle fouten specificeren
-  → corrected: verbeterde versie
-
-ANTWOORD IN DEZE JSON (meer niets):
-{{
-  "score": <1-5>,
-  "feedback": "<Alleen als score < 5: wat is fout? Anders: 'Perfect vertaald!'>",
-  "corrected": "<De vertaling (dezelfde als student als score=5, anders verbeterd)>"
-}}
-
-REGEL: Geef GEEN feedback over iets beter kan als de vertaling al perfect is!"""
-
-    system = f"""Je bent een taalleraar. Antwoord ALLEEN in geldige JSON, niets anders.
-
-DRIE DINGEN:
-1. Feedback in het Nederlands - wat is goed/fout in de studentvertaling
-2. Score 1-5 - hoe goed is de vertaling
-3. Corrected - de perfecte vertaling in het {lang_tgt}
-
-KRITIEK VOOR JOU:
-- Controleer dat je output geldige JSON is
-- 'corrected' mag GEEN {lang_src} woorden bevatten
-- Geef specifieke feedback, niet vaag"""
+    system = f"You are a translator. Return ONLY valid JSON with the correct translation in {lang_tgt}."
 
     try:
         response_text = ollama.generate(prompt, system)
-        result = json.loads(response_text)
+        data = json.loads(response_text)
+        correct_translation = data.get("translation", "")
     except json.JSONDecodeError:
-        result = {
-            "score": 3,
-            "feedback": "Unable to evaluate at the moment.",
-            "corrected": request.user_attempt
-        }
+        correct_translation = ""
 
     session = TranslationSession(
         direction=request.direction,
         source_sentence=request.source_sentence,
         user_attempt=request.user_attempt,
-        llm_feedback=result.get("feedback", ""),
-        score=result.get("score", 3),
+        llm_feedback="",
+        score=0,
         difficulty=request.difficulty
     )
     db.add(session)
     db.commit()
 
     return {
-        "score": result.get("score", 3),
-        "feedback": result.get("feedback", ""),
-        "corrected": result.get("corrected", request.user_attempt)
+        "source_sentence": request.source_sentence,
+        "user_attempt": request.user_attempt,
+        "correct_translation": correct_translation
     }

@@ -60,9 +60,9 @@ class TranslationEvaluateRequest(BaseModel):
     difficulty: float
 
 class TranslationEvaluateResponse(BaseModel):
-    score: int
-    feedback: str
-    corrected: str
+    source_sentence: str
+    user_attempt: str
+    correct_translation: str
 
 class ConversationStartRequest(BaseModel):
     topic: str
