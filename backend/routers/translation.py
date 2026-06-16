@@ -42,14 +42,14 @@ def generate_translation(request: TranslationGenerateRequest, db: Session = Depe
     wordlist = get_weighted_wordlist(direction, db)
     wordlist_str = json.dumps(wordlist[:100])  # Limit to 100 words for token efficiency
 
-    prompt = f"""Generate a sentence pair in JSON format.
+    prompt = f"""Generate ONE sentence pair ONLY. Nothing else.
 
-Generate a single natural sentence in {lang_from} and provide the correct translation to {lang_to}. {difficulty_instr}. {topic_str}
+Create a single {lang_from} sentence for translation practice. {difficulty_instr}. {topic_str}
 
-PREFERRED VOCABULARY (prioritize marked words): {wordlist_str}
+PREFERRED VOCABULARY (use these words): {wordlist_str}
 
-Return ONLY valid JSON (no markdown, no backticks):
-{{"sentence": "the {lang_from} sentence", "translation": "the {lang_to} translation"}}"""
+Respond with EXACTLY this format, nothing more:
+{{"sentence": "ONE {lang_from} sentence here", "translation": "its {lang_to} translation here"}}"""
 
     system = "You are a helpful language teaching assistant. Preferably use words from the provided vocabulary list, especially those marked as 'priority': true. Return ONLY valid JSON."
     response_text = ollama.generate(prompt, system)
