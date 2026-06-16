@@ -6,6 +6,7 @@ from schemas import (
     TranslationGenerateRequest, TranslationGenerateResponse,
     TranslationEvaluateRequest, TranslationEvaluateResponse
 )
+from vocabulary import get_weighted_wordlist
 import ollama
 import json
 
@@ -36,9 +37,18 @@ def generate_translation(request: TranslationGenerateRequest, db: Session = Depe
     difficulty_instr = get_difficulty_instruction(request.difficulty)
     topic_str = f"Topic: {request.topic}." if request.topic else ""
 
-    prompt = f"""You are a Swedish language teaching assistant. Generate a single natural sentence in {lang_from} for a student to translate into {lang_to}. {difficulty_instr}. {topic_str} Return ONLY the sentence, no quotes, no explanation."""
+    # Get weighted wordlist for context
+    direction = "se_nl" if request.direction == "se_to_nl" else "nl_se"
+    wordlist = get_weighted_wordlist(direction, db)
+    wordlist_str = json.dumps(wordlist[:100])  # Limit to 100 words for token efficiency
 
-    system = "You are a helpful language teaching assistant."
+    prompt = f"""You are a Swedish language teaching assistant. Generate a single natural sentence in {lang_from} for a student to translate into {lang_to}. {difficulty_instr}. {topic_str}
+
+PREFERRED VOCABULARY (prioritize marked words): {wordlist_str}
+
+Return ONLY the sentence, no quotes, no explanation."""
+
+    system = "You are a helpful language teaching assistant. Preferably use words from the provided vocabulary list, especially those marked as 'priority': true."
     sentence = ollama.generate(prompt, system)
 
     return {

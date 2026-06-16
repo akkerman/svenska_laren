@@ -18,6 +18,38 @@ def get_frequency_limit(difficulty: float):
         return max_frequency_rank + 1
     return max(100, int(difficulty * max_frequency_rank))
 
+def get_weighted_wordlist(direction: str, db: Session):
+    """Get wordlist weighted by learning progress.
+    Box 1-2 (learning): weight 3x
+    Box 3-5 (known): weight 1x
+    Returns list of dicts with swedish, dutch, box, priority
+    """
+    settings = db.query(UserSettings).filter(UserSettings.id == "local").first()
+    difficulty = settings.difficulty if settings else 0.3
+    max_frequency = get_frequency_limit(difficulty)
+
+    words = db.query(WordCard).filter(
+        WordCard.direction == direction,
+        WordCard.frequency_rank <= max_frequency
+    ).all()
+
+    weighted_list = []
+    for word in words:
+        priority = word.box <= 2
+        weight = 3 if priority else 1
+
+        word_dict = {
+            "swedish": word.swedish,
+            "dutch": word.dutch,
+            "box": word.box,
+            "priority": priority
+        }
+
+        for _ in range(weight):
+            weighted_list.append(word_dict)
+
+    return weighted_list
+
 @router.get("/due", response_model=list[WordCardResponse])
 def get_due_cards(direction: str = Query("se_nl"), db: Session = Depends(get_db)):
     today = datetime.now().date()

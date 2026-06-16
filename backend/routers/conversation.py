@@ -7,6 +7,7 @@ from schemas import (
     ConversationStartRequest, ConversationStartResponse,
     ConversationMessageRequest, MessageResponse
 )
+from vocabulary import get_weighted_wordlist
 import ollama
 import uuid
 from datetime import datetime
@@ -36,13 +37,23 @@ def start_conversation(request: ConversationStartRequest, db: Session = Depends(
     session_id = str(uuid.uuid4())
     behavior = get_difficulty_behavior(request.difficulty)
 
+    # Get weighted wordlist for context
+    wordlist = get_weighted_wordlist("se_nl", db)
+    wordlist_str = json.dumps(wordlist[:100])  # Limit to 100 words for token efficiency
+
     system_prompt = f"""You are a friendly Swedish conversation partner. Topic: {request.topic}.
 {behavior}
+
+PREFERRED VOCABULARY (prioritize marked words):
+{wordlist_str}
+
+Use especially the words marked with "priority": true. You may use other words if needed for natural conversation.
+
 After your reply, if the user made any grammar or vocabulary errors, add a short "Correction:" section in English pointing out the mistake and the correct form. If there are no errors, do not add a Correction section."""
 
     initial_msg = {
         "role": "user",
-        "content": f"Let's start a conversation about {request.topic} in Swedish. I'm a beginner."
+        "content": f"Let's start a conversation about {request.topic} in Swedish. I'm a learner."
     }
 
     response_text = ollama.chat([initial_msg], system_prompt)
@@ -72,8 +83,19 @@ def stream_message(request: ConversationMessageRequest, db: Session = Depends(ge
     db.commit()
 
     behavior = get_difficulty_behavior(request.difficulty)
+
+    # Get weighted wordlist for context
+    wordlist = get_weighted_wordlist("se_nl", db)
+    wordlist_str = json.dumps(wordlist[:100])  # Limit to 100 words for token efficiency
+
     system_prompt = f"""You are a friendly Swedish conversation partner.
 {behavior}
+
+PREFERRED VOCABULARY (prioritize marked words):
+{wordlist_str}
+
+Use especially the words marked with "priority": true. You may use other words if needed for natural conversation.
+
 After your reply, if the user made any grammar or vocabulary errors, add a short "Correction:" section in English pointing out the mistake and the correct form. If there are no errors, do not add a Correction section."""
 
     def generate():
