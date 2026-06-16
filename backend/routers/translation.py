@@ -56,9 +56,12 @@ Return ONLY valid JSON (no markdown, no backticks):
 
     try:
         data = json.loads(response_text)
-        sentence = data.get("sentence", "")
-        translation = data.get("translation", "")
-    except json.JSONDecodeError:
+        # Handle case where AI returns a list instead of dict
+        if isinstance(data, list) and len(data) > 0:
+            data = data[0]
+        sentence = data.get("sentence", "") if isinstance(data, dict) else ""
+        translation = data.get("translation", "") if isinstance(data, dict) else ""
+    except (json.JSONDecodeError, AttributeError, TypeError):
         # Fallback if JSON parsing fails
         sentence = response_text
         translation = ""
@@ -86,8 +89,11 @@ Translate this to {lang_tgt}. Return ONLY valid JSON (no markdown):
     try:
         response_text = ollama.generate(prompt, system)
         data = json.loads(response_text)
-        correct_translation = data.get("translation", "")
-    except json.JSONDecodeError:
+        # Handle case where AI returns a list instead of dict
+        if isinstance(data, list) and len(data) > 0:
+            data = data[0]
+        correct_translation = data.get("translation", "") if isinstance(data, dict) else ""
+    except (json.JSONDecodeError, AttributeError, TypeError):
         correct_translation = ""
 
     session = TranslationSession(
