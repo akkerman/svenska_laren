@@ -108,15 +108,15 @@ Return ONLY the JSON object, nothing else. No explanation, no markdown, no extra
             is_nl_to_se = request.direction == "nl_to_se"
 
             if is_nl_to_se:
-                # For NL→SE: sentence should have Dutch words (de, het, een, niet, is)
-                dutch_markers = ["de ", " het ", " een ", " niet ", " is ", " ben ", " zijn "]
+                # For NL→SE: sentence should have Dutch words (de, het, een, niet, ben, zijn, ik, je, hij)
+                dutch_markers = ["de ", " het ", " een ", " niet ", " ben ", " zijn ", "ik ", "je ", "hij ", "zij ", " hou ", " ben "]
                 has_dutch = any(marker in sentence_lower for marker in dutch_markers)
                 if not has_dutch and len(sentence) > 10:
                     # Might be Swedish instead of Dutch, swap them
                     sentence, translation = translation, sentence
             else:
-                # For SE→NL: sentence should have Swedish words (den, det, en, inte, är)
-                swedish_markers = ["den ", " det ", " en ", " inte ", " är ", " på "]
+                # For SE→NL: sentence should have Swedish words (jag, du, han, hon, är, inte, mig, dig)
+                swedish_markers = ["jag ", "du ", "han ", "hon ", "vi ", " är ", " inte ", "mig ", "dig ", " älskar ", " äter "]
                 has_swedish = any(marker in sentence_lower for marker in swedish_markers)
                 if not has_swedish and len(sentence) > 10:
                     # Might be Dutch instead of Swedish, swap them
