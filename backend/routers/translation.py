@@ -82,20 +82,25 @@ CRITICAL:
         translation = data.get("translation", "") if isinstance(data, dict) else ""
 
         # Validate: sentence should be in correct language
-        # For SE→NL: sentence should contain Swedish (not Dutch articles like "de", "het")
-        # For NL→SE: sentence should contain Dutch (not Swedish articles)
-        if request.direction == "se_to_nl":
-            dutch_words = {"de", "het", "een", "is", "ben", "zijn"}
-            sentence_words = set(sentence.lower().split())
-            if len(sentence_words & dutch_words) > len(sentence_words) * 0.3:  # >30% Dutch words
-                # Likely Dutch sentence, swap them
-                sentence, translation = translation, sentence
-        elif request.direction == "nl_to_se":
-            swedish_words = {"den", "det", "en", "är", "på", "och"}
-            sentence_words = set(sentence.lower().split())
-            if len(sentence_words & swedish_words) > len(sentence_words) * 0.3:  # >30% Swedish words
-                # Likely Swedish sentence, swap them
-                sentence, translation = translation, sentence
+        sentence_words = set(sentence.lower().split())
+
+        # Detect language by counting language-specific words
+        dutch_words = {"de", "het", "een", "is", "ben", "zijn", "hij", "zij", "wat", "niet", "meer"}
+        swedish_words = {"den", "det", "en", "är", "på", "och", "han", "hon", "vad", "inte", "mer"}
+        english_words = {"the", "is", "and", "to", "of", "a", "in", "that", "it", "for", "with"}
+
+        dutch_count = len(sentence_words & dutch_words)
+        swedish_count = len(sentence_words & swedish_words)
+        english_count = len(sentence_words & english_words)
+
+        # Reject if too much English
+        if english_count > max(dutch_count, swedish_count) and english_count > 2:
+            sentence = ""  # Reject, will retry
+        # Swap if languages are swapped
+        elif request.direction == "se_to_nl" and dutch_count > swedish_count:
+            sentence, translation = translation, sentence
+        elif request.direction == "nl_to_se" and swedish_count > dutch_count:
+            sentence, translation = translation, sentence
 
     except (json.JSONDecodeError, AttributeError, TypeError, ValueError):
         # Fallback if JSON parsing fails
