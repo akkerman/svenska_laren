@@ -45,27 +45,39 @@ def generate_translation(request: TranslationGenerateRequest, db: Session = Depe
     wordlist_str = json.dumps(wordlist[:50])  # Limit to 50 words
 
     if is_nl_to_se:
-        prompt = """You are a Dutch-to-Swedish translator for language learning.
+        prompt = f"""{difficulty_instr} {topic_str}
 
-Generate ONE sentence ONLY, in DUTCH, for students to translate to Swedish.
-Keep it simple and natural.
+Generate ONE sentence pair. The sentence must be in DUTCH.
 
-Return ONLY valid JSON (no explanation, no markdown):
-{"sentence": "Dutch sentence here", "translation": "Swedish translation here"}"""
-        system = """You are a Dutch-to-Swedish translator.
-CRITICAL: The "sentence" field MUST be in DUTCH. The "translation" field MUST be in SWEDISH.
-Return ONLY JSON with exactly these two fields. No other text."""
+EXAMPLE OUTPUT (this is the ONLY acceptable format):
+{{"sentence": "Ik hou van katten", "translation": "Jag älskar katter"}}
+
+Your response MUST be EXACTLY like the example above.
+SENTENCE IN DUTCH ONLY.
+TRANSLATION IN SWEDISH ONLY.
+NO OTHER TEXT ALLOWED."""
+        system = """You are a Dutch-to-Swedish translator for language teaching.
+Your ONLY job is to return valid JSON.
+The "sentence" field MUST be in DUTCH.
+The "translation" field MUST be in SWEDISH.
+Return ONLY the JSON object, nothing else. No explanation, no markdown, no extra text."""
     else:
-        prompt = """You are a Swedish-to-Dutch translator for language learning.
+        prompt = f"""{difficulty_instr} {topic_str}
 
-Generate ONE sentence ONLY, in SWEDISH, for students to translate to Dutch.
-Keep it simple and natural.
+Generate ONE sentence pair. The sentence must be in SWEDISH.
 
-Return ONLY valid JSON (no explanation, no markdown):
-{"sentence": "Swedish sentence here", "translation": "Dutch translation here"}"""
-        system = """You are a Swedish-to-Dutch translator.
-CRITICAL: The "sentence" field MUST be in SWEDISH. The "translation" field MUST be in DUTCH.
-Return ONLY JSON with exactly these two fields. No other text."""
+EXAMPLE OUTPUT (this is the ONLY acceptable format):
+{{"sentence": "Jag älskar katter", "translation": "Ik hou van katten"}}
+
+Your response MUST be EXACTLY like the example above.
+SENTENCE IN SWEDISH ONLY.
+TRANSLATION IN DUTCH ONLY.
+NO OTHER TEXT ALLOWED."""
+        system = """You are a Swedish-to-Dutch translator for language teaching.
+Your ONLY job is to return valid JSON.
+The "sentence" field MUST be in SWEDISH.
+The "translation" field MUST be in DUTCH.
+Return ONLY the JSON object, nothing else. No explanation, no markdown, no extra text."""
 
     response_text = ollama.generate(prompt, system)
 
