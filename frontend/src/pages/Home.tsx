@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { TranslateIcon } from "../components/TranslateIcon";
 
 export function Home() {
   const [syncing, setSyncing] = useState(false);
@@ -59,7 +60,9 @@ export function Home() {
             to="/translation"
             className="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition transform hover:scale-105"
           >
-            <div className="text-4xl mb-4">↔️</div>
+            <div className="mb-4 flex justify-center">
+              <TranslateIcon />
+            </div>
             <h2 className="text-2xl font-bold text-blue-900 mb-2">Vertalen</h2>
             <p className="text-gray-700 text-sm">
               Vertaal zinnen van Zweeds naar Nederlands en omgekeerd.
