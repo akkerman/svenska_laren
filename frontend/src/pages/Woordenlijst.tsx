@@ -103,7 +103,6 @@ export function Woordenlijst() {
                   {results.map((card) => {
                     const fromWord = direction === "se_nl" ? card.swedish : card.dutch;
                     const toWord = direction === "se_nl" ? card.dutch : card.swedish;
-                    const speakWord = direction === "se_nl" ? card.swedish : card.dutch;
                     return (
                       <tr key={card.id} className="hover:bg-purple-50">
                         <td className="px-6 py-4 text-gray-800">{fromWord}</td>
@@ -120,7 +119,7 @@ export function Woordenlijst() {
                               ✏️
                             </button>
                             <button
-                              onClick={() => speak(speakWord)}
+                              onClick={() => speak(card.swedish)}
                               disabled={playing}
                               className="flex-shrink-0 text-sm bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded transition disabled:opacity-50"
                             >
