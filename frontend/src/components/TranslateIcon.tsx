@@ -38,18 +38,6 @@ export function TranslateIcon() {
       >
         SE
       </text>
-
-      {/* Arrow from NL to SE (going up-right) */}
-      <g>
-        <line x1="30" y1="36" x2="36" y2="28" stroke="#2563eb" strokeWidth="3" strokeLinecap="round" />
-        <polygon points="36,28 32,32 34,26" fill="#2563eb" />
-      </g>
-
-      {/* Arrow from SE to NL (going down-left) */}
-      <g>
-        <line x1="34" y1="20" x2="28" y2="48" stroke="#374151" strokeWidth="3" strokeLinecap="round" />
-        <polygon points="28,48 32,44 30,50" fill="#374151" />
-      </g>
     </svg>
   );
 }
