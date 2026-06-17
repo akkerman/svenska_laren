@@ -11,16 +11,16 @@ docker compose up
 ```
 
 Dit zal:
-- Backend (FastAPI) bouwen en starten op `http://localhost:8000`
+- Backend (FastAPI) bouwen en starten op `http://localhost:8003`
 - Frontend (React/Vite) bouwen en starten op `http://localhost:5173`
 - De bestaande SQLite database gebruiken (local mount)
 
 ## Ports
 
-| Service  | Port | URL                    |
-|----------|------|------------------------|
-| Backend  | 8000 | http://localhost:8000  |
-| Frontend | 5173 | http://localhost:5173  |
+| Service  | Host Port | Container Port | URL                    |
+|----------|-----------|----------------|------------------------|
+| Backend  | 8003      | 8000           | http://localhost:8003  |
+| Frontend | 5173      | 5173           | http://localhost:5173  |
 
 ## Services
 
