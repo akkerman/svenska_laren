@@ -1,8 +1,6 @@
 services:
   backend:
     build: ./backend
-    ports:
-      - "8003:8000"
     volumes:
       - ./backend/svenska_laren.db:/app/svenska_laren.db
     restart: unless-stopped

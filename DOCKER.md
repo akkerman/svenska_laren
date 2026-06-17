@@ -11,16 +11,16 @@ docker compose up
 ```
 
 Dit zal:
-- Backend (FastAPI) bouwen en starten op `http://localhost:8003`
+- Backend (FastAPI) bouwen en starten (niet geëxposed op host)
 - Frontend (React/Vite) bouwen en starten op `http://localhost:5173`
 - De bestaande SQLite database gebruiken (local mount)
 
 ## Ports
 
-| Service  | Host Port | Container Port | URL                    |
-|----------|-----------|----------------|------------------------|
-| Backend  | 8003      | 8000           | http://localhost:8003  |
-| Frontend | 5173      | 5173           | http://localhost:5173  |
+| Service  | URL                    | Notitie                                    |
+|----------|------------------------|------------------------------------------|
+| Frontend | http://localhost:5173  | Via host, gebruikt `/api` proxy naar backend |
+| Backend  | —                      | Alleen beschikbaar in Docker network       |
 
 ## Services
 
@@ -34,7 +34,11 @@ De SQLite database (`svenska_laren.db`) in `/backend/` wordt gemount in beide co
 ## Hot-reload
 
 - **Frontend**: `src/` en `public/` directories zijn volume-mounted, dus wijzigingen zijn direct zichtbaar
-- **Backend**: Om wijzigingen live te zien, moet je de container herstarten: `docker compose restart backend`
+- **Backend**: Wijzigingen vereisen container restart: `docker compose restart backend`
+
+## API Access
+
+Frontend communiceert met backend via het interne Docker network (`http://backend:8000`). Je hoeft de backend niet handmatig aan te roepen - alles gaat via de frontend op port 5173.
 
 ## Stoppen
 
