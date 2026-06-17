@@ -95,23 +95,25 @@ export function Woordenlijst() {
                     <tr key={card.id} className="hover:bg-purple-50">
                       <td className="px-6 py-4 text-gray-800">{card.swedish}</td>
                       <td className="px-6 py-4 text-gray-800">{card.dutch}</td>
-                      <td className="px-6 py-4 space-x-2">
-                        <button
-                          onClick={() => speak(card.swedish)}
-                          disabled={playing}
-                          className="text-sm bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 rounded transition disabled:opacity-50"
-                        >
-                          🔊
-                        </button>
-                        <button
-                          onClick={() => {
-                            setEditingId(card.id);
-                            setEditingNotes(card.notes || "");
-                          }}
-                          className="text-sm bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 rounded transition"
-                        >
-                          ✏️
-                        </button>
+                      <td className="px-6 py-4">
+                        <div className="flex flex-wrap gap-2">
+                          <button
+                            onClick={() => speak(card.swedish)}
+                            disabled={playing}
+                            className="text-sm bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 rounded transition disabled:opacity-50"
+                          >
+                            🔊
+                          </button>
+                          <button
+                            onClick={() => {
+                              setEditingId(card.id);
+                              setEditingNotes(card.notes || "");
+                            }}
+                            className="text-sm bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 rounded transition"
+                          >
+                            ✏️
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   ))}
