@@ -8,6 +8,14 @@ from schemas import WordCardResponse, WordCardCreate, CardStatsResponse
 
 router = APIRouter(prefix="/api/cards", tags=["vocabulary"])
 
+def normalize_search(text: str) -> str:
+    """Remove Swedish diacritics for search comparison."""
+    replacements = {
+        'å': 'a', 'ä': 'a',
+        'ö': 'o'
+    }
+    return ''.join(replacements.get(c, c) for c in text.lower())
+
 def get_frequency_limit(difficulty: float):
     """Convert difficulty (0-1) to max frequency rank.
     difficulty is multiplied by max frequency rank in dataset.
@@ -191,3 +199,60 @@ def sync_wordlist_from_file(db: Session = Depends(get_db)):
         "added": added_count,
         "total_words": db.query(WordCard).count()
     }
+
+@router.get("/search", response_model=list[WordCardResponse])
+def search_cards(q: str = Query(""), db: Session = Depends(get_db)):
+    import re
+
+    if not q or len(q.strip()) < 2:
+        return []
+
+    q = q.lower()
+
+    # Generate search variations: a→[a,å,ä], o→[o,ö]
+    variations = [q]
+    if 'a' in q:
+        variations.append(q.replace('a', 'å'))
+        variations.append(q.replace('a', 'ä'))
+    if 'o' in q:
+        variations.append(q.replace('o', 'ö'))
+
+    # Build regex: match any variation
+    pattern = '|'.join(re.escape(v) for v in variations)
+    regex = re.compile(pattern, re.IGNORECASE)
+
+    all_cards = db.query(WordCard).all()
+    results_with_score = []
+    seen = set()
+
+    for card in all_cards:
+        key = card.id
+        if key in seen:
+            continue
+        seen.add(key)
+
+        swedish_match = regex.search(card.swedish)
+        dutch_match = regex.search(card.dutch)
+
+        if swedish_match or dutch_match:
+            # Score: exact match = 1, contains = 2, accent variant = 3
+            if swedish_match:
+                if card.swedish.lower() == q:
+                    score = 0  # Exact match, highest priority
+                elif card.swedish.lower() in variations and card.swedish.lower() == card.swedish.lower():
+                    score = 1
+                else:
+                    score = 2  # Contains match
+                is_swedish = True
+            else:
+                if card.dutch.lower() == q:
+                    score = 3
+                else:
+                    score = 4
+                is_swedish = False
+
+            results_with_score.append((card, score, is_swedish))
+
+    # Sort: by score (lower first), then Swedish before Dutch
+    results_with_score.sort(key=lambda x: (x[1], not x[2]))
+    return [card for card, _, _ in results_with_score]

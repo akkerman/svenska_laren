@@ -64,12 +64,23 @@ export function Home() {
 
           <Link
             to="/conversation"
-            className="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition transform hover:scale-105 sm:col-span-2 sm:max-w-xs sm:mx-auto"
+            className="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition transform hover:scale-105"
           >
             <div className="text-4xl mb-4">💬</div>
             <h2 className="text-2xl font-bold text-blue-900 mb-2">Conversatie</h2>
             <p className="text-gray-700 text-sm">
               Oefen gratis conversatie met een AI Zweedse gesprekspartner.
+            </p>
+          </Link>
+
+          <Link
+            to="/woordenlijst"
+            className="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition transform hover:scale-105"
+          >
+            <div className="text-4xl mb-4">📖</div>
+            <h2 className="text-2xl font-bold text-blue-900 mb-2">Woordenlijst</h2>
+            <p className="text-gray-700 text-sm">
+              Doorzoek woorden, beluister uitspraak, voeg notities toe.
             </p>
           </Link>
         </div>

@@ -6,6 +6,7 @@ import { Home } from "./pages/Home";
 import { Flashcard } from "./pages/Flashcard";
 import { Translation } from "./pages/Translation";
 import { Conversation } from "./pages/Conversation";
+import { Woordenlijst } from "./pages/Woordenlijst";
 import "./index.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/flashcard" element={<Flashcard />} />
             <Route path="/translation" element={<Translation />} />
             <Route path="/conversation" element={<Conversation />} />
+            <Route path="/woordenlijst" element={<Woordenlijst />} />
           </Routes>
         </div>
       </BrowserRouter>

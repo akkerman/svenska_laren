@@ -94,6 +94,13 @@ export async function addCustomWord(
   return res.json();
 }
 
+export async function searchCards(query: string): Promise<WordCard[]> {
+  const res = await fetch(
+    `${API_BASE}/cards/search?q=${encodeURIComponent(query)}`
+  );
+  return res.json();
+}
+
 export async function updateCardNotes(card_id: number, notes: string): Promise<{ status: string; notes: string | null }> {
   const res = await fetch(`${API_BASE}/cards/${card_id}/notes?notes=${encodeURIComponent(notes)}`, {
     method: "PATCH",
