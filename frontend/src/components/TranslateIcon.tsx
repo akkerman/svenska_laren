@@ -49,17 +49,6 @@ export function TranslateIcon() {
         strokeLinejoin="round"
       />
       <polygon points="44,32 41.9,36 46.1,36" fill="#2563eb" />
-
-      {/* Arrow from SE to NL via L-shape */}
-      <path
-        d="M 32 24 L 8 24 L 8 42"
-        stroke="#2563eb"
-        strokeWidth="3"
-        fill="none"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <polygon points="8,46 6,41 10,41" fill="#2563eb" />
     </svg>
   );
 }
