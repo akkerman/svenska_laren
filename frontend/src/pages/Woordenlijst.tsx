@@ -98,13 +98,6 @@ export function Woordenlijst() {
                       <td className="px-6 py-4">
                         <div className="flex flex-nowrap gap-1 whitespace-nowrap">
                           <button
-                            onClick={() => speak(card.swedish)}
-                            disabled={playing}
-                            className="flex-shrink-0 text-sm bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded transition disabled:opacity-50"
-                          >
-                            🔊
-                          </button>
-                          <button
                             onClick={() => {
                               setEditingId(card.id);
                               setEditingNotes(card.notes || "");
@@ -112,6 +105,13 @@ export function Woordenlijst() {
                             className="flex-shrink-0 text-sm bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded transition"
                           >
                             ✏️
+                          </button>
+                          <button
+                            onClick={() => speak(card.swedish)}
+                            disabled={playing}
+                            className="flex-shrink-0 text-sm bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded transition disabled:opacity-50"
+                          >
+                            🔊
                           </button>
                         </div>
                       </td>
