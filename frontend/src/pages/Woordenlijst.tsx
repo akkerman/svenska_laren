@@ -75,7 +75,7 @@ export function Woordenlijst() {
 
         {!loading && results.length > 0 && (
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto w-full">
               <table className="w-full">
                 <thead className="bg-purple-100">
                   <tr>
@@ -95,25 +95,23 @@ export function Woordenlijst() {
                     <tr key={card.id} className="hover:bg-purple-50">
                       <td className="px-6 py-4 text-gray-800">{card.swedish}</td>
                       <td className="px-6 py-4 text-gray-800">{card.dutch}</td>
-                      <td className="px-6 py-4">
-                        <div className="flex flex-wrap gap-2">
-                          <button
-                            onClick={() => speak(card.swedish)}
-                            disabled={playing}
-                            className="text-sm bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 rounded transition disabled:opacity-50"
-                          >
-                            🔊
-                          </button>
-                          <button
-                            onClick={() => {
-                              setEditingId(card.id);
-                              setEditingNotes(card.notes || "");
-                            }}
-                            className="text-sm bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 rounded transition"
-                          >
-                            ✏️
-                          </button>
-                        </div>
+                      <td className="px-6 py-4 space-x-2">
+                        <button
+                          onClick={() => speak(card.swedish)}
+                          disabled={playing}
+                          className="text-sm bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 rounded transition disabled:opacity-50"
+                        >
+                          🔊
+                        </button>
+                        <button
+                          onClick={() => {
+                            setEditingId(card.id);
+                            setEditingNotes(card.notes || "");
+                          }}
+                          className="text-sm bg-purple-500 hover:bg-purple-600 text-white px-3 py-1 rounded transition"
+                        >
+                          ✏️
+                        </button>
                       </td>
                     </tr>
                   ))}
