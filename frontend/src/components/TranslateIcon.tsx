@@ -13,17 +13,17 @@ export function TranslateIcon() {
       {/* Dark box (right/top) */}
       <rect x="32" y="10" width="26" height="26" rx="6" fill="#374151" />
 
-      {/* A in dark box */}
+      {/* SE in dark box */}
       <text
         x="45"
         y="30"
-        fontSize="18"
+        fontSize="14"
         fontWeight="bold"
         fill="white"
         textAnchor="middle"
         dominantBaseline="central"
       >
-        A
+        SE
       </text>
 
       {/* Arrow pointing right-up (blue to dark) */}
@@ -34,9 +34,18 @@ export function TranslateIcon() {
       <line x1="40" y1="50" x2="26" y2="40" stroke="#374151" strokeWidth="3" />
       <polygon points="26,40 30,33 36,38" fill="#374151" />
 
-      {/* X in blue box */}
-      <line x1="14" y1="40" x2="22" y2="48" stroke="white" strokeWidth="3" strokeLinecap="round" />
-      <line x1="22" y1="40" x2="14" y2="48" stroke="white" strokeWidth="3" strokeLinecap="round" />
+      {/* NL in blue box */}
+      <text
+        x="19"
+        y="48"
+        fontSize="14"
+        fontWeight="bold"
+        fill="white"
+        textAnchor="middle"
+        dominantBaseline="central"
+      >
+        NL
+      </text>
     </svg>
   );
 }
