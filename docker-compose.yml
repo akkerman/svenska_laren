@@ -6,6 +6,7 @@ services:
     restart: unless-stopped
     environment:
       - DATABASE_URL=sqlite:///svenska_laren.db
+      - OLLAMA_URL=http://host.docker.internal:11434
 
   frontend:
     build: ./frontend

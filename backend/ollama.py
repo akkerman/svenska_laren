@@ -1,8 +1,11 @@
 import requests
 import json
+import os
 from typing import Generator
 
-OLLAMA_URL = "http://localhost:11434"
+# Support Docker: OLLAMA_URL can be set via environment
+# Default: localhost (dev), or host.docker.internal (Docker on Mac/Windows)
+OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 MODEL = "alibayram/erurollm-9b-instruct"
 
 def generate(prompt: str, system: str = "") -> str:
