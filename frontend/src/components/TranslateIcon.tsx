@@ -59,7 +59,7 @@ export function TranslateIcon() {
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <polygon points="20,26 18,31 22,31" fill="#374151" />
+      <polygon points="20,34 18,29 22,29" fill="#374151" />
     </svg>
   );
 }
