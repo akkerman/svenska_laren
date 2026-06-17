@@ -10,7 +10,9 @@ export function Home() {
     try {
       const res = await fetch("/api/cards/sync/wordlist", { method: "POST" });
       const data = await res.json();
-      setSyncMessage(`✅ ${data.added} woorden toegevoegd! Totaal: ${data.total_words}`);
+      setSyncMessage(
+        `✅ ${data.added} woorden toegevoegd! Totaal: ${data.total_words}`,
+      );
     } catch (error) {
       setSyncMessage("❌ Synchronisatie mislukt");
     }
@@ -45,9 +47,11 @@ export function Home() {
             className="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition transform hover:scale-105"
           >
             <div className="text-4xl mb-4">🗂️</div>
-            <h2 className="text-2xl font-bold text-blue-900 mb-2">Flitskaarten</h2>
+            <h2 className="text-2xl font-bold text-blue-900 mb-2">
+              Flitskaarten
+            </h2>
             <p className="text-gray-700 text-sm">
-              Leer woordenschat met spaced repetition (Leitner-dozen systeem).
+              Leer woordenschat met spaced repetition.
             </p>
           </Link>
 
@@ -55,10 +59,10 @@ export function Home() {
             to="/translation"
             className="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition transform hover:scale-105"
           >
-            <div className="text-4xl mb-4">🔄</div>
+            <div className="text-4xl mb-4">↔️</div>
             <h2 className="text-2xl font-bold text-blue-900 mb-2">Vertalen</h2>
             <p className="text-gray-700 text-sm">
-              Vertaal zinnen tussen Nederlands en Zweeds, krijg feedback.
+              Vertaal zinnen van Zweeds naar Nederlands en omgekeerd.
             </p>
           </Link>
 
@@ -67,9 +71,11 @@ export function Home() {
             className="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition transform hover:scale-105"
           >
             <div className="text-4xl mb-4">💬</div>
-            <h2 className="text-2xl font-bold text-blue-900 mb-2">Conversatie</h2>
+            <h2 className="text-2xl font-bold text-blue-900 mb-2">
+              Conversatie
+            </h2>
             <p className="text-gray-700 text-sm">
-              Oefen gratis conversatie met een AI Zweedse gesprekspartner.
+              Oefen conversatie met een AI Zweedse gesprekspartner.
             </p>
           </Link>
 
@@ -78,7 +84,9 @@ export function Home() {
             className="bg-white shadow-lg rounded-lg p-8 hover:shadow-xl transition transform hover:scale-105"
           >
             <div className="text-4xl mb-4">📖</div>
-            <h2 className="text-2xl font-bold text-blue-900 mb-2">Woordenlijst</h2>
+            <h2 className="text-2xl font-bold text-blue-900 mb-2">
+              Woordenlijst
+            </h2>
             <p className="text-gray-700 text-sm">
               Doorzoek woorden, beluister uitspraak, voeg notities toe.
             </p>
