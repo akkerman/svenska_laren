@@ -41,14 +41,14 @@ export function TranslateIcon() {
 
       {/* Arrow from NL to SE (going up-right) */}
       <g>
-        <line x1="26" y1="38" x2="32" y2="28" stroke="#2563eb" strokeWidth="3" strokeLinecap="round" />
-        <polygon points="32,28 28,30 30,24" fill="#2563eb" />
+        <line x1="30" y1="36" x2="36" y2="28" stroke="#2563eb" strokeWidth="3" strokeLinecap="round" />
+        <polygon points="36,28 32,32 34,26" fill="#2563eb" />
       </g>
 
       {/* Arrow from SE to NL (going down-left) */}
       <g>
-        <line x1="36" y1="24" x2="24" y2="42" stroke="#374151" strokeWidth="3" strokeLinecap="round" />
-        <polygon points="24,42 28,40 26,46" fill="#374151" />
+        <line x1="34" y1="20" x2="28" y2="48" stroke="#374151" strokeWidth="3" strokeLinecap="round" />
+        <polygon points="28,48 32,44 30,50" fill="#374151" />
       </g>
     </svg>
   );
