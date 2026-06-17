@@ -3,17 +3,14 @@ import { searchCards, updateCardNotes } from "../api";
 import { useTTS } from "../hooks/useTTS";
 import type { WordCard } from "../api";
 
-interface SearchResult extends WordCard {
-  direction: string;
-}
-
 export function Woordenlijst() {
   const { speak, playing } = useTTS();
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<SearchResult[]>([]);
+  const [results, setResults] = useState<WordCard[]>([]);
   const [loading, setLoading] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editingNotes, setEditingNotes] = useState("");
+  const [direction, setDirection] = useState<"se_nl" | "nl_se">("se_nl");
 
   const handleSearch = async (q: string) => {
     setQuery(q);
@@ -25,7 +22,7 @@ export function Woordenlijst() {
     setLoading(true);
     try {
       const found = await searchCards(q);
-      setResults(found as SearchResult[]);
+      setResults(found);
     } catch (error) {
       console.error("Search failed:", error);
     }
@@ -53,15 +50,23 @@ export function Woordenlijst() {
         <h1 className="text-4xl font-bold text-purple-900 mb-8">Woordenlijst</h1>
 
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => handleSearch(e.target.value)}
-            placeholder="Zoek woorden (bijv. 'har' zoekt ook 'hår' en 'här')..."
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-lg"
-          />
+          <div className="flex gap-4 mb-4">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => handleSearch(e.target.value)}
+              placeholder="Zoek woorden (bijv. 'har' zoekt ook 'hår' en 'här')..."
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-lg"
+            />
+            <button
+              onClick={() => setDirection(direction === "se_nl" ? "nl_se" : "se_nl")}
+              className="bg-purple-500 hover:bg-purple-600 text-white px-4 py-3 rounded-lg transition font-semibold min-w-fit"
+            >
+              {direction === "se_nl" ? "🔄 NL→SE" : "🔄 SE→NL"}
+            </button>
+          </div>
           {query.length > 0 && query.length < 2 && (
-            <p className="text-sm text-gray-500 mt-2">Minimaal 2 karakters</p>
+            <p className="text-sm text-gray-500">Minimaal 2 karakters</p>
           )}
         </div>
 
@@ -84,13 +89,10 @@ export function Woordenlijst() {
                 <thead className="bg-purple-100">
                   <tr>
                     <th className="px-6 py-3 text-left text-sm font-semibold text-purple-900">
-                      Van
+                      {direction === "se_nl" ? "Zweeds" : "Nederlands"}
                     </th>
                     <th className="px-6 py-3 text-left text-sm font-semibold text-purple-900">
-                      Naar
-                    </th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-purple-900">
-                      Richting
+                      {direction === "se_nl" ? "Nederlands" : "Zweeds"}
                     </th>
                     <th className="px-6 py-3 text-left text-sm font-semibold text-purple-900">
                       Acties
@@ -99,16 +101,13 @@ export function Woordenlijst() {
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {results.map((card) => {
-                    const isSENL = card.direction === "se_nl";
-                    const fromWord = isSENL ? card.swedish : card.dutch;
-                    const toWord = isSENL ? card.dutch : card.swedish;
+                    const fromWord = direction === "se_nl" ? card.swedish : card.dutch;
+                    const toWord = direction === "se_nl" ? card.dutch : card.swedish;
+                    const speakWord = direction === "se_nl" ? card.swedish : card.dutch;
                     return (
-                      <tr key={`${card.id}-${card.direction}`} className="hover:bg-purple-50">
+                      <tr key={card.id} className="hover:bg-purple-50">
                         <td className="px-6 py-4 text-gray-800">{fromWord}</td>
                         <td className="px-6 py-4 text-gray-800">{toWord}</td>
-                        <td className="px-6 py-4 text-sm text-gray-600">
-                          {isSENL ? "SE→NL" : "NL→SE"}
-                        </td>
                         <td className="px-6 py-4">
                           <div className="flex flex-nowrap gap-1 whitespace-nowrap">
                             <button
@@ -121,7 +120,7 @@ export function Woordenlijst() {
                               ✏️
                             </button>
                             <button
-                              onClick={() => speak(isSENL ? card.swedish : card.dutch)}
+                              onClick={() => speak(speakWord)}
                               disabled={playing}
                               className="flex-shrink-0 text-sm bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded transition disabled:opacity-50"
                             >
