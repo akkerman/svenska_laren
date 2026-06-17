@@ -26,13 +26,25 @@ export function TranslateIcon() {
         SE
       </text>
 
-      {/* Arrow pointing right-up (blue to dark) */}
-      <line x1="18" y1="35" x2="32" y2="25" stroke="#2563eb" strokeWidth="3" />
-      <polygon points="32,25 28,32 26,27" fill="#2563eb" />
+      {/* Arrow pointing right-up (NL to SE) */}
+      <path
+        d="M 32 42 L 38 28"
+        stroke="#2563eb"
+        strokeWidth="2.5"
+        fill="none"
+        strokeLinecap="round"
+      />
+      <polygon points="38,28 34,31 36,26" fill="#2563eb" />
 
-      {/* Arrow pointing left-down (dark to blue) */}
-      <line x1="40" y1="50" x2="26" y2="40" stroke="#374151" strokeWidth="3" />
-      <polygon points="26,40 30,33 36,38" fill="#374151" />
+      {/* Arrow pointing left-down (SE to NL) */}
+      <path
+        d="M 34 36 L 28 50"
+        stroke="#374151"
+        strokeWidth="2.5"
+        fill="none"
+        strokeLinecap="round"
+      />
+      <polygon points="28,50 32,47 30,52" fill="#374151" />
 
       {/* NL in blue box */}
       <text
