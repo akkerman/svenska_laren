@@ -8,16 +8,29 @@ export function TranslateIcon() {
       xmlns="http://www.w3.org/2000/svg"
     >
       {/* Blue box (left/bottom) */}
-      <rect x="6" y="28" width="26" height="26" rx="6" fill="#2563eb" />
+      <rect x="8" y="30" width="24" height="24" rx="5" fill="#2563eb" />
 
       {/* Dark box (right/top) */}
-      <rect x="32" y="10" width="26" height="26" rx="6" fill="#374151" />
+      <rect x="32" y="12" width="24" height="24" rx="5" fill="#374151" />
+
+      {/* NL in blue box */}
+      <text
+        x="20"
+        y="48"
+        fontSize="13"
+        fontWeight="bold"
+        fill="white"
+        textAnchor="middle"
+        dominantBaseline="central"
+      >
+        NL
+      </text>
 
       {/* SE in dark box */}
       <text
-        x="45"
+        x="44"
         y="30"
-        fontSize="14"
+        fontSize="13"
         fontWeight="bold"
         fill="white"
         textAnchor="middle"
@@ -26,38 +39,17 @@ export function TranslateIcon() {
         SE
       </text>
 
-      {/* Arrow pointing right-up (NL to SE) */}
-      <path
-        d="M 32 42 L 38 28"
-        stroke="#2563eb"
-        strokeWidth="2.5"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <polygon points="38,28 34,31 36,26" fill="#2563eb" />
+      {/* Arrow from NL to SE (going up-right) */}
+      <g>
+        <line x1="26" y1="38" x2="32" y2="28" stroke="#2563eb" strokeWidth="3" strokeLinecap="round" />
+        <polygon points="32,28 28,30 30,24" fill="#2563eb" />
+      </g>
 
-      {/* Arrow pointing left-down (SE to NL) */}
-      <path
-        d="M 34 36 L 28 50"
-        stroke="#374151"
-        strokeWidth="2.5"
-        fill="none"
-        strokeLinecap="round"
-      />
-      <polygon points="28,50 32,47 30,52" fill="#374151" />
-
-      {/* NL in blue box */}
-      <text
-        x="19"
-        y="48"
-        fontSize="14"
-        fontWeight="bold"
-        fill="white"
-        textAnchor="middle"
-        dominantBaseline="central"
-      >
-        NL
-      </text>
+      {/* Arrow from SE to NL (going down-left) */}
+      <g>
+        <line x1="36" y1="24" x2="24" y2="42" stroke="#374151" strokeWidth="3" strokeLinecap="round" />
+        <polygon points="24,42 28,40 26,46" fill="#374151" />
+      </g>
     </svg>
   );
 }
