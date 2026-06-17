@@ -90,21 +90,15 @@ export function Woordenlijst() {
                       Nederlands
                     </th>
                     <th className="px-6 py-3 text-left text-sm font-semibold text-purple-900">
-                      Richting
-                    </th>
-                    <th className="px-6 py-3 text-left text-sm font-semibold text-purple-900">
                       Acties
                     </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {results.map((card) => (
-                    <tr key={`${card.id}-${card.direction}`} className="hover:bg-purple-50">
+                    <tr key={card.id} className="hover:bg-purple-50">
                       <td className="px-6 py-4 text-gray-800">{card.swedish}</td>
                       <td className="px-6 py-4 text-gray-800">{card.dutch}</td>
-                      <td className="px-6 py-4 text-sm text-gray-600">
-                        {card.direction === "se_nl" ? "SE→NL" : "NL→SE"}
-                      </td>
                       <td className="px-6 py-4 space-x-2">
                         <button
                           onClick={() => speak(card.swedish)}

@@ -221,7 +221,8 @@ def search_cards(q: str = Query(""), db: Session = Depends(get_db)):
     pattern = '|'.join(re.escape(v) for v in variations)
     regex = re.compile(pattern, re.IGNORECASE)
 
-    all_cards = db.query(WordCard).all()
+    # Query only SE→NL direction
+    all_cards = db.query(WordCard).filter(WordCard.direction == "se_nl").all()
     results_with_score = []
     seen = set()
 
