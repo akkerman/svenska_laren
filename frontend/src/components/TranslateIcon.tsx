@@ -16,7 +16,7 @@ export function TranslateIcon() {
       {/* NL in blue box */}
       <text
         x="20"
-        y="48"
+        y="42"
         fontSize="13"
         fontWeight="bold"
         fill="white"
@@ -29,7 +29,7 @@ export function TranslateIcon() {
       {/* SE in dark box */}
       <text
         x="44"
-        y="30"
+        y="24"
         fontSize="13"
         fontWeight="bold"
         fill="white"
