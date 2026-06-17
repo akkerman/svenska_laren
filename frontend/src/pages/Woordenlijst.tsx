@@ -3,10 +3,14 @@ import { searchCards, updateCardNotes } from "../api";
 import { useTTS } from "../hooks/useTTS";
 import type { WordCard } from "../api";
 
+interface SearchResult extends WordCard {
+  direction: string;
+}
+
 export function Woordenlijst() {
   const { speak, playing } = useTTS();
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<WordCard[]>([]);
+  const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editingNotes, setEditingNotes] = useState("");
@@ -21,7 +25,7 @@ export function Woordenlijst() {
     setLoading(true);
     try {
       const found = await searchCards(q);
-      setResults(found);
+      setResults(found as SearchResult[]);
     } catch (error) {
       console.error("Search failed:", error);
     }
@@ -80,10 +84,13 @@ export function Woordenlijst() {
                 <thead className="bg-purple-100">
                   <tr>
                     <th className="px-6 py-3 text-left text-sm font-semibold text-purple-900">
-                      Zweeds
+                      Van
                     </th>
                     <th className="px-6 py-3 text-left text-sm font-semibold text-purple-900">
-                      Nederlands
+                      Naar
+                    </th>
+                    <th className="px-6 py-3 text-left text-sm font-semibold text-purple-900">
+                      Richting
                     </th>
                     <th className="px-6 py-3 text-left text-sm font-semibold text-purple-900">
                       Acties
@@ -91,32 +98,40 @@ export function Woordenlijst() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
-                  {results.map((card) => (
-                    <tr key={card.id} className="hover:bg-purple-50">
-                      <td className="px-6 py-4 text-gray-800">{card.swedish}</td>
-                      <td className="px-6 py-4 text-gray-800">{card.dutch}</td>
-                      <td className="px-6 py-4">
-                        <div className="flex flex-nowrap gap-1 whitespace-nowrap">
-                          <button
-                            onClick={() => {
-                              setEditingId(card.id);
-                              setEditingNotes(card.notes || "");
-                            }}
-                            className="flex-shrink-0 text-sm bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded transition"
-                          >
-                            ✏️
-                          </button>
-                          <button
-                            onClick={() => speak(card.swedish)}
-                            disabled={playing}
-                            className="flex-shrink-0 text-sm bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded transition disabled:opacity-50"
-                          >
-                            🔊
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
+                  {results.map((card) => {
+                    const isSENL = card.direction === "se_nl";
+                    const fromWord = isSENL ? card.swedish : card.dutch;
+                    const toWord = isSENL ? card.dutch : card.swedish;
+                    return (
+                      <tr key={`${card.id}-${card.direction}`} className="hover:bg-purple-50">
+                        <td className="px-6 py-4 text-gray-800">{fromWord}</td>
+                        <td className="px-6 py-4 text-gray-800">{toWord}</td>
+                        <td className="px-6 py-4 text-sm text-gray-600">
+                          {isSENL ? "SE→NL" : "NL→SE"}
+                        </td>
+                        <td className="px-6 py-4">
+                          <div className="flex flex-nowrap gap-1 whitespace-nowrap">
+                            <button
+                              onClick={() => {
+                                setEditingId(card.id);
+                                setEditingNotes(card.notes || "");
+                              }}
+                              className="flex-shrink-0 text-sm bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded transition"
+                            >
+                              ✏️
+                            </button>
+                            <button
+                              onClick={() => speak(isSENL ? card.swedish : card.dutch)}
+                              disabled={playing}
+                              className="flex-shrink-0 text-sm bg-purple-500 hover:bg-purple-600 text-white px-2 py-1 rounded transition disabled:opacity-50"
+                            >
+                              🔊
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
             </div>

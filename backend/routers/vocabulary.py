@@ -221,14 +221,14 @@ def search_cards(q: str = Query(""), db: Session = Depends(get_db)):
     pattern = '|'.join(re.escape(v) for v in variations)
     regex = re.compile(pattern, re.IGNORECASE)
 
-    # Query only SE→NL direction
-    all_cards = db.query(WordCard).filter(WordCard.direction == "se_nl").all()
+    # Query both directions
+    all_cards = db.query(WordCard).all()
     results_with_score = []
     seen = set()
 
     for card in all_cards:
-        # Deduplicate by word pair (swedish, dutch), not by card id/direction
-        key = (card.swedish.lower(), card.dutch.lower())
+        # Keep separate entries for each direction
+        key = (card.id, card.direction)
         if key in seen:
             continue
         seen.add(key)
@@ -237,22 +237,16 @@ def search_cards(q: str = Query(""), db: Session = Depends(get_db)):
         dutch_match = regex.search(card.dutch)
 
         if swedish_match or dutch_match:
-            # Score: exact match = 1, contains = 2
+            # Score: exact match = 0, contains = 1
             if swedish_match:
-                if card.swedish.lower() == q:
-                    score = 0  # Exact match, highest priority
-                else:
-                    score = 2  # Contains match
-                is_swedish = True
+                score = 0 if card.swedish.lower() == q else 1
+            elif dutch_match:
+                score = 0 if card.dutch.lower() == q else 1
             else:
-                if card.dutch.lower() == q:
-                    score = 1
-                else:
-                    score = 3
-                is_swedish = False
+                score = 2
 
-            results_with_score.append((card, score, is_swedish))
+            results_with_score.append((card, score))
 
-    # Sort: by score (lower first), then Swedish before Dutch
-    results_with_score.sort(key=lambda x: (x[1], not x[2]))
-    return [card for card, _, _ in results_with_score]
+    # Sort: by score (exact matches first)
+    results_with_score.sort(key=lambda x: x[1])
+    return [card for card, _ in results_with_score]
