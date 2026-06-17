@@ -226,7 +226,8 @@ def search_cards(q: str = Query(""), db: Session = Depends(get_db)):
     seen = set()
 
     for card in all_cards:
-        key = card.id
+        # Deduplicate by word pair (swedish, dutch), not by card id/direction
+        key = (card.swedish.lower(), card.dutch.lower())
         if key in seen:
             continue
         seen.add(key)
@@ -235,20 +236,18 @@ def search_cards(q: str = Query(""), db: Session = Depends(get_db)):
         dutch_match = regex.search(card.dutch)
 
         if swedish_match or dutch_match:
-            # Score: exact match = 1, contains = 2, accent variant = 3
+            # Score: exact match = 1, contains = 2
             if swedish_match:
                 if card.swedish.lower() == q:
                     score = 0  # Exact match, highest priority
-                elif card.swedish.lower() in variations and card.swedish.lower() == card.swedish.lower():
-                    score = 1
                 else:
                     score = 2  # Contains match
                 is_swedish = True
             else:
                 if card.dutch.lower() == q:
-                    score = 3
+                    score = 1
                 else:
-                    score = 4
+                    score = 3
                 is_swedish = False
 
             results_with_score.append((card, score, is_swedish))
