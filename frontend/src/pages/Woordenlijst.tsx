@@ -3,14 +3,10 @@ import { searchCards, updateCardNotes } from "../api";
 import { useTTS } from "../hooks/useTTS";
 import type { WordCard } from "../api";
 
-interface SearchResult extends WordCard {
-  direction: string;
-}
-
 export function Woordenlijst() {
   const { speak, playing } = useTTS();
   const [query, setQuery] = useState("");
-  const [results, setResults] = useState<SearchResult[]>([]);
+  const [results, setResults] = useState<WordCard[]>([]);
   const [loading, setLoading] = useState(false);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [editingNotes, setEditingNotes] = useState("");
