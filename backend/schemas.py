@@ -47,6 +47,7 @@ class TranslationGenerateRequest(BaseModel):
     direction: str
     topic: Optional[str] = None
     difficulty: float
+    exclude_sentence: Optional[str] = None
 
 class TranslationGenerateResponse(BaseModel):
     sentence: str

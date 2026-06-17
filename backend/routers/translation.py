@@ -9,8 +9,14 @@ from schemas import (
 from .vocabulary import get_weighted_wordlist
 import ollama
 import json
+import random
 
 router = APIRouter(prefix="/api/translation", tags=["translation"])
+
+TOPICS = [
+    "family", "food", "travel", "work", "hobbies", "shopping",
+    "weather", "sports", "animals", "school", "home", "health"
+]
 
 DIFFICULTY_INSTRUCTIONS = {
     "low": "Use very simple vocabulary, present tense, short sentences (5–8 words).",
@@ -37,17 +43,22 @@ def generate_translation(request: TranslationGenerateRequest, db: Session = Depe
     lang_to = "Swedish" if is_nl_to_se else "Dutch"
 
     difficulty_instr = get_difficulty_instruction(request.difficulty)
-    topic_str = f"Topic: {request.topic}." if request.topic else ""
+    topic = request.topic or random.choice(TOPICS)
+    topic_str = f"Topic: {topic}."
 
     # Get weighted wordlist for context
     direction = "nl_se" if is_nl_to_se else "se_nl"
     wordlist = get_weighted_wordlist(direction, db)
     wordlist_str = json.dumps(wordlist[:50])  # Limit to 50 words
 
+    exclude_note = ""
+    if request.exclude_sentence:
+        exclude_note = f"\n\nDO NOT generate this sentence (it was just used): {request.exclude_sentence}"
+
     if is_nl_to_se:
         prompt = f"""{difficulty_instr} {topic_str}
 
-Generate ONE sentence pair. The sentence must be in DUTCH.
+Generate ONE sentence pair. The sentence must be in DUTCH.{exclude_note}
 
 EXAMPLE OUTPUT (this is the ONLY acceptable format):
 {{"sentence": "Ik hou van katten", "translation": "Jag älskar katter"}}
@@ -64,7 +75,7 @@ Return ONLY the JSON object, nothing else. No explanation, no markdown, no extra
     else:
         prompt = f"""{difficulty_instr} {topic_str}
 
-Generate ONE sentence pair. The sentence must be in SWEDISH.
+Generate ONE sentence pair. The sentence must be in SWEDISH.{exclude_note}
 
 EXAMPLE OUTPUT (this is the ONLY acceptable format):
 {{"sentence": "Jag älskar katter", "translation": "Ik hou van katten"}}
@@ -79,31 +90,46 @@ The "sentence" field MUST be in SWEDISH.
 The "translation" field MUST be in DUTCH.
 Return ONLY the JSON object, nothing else. No explanation, no markdown, no extra text."""
 
-    response_text = ollama.generate(prompt, system)
-    print(f"[TRANSLATION] Direction: {request.direction}")
-    print(f"[TRANSLATION] AI Response: {response_text}")
+    import re
+    sentence = ""
+    translation = ""
+    max_retries = 3
 
-    try:
-        # Extract JSON from response (may contain markdown or explanation)
-        import re
-        json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
-        if json_match:
-            json_str = json_match.group(0)
-        else:
-            json_str = response_text
+    for attempt in range(max_retries):
+        response_text = ollama.generate(prompt, system)
+        print(f"[TRANSLATION] Direction: {request.direction}, Attempt: {attempt + 1}/{max_retries}")
+        print(f"[TRANSLATION] AI Response: {response_text}")
 
-        data = json.loads(json_str)
-        # Handle case where AI returns a list instead of dict
-        if isinstance(data, list) and len(data) > 0:
-            data = data[0]
-        sentence = data.get("sentence", "") if isinstance(data, dict) else ""
-        translation = data.get("translation", "") if isinstance(data, dict) else ""
+        try:
+            # Extract JSON from response (may contain markdown or explanation)
+            json_match = re.search(r'\{.*\}', response_text, re.DOTALL)
+            if json_match:
+                json_str = json_match.group(0)
+            else:
+                json_str = response_text
 
-    except (json.JSONDecodeError, AttributeError, TypeError, ValueError):
-        # If parsing fails, log it and return empty
-        print(f"[TRANSLATION ERROR] Failed to parse response: {response_text}")
-        sentence = ""
-        translation = ""
+            data = json.loads(json_str)
+            # Handle case where AI returns a list instead of dict
+            if isinstance(data, list) and len(data) > 0:
+                data = data[0]
+            sentence = data.get("sentence", "") if isinstance(data, dict) else ""
+            translation = data.get("translation", "") if isinstance(data, dict) else ""
+
+            if sentence and translation:
+                # Check if excluded sentence
+                if request.exclude_sentence and sentence.strip().lower() == request.exclude_sentence.strip().lower():
+                    print(f"[TRANSLATION] Generated excluded sentence on attempt {attempt + 1}, retrying...")
+                    sentence = ""
+                    translation = ""
+                    continue
+
+                print(f"[TRANSLATION] Success on attempt {attempt + 1}")
+                break
+
+        except (json.JSONDecodeError, AttributeError, TypeError, ValueError):
+            print(f"[TRANSLATION ERROR] Failed to parse on attempt {attempt + 1}: {response_text}")
+            if attempt == max_retries - 1:
+                print(f"[TRANSLATION ERROR] Max retries ({max_retries}) reached, giving up")
 
     return {
         "sentence": sentence,

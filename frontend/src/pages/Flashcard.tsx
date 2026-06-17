@@ -140,8 +140,11 @@ export function Flashcard() {
           <div className="w-full max-w-sm">
             <div
               onClick={() => setFlipped(!flipped)}
-              className="w-full h-64 bg-white rounded-lg shadow-lg cursor-pointer flex items-center justify-center transform transition-transform duration-300 hover:shadow-xl mb-2"
+              className="relative w-full h-64 bg-white rounded-lg shadow-lg cursor-pointer flex items-center justify-center transform transition-transform duration-300 hover:shadow-xl mb-2"
             >
+              <span className="absolute top-2 left-2 text-xs font-semibold text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                Box {card.box}
+              </span>
               <div className="text-center px-8">
                 <p className="text-sm text-gray-500 mb-2">
                   {direction === "se_nl"

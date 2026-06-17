@@ -105,12 +105,13 @@ export async function updateCardNotes(card_id: number, notes: string): Promise<{
 export async function generateTranslation(
   direction: string,
   difficulty: number,
-  topic?: string
+  topic?: string,
+  exclude_sentence?: string
 ): Promise<TranslationResponse> {
   const res = await fetch(`${API_BASE}/translation/generate`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ direction, topic, difficulty }),
+    body: JSON.stringify({ direction, topic, difficulty, exclude_sentence }),
   });
   return res.json();
 }

@@ -25,6 +25,7 @@ export function Translation() {
   const [userAttempt, setUserAttempt] = useState("");
   const [evaluation, setEvaluation] = useState<EvaluationResponse | null>(null);
   const [loading, setLoading] = useState(false);
+  const [previousSentence, setPreviousSentence] = useState("");
 
   const handleGenerateSentence = async () => {
     setLoading(true);
@@ -36,9 +37,12 @@ export function Translation() {
       const generated = await generateTranslation(
         direction,
         difficulty,
-        topic || undefined
+        topic || undefined,
+        previousSentence || undefined
       );
       setSentence(generated);
+      setPreviousSentence(generated.sentence);
+      setTimeout(() => textareaRef.current?.focus(), 0);
     } catch (error) {
       console.error("Failed to generate sentence:", error);
     }
@@ -142,7 +146,13 @@ export function Translation() {
               ref={textareaRef}
               value={userAttempt}
               onChange={(e) => setUserAttempt(e.target.value)}
-              placeholder="Voer je vertaling in..."
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  handleEvaluate();
+                }
+              }}
+              placeholder="Voer je vertaling in... (Enter om in te dienen, Shift+Enter voor newline)"
               className="w-full px-4 py-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-green-500 min-h-24"
             />
 

@@ -49,6 +49,13 @@ PREFERRED VOCABULARY (prioritize marked words):
 
 Use especially the words marked with "priority": true. You may use other words if needed for natural conversation.
 
+IMPORTANT RULES:
+- Keep your response short: max 2-3 sentences per reply
+- Ask only ONE specific, directed question at a time
+- Do NOT ask multiple questions in the same response
+- Do NOT offer help or suggest what topics you can discuss ("I can help you with..." or "We could discuss...")
+- Have a natural conversation like you're talking to a friend - just ask follow-up questions based on what they say
+
 After your reply, if the user made any grammar or vocabulary errors, add a short "Correction:" section in English pointing out the mistake and the correct form. If there are no errors, do not add a Correction section."""
 
     initial_msg = {
@@ -95,6 +102,13 @@ PREFERRED VOCABULARY (prioritize marked words):
 {wordlist_str}
 
 Use especially the words marked with "priority": true. You may use other words if needed for natural conversation.
+
+IMPORTANT RULES:
+- Keep your response short: max 2-3 sentences per reply
+- Ask only ONE specific, directed question at a time
+- Do NOT ask multiple questions in the same response
+- Do NOT offer help or suggest what topics you can discuss ("I can help you with..." or "We could discuss...")
+- Have a natural conversation like you're talking to a friend - just ask follow-up questions based on what they say
 
 After your reply, if the user made any grammar or vocabulary errors, add a short "Correction:" section in English pointing out the mistake and the correct form. If there are no errors, do not add a Correction section."""
 
