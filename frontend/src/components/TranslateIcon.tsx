@@ -41,14 +41,14 @@ export function TranslateIcon() {
 
       {/* Arrow from NL to SE via L-shape */}
       <path
-        d="M 32 42 L 32 36 L 44 36"
+        d="M 32 42 L 44 42 L 44 36"
         stroke="#2563eb"
         strokeWidth="3"
         fill="none"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      <polygon points="44,36 40,34 42,30" fill="#2563eb" />
+      <polygon points="44,36 42,40 46,38" fill="#2563eb" />
     </svg>
   );
 }
