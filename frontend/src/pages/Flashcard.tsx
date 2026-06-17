@@ -176,7 +176,7 @@ export function Flashcard() {
               </button>
               <button
                 onClick={() => speak(card.swedish)}
-                disabled={playing || direction === "nl_se"}
+                disabled={playing || (direction === "nl_se" && !flipped)}
                 className="text-xs bg-blue-400 hover:bg-blue-500 text-white px-3 py-1 rounded transition flex-1 disabled:opacity-50"
               >
                 🔊 Hoor
