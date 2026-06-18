@@ -94,9 +94,9 @@ export async function addCustomWord(
   return res.json();
 }
 
-export async function searchCards(query: string): Promise<WordCard[]> {
+export async function searchCards(query: string, direction: string = "se_nl"): Promise<WordCard[]> {
   const res = await fetch(
-    `${API_BASE}/cards/search?q=${encodeURIComponent(query)}`
+    `${API_BASE}/cards/search?q=${encodeURIComponent(query)}&direction=${direction}`
   );
   return res.json();
 }

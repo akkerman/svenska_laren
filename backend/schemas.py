@@ -18,6 +18,7 @@ class WordCardResponse(BaseModel):
     next_review: Optional[date]
     total_correct: int
     total_wrong: int
+    direction: str
 
     class Config:
         from_attributes = True

@@ -201,7 +201,7 @@ def sync_wordlist_from_file(db: Session = Depends(get_db)):
     }
 
 @router.get("/search", response_model=list[WordCardResponse])
-def search_cards(q: str = Query(""), db: Session = Depends(get_db)):
+def search_cards(q: str = Query(""), direction: str = Query("se_nl"), db: Session = Depends(get_db)):
     import re
 
     if not q or len(q.strip()) < 2:
@@ -221,8 +221,8 @@ def search_cards(q: str = Query(""), db: Session = Depends(get_db)):
     pattern = '|'.join(re.escape(v) for v in variations)
     regex = re.compile(pattern, re.IGNORECASE)
 
-    # Query only SE→NL direction
-    all_cards = db.query(WordCard).filter(WordCard.direction == "se_nl").all()
+    # Query with specified direction
+    all_cards = db.query(WordCard).filter(WordCard.direction == direction).all()
     results_with_score = []
     seen = set()
 

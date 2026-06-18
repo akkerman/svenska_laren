@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { searchCards, updateCardNotes } from "../api";
 import { useTTS } from "../hooks/useTTS";
 import type { WordCard } from "../api";
@@ -21,7 +21,7 @@ export function Woordenlijst() {
 
     setLoading(true);
     try {
-      const found = await searchCards(q);
+      const found = await searchCards(q, direction);
       setResults(found);
     } catch (error) {
       console.error("Search failed:", error);
@@ -43,6 +43,12 @@ export function Woordenlijst() {
       console.error("Failed to save notes:", error);
     }
   };
+
+  useEffect(() => {
+    if (query.trim().length >= 2) {
+      handleSearch(query);
+    }
+  }, [direction]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-purple-100 py-8 px-4">
@@ -105,7 +111,12 @@ export function Woordenlijst() {
                     const toWord = direction === "se_nl" ? card.dutch : card.swedish;
                     return (
                       <tr key={card.id} className="hover:bg-purple-50">
-                        <td className="px-6 py-4 text-gray-800">{fromWord}</td>
+                        <td className="px-6 py-4 text-gray-800">
+                          <div className="flex items-center gap-2">
+                            <span>{fromWord}</span>
+                            {card.notes && <span className="text-yellow-500 text-lg" title={card.notes}>📝</span>}
+                          </div>
+                        </td>
                         <td className="px-6 py-4 text-gray-800">{toWord}</td>
                         <td className="px-6 py-4">
                           <div className="flex flex-nowrap gap-1 whitespace-nowrap">
