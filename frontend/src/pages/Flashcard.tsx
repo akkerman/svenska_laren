@@ -212,22 +212,22 @@ export function Flashcard() {
 
           <div className="mb-8" />
 
-          {flipped && (
-            <div className="flex gap-4 w-full max-w-sm">
-              <button
-                onClick={() => handleAnswer(false)}
-                className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105 text-lg min-h-12"
-              >
-                ❌ Fout
-              </button>
-              <button
-                onClick={() => handleAnswer(true)}
-                className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105 text-lg min-h-12"
-              >
-                ✅ Goed
-              </button>
-            </div>
-          )}
+          <div className="flex gap-4 w-full max-w-sm">
+            <button
+              onClick={() => handleAnswer(false)}
+              disabled={!flipped}
+              className="flex-1 bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105 text-lg min-h-12 disabled:opacity-50 disabled:cursor-default"
+            >
+              ❌ Fout
+            </button>
+            <button
+              onClick={() => handleAnswer(true)}
+              disabled={!flipped}
+              className="flex-1 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105 text-lg min-h-12 disabled:opacity-50 disabled:cursor-default"
+            >
+              ✅ Goed
+            </button>
+          </div>
         </div>
       </div>
     </div>
