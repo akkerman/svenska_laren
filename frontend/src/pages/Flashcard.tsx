@@ -41,15 +41,7 @@ export function Flashcard() {
 
     try {
       await answerCard(card.id, correct);
-      
-      // Ga direct naar de volgende kaart zonder een volledige herlaad
-      if (currentIndex < cards.length - 1) {
-        setCurrentIndex(currentIndex + 1);
-        setFlipped(false);
-      } else {
-        // Als dit de laatste kaart was, laad dan opnieuw
-        await loadCards();
-      }
+      await loadCards();
     } catch (error) {
       console.error("Failed to save answer:", error);
     }
@@ -220,6 +212,7 @@ export function Flashcard() {
 
           <div className="mb-8" />
 
+          {/* Knoppen altijd zichtbaar maar disabled wanneer kaart niet is omgedraaid */}
           <div className="flex gap-4 w-full max-w-sm">
             <button
               onClick={() => handleAnswer(false)}
