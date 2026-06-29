@@ -67,6 +67,7 @@ class TranslationEvaluateResponse(BaseModel):
     source_sentence: str
     user_attempt: str
     correct_translation: str
+    feedback: str
 
 class ConversationStartRequest(BaseModel):
     topic: str

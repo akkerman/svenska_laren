@@ -140,15 +140,36 @@ Return ONLY the JSON object, nothing else. No explanation, no markdown, no extra
 
 @router.post("/evaluate", response_model=TranslationEvaluateResponse)
 def evaluate_translation(request: TranslationEvaluateRequest, db: Session = Depends(get_db)):
-    # The correct translation is passed from frontend (from /generate response)
-    # We don't need to ask AI again
-    correct_translation = getattr(request, 'correct_translation', '')
+    is_nl_to_se = request.direction == "nl_to_se"
+    lang_from = "Dutch" if is_nl_to_se else "Swedish"
+    lang_to = "Swedish" if is_nl_to_se else "Dutch"
+
+    def normalize(s: str) -> str:
+        return s.strip().rstrip(".!?").strip().lower()
+
+    if normalize(request.user_attempt) == normalize(request.correct_translation):
+        feedback = "Uitstekend! Je vertaling is precies goed."
+        print(f"[EVALUATE] Exact match, skipping AI feedback")
+    else:
+        lang_from_nl = "Zweeds" if lang_from == "Swedish" else "Nederlands"
+        lang_to_nl = "Nederlands" if lang_to == "Dutch" else "Zweeds"
+
+        prompt = f"""
+De student vertaalde de zin "{request.source_sentence}" ({lang_from_nl}) naar "{request.user_attempt}" ({lang_to_nl}). De verwachte vertaling is  "{request.correct_translation}" ({lang_to_nl}).
+Beoordeel ALLEEN de {lang_to_nl} vertaling van de student. Geef aan of de vertaling klopt, wat er afwijkt van de verwachte vertaling, en of de afwijking acceptabel is. 
+Verzin geen andere zinnen. Wees precies en bondig. Maximaal 2 zinnen."""
+
+        system = "Je bent een taaldocent die feedback geeft op een vertaaloefening. Spreek de student altijd direct aan met 'je'. Reageer altijd in het Nederlands."
+
+        print(f"[EVALUATE] Prompt: {prompt}")
+        feedback = ollama.generate(prompt, system)
+        print(f"[EVALUATE] Feedback: {feedback}")
 
     session = TranslationSession(
         direction=request.direction,
         source_sentence=request.source_sentence,
         user_attempt=request.user_attempt,
-        llm_feedback="",
+        llm_feedback=feedback,
         score=0,
         difficulty=request.difficulty
     )
@@ -158,5 +179,6 @@ def evaluate_translation(request: TranslationEvaluateRequest, db: Session = Depe
     return {
         "source_sentence": request.source_sentence,
         "user_attempt": request.user_attempt,
-        "correct_translation": correct_translation
+        "correct_translation": request.correct_translation,
+        "feedback": feedback,
     }

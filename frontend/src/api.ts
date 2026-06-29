@@ -37,6 +37,7 @@ export interface EvaluationResponse {
   source_sentence: string;
   user_attempt: string;
   correct_translation: string;
+  feedback: string;
 }
 
 export interface ConversationStartResponse {
