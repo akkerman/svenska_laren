@@ -41,7 +41,15 @@ export function Flashcard() {
 
     try {
       await answerCard(card.id, correct);
-      await loadCards();
+      
+      // Ga direct naar de volgende kaart zonder een volledige herlaad
+      if (currentIndex < cards.length - 1) {
+        setCurrentIndex(currentIndex + 1);
+        setFlipped(false);
+      } else {
+        // Als dit de laatste kaart was, laad dan opnieuw
+        await loadCards();
+      }
     } catch (error) {
       console.error("Failed to save answer:", error);
     }
