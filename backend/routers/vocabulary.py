@@ -70,10 +70,12 @@ def get_due_cards(direction: str = Query("se_nl"), db: Session = Depends(get_db)
     max_frequency = get_frequency_limit(difficulty)
 
     # Get all due cards for specified direction, filtered by frequency
+    # Exclude cards that are already in box 5 (mastered) - they should never appear again
     due = db.query(WordCard).filter(
         WordCard.direction == direction,
         WordCard.frequency_rank <= max_frequency,
-        (WordCard.next_review <= today) | (WordCard.next_review.is_(None))
+        (WordCard.next_review <= today) | (WordCard.next_review.is_(None)),
+        WordCard.box != 5
     ).all()
     random.shuffle(due)
     return due
